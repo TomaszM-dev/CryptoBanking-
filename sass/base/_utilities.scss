@@ -1,0 +1,101 @@
+// HEADINGS
+
+.heading-h1 {
+  font-size: 5.2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: $color-primary-light-1;
+
+  @include respond(phone) {
+    font-size: 4rem;
+  }
+}
+.heading-h2 {
+  @include respond(phone) {
+    font-size: 2.5rem;
+  }
+  font-size: 3.4rem;
+  text-transform: uppercase;
+
+  transition: all 0.3s;
+  &:hover {
+    transform: skewY(2deg) skewX(15deg) scale(1.1);
+    text-shadow: 0.5rem 1rem 2rem rgba($color-black, 0.2);
+  }
+}
+.heading-h3 {
+}
+.heading-h4 {
+  transition: all 0.3s;
+  &:hover {
+    transform: skewY(2deg) skewX(15deg) scale(1.1);
+    text-shadow: 0.5rem 1rem 2rem rgba($color-black, 0.2);
+  }
+  font-size: 2.4rem;
+  font-weight: 400;
+
+  @include respond(phone) {
+    font-size: 2rem;
+  }
+}
+.heading-h5 {
+  text-transform: uppercase;
+  font-size: 2.1rem;
+}
+
+// MARGINS
+
+.mg-sm {
+  margin-bottom: 1rem;
+}
+.mg-mm {
+  margin-bottom: 3rem;
+}
+.mg-lm {
+  margin-bottom: 9rem;
+}
+.mg-hm {
+  margin-bottom: 12rem;
+}
+
+// PADDINGS
+
+.pdb-xxs {
+  padding-bottom: 2rem;
+}
+.pdb-xs {
+}
+.pdb-s {
+}
+.pdb-m {
+}
+.pdb-l {
+}
+
+// TEXT ALIGN
+
+.al-s {
+  text-align: start;
+}
+.al-c {
+  text-align: center;
+}
+.al-e {
+  text-align: end;
+}
+
+// BACKGROUND COLORS
+
+.bg-light {
+}
+.bg-dark {
+}
+
+// HIDDEN CLASS
+
+.hidden {
+  opacity: 0;
+  transform: translateY(5rem);
+}
+
+// BLUR
