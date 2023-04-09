@@ -87,3 +87,47 @@ body {
   font-weight: 700;
   text-transform: uppercase;
 }
+
+.active {
+  color: rgba(rgb(32, 255, 3), 1) !important;
+  opacity: 1 !important;
+}
+
+.hidden {
+  opacity: 0;
+  display: none;
+}
+
+.wrong-password {
+  &__popup {
+    position: absolute;
+    @include absCenter;
+    width: 30rem;
+    height: 16rem;
+    background-color: black;
+    border-radius: 10px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid red;
+  }
+  &__close {
+    position: absolute !important;
+    top: -0.2rem;
+    right: 0rem;
+    color: white;
+    font-size: 1.6rem;
+    padding: 1rem;
+  }
+
+  &__headline {
+    text-transform: uppercase;
+    font-size: 2rem;
+  }
+
+  &__info {
+    font-size: 1.3rem;
+  }
+}

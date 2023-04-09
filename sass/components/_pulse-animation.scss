@@ -1,0 +1,19 @@
+.pulse-text {
+  &::before {
+    content: "";
+    display: block;
+    background-color: #00b300;
+    border-radius: 20px;
+    position: absolute;
+    bottom: 31%;
+    left: 16%;
+
+    height: 10px;
+    width: 10px;
+    transform: scale(1);
+    animation: pulse-fade 2s infinite;
+  }
+
+  &:hover {
+  }
+}

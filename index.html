@@ -5,6 +5,124 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CRYPTOBANKING</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <script type="module" defer src="js/controller.js"></script>
   </head>
-  <body></body>
+  <body>
+    <section class="section-starter">
+      <div class="bg-video">
+        <video class="bg-video__content" autoplay muted loop>
+          <source src="img/bg-video.mp4" type="video/mp4" />
+          <source src="img/video.webm" type="video/webm" />
+          Your browser is not supported!
+        </video>
+      </div>
+
+      <div class="cube__container-1">
+        <div class="cube__box-1">
+          <div class="cube__top-1">
+            <div class="cube__top-text-1">
+              <svg class="icon icon-bitcoin"><use xlink:href="img/sprite.svg#icon-bitcoin"></use></svg>
+              </svg>
+            </div>
+          </div>
+          <span class="cube__item-1" style="--i: 1"> </span>
+          <span class="cube__item-1" style="--i: 2"></span>
+          <span class="cube__item-1" style="--i: 3"></span>
+          <span class="cube__item-1" style="--i: 4"></span>
+        </div>
+      </div>
+      <div class="cube__container-2">
+        <div class="cube__box-2">
+          <div class="cube__top-2">
+            <div class="cube__top-text-2">
+              <svg class="cube__top-icon">
+                <use xlink:href="img/sprite.svg#icon-dollar-sign"></use>
+              </svg>
+            </div>
+          </div>
+          <span class="cube__item-2" style="--i: 1"> </span>
+          <span class="cube__item-2" style="--i: 2"></span>
+          <span class="cube__item-2" style="--i: 3"></span>
+          <span class="cube__item-2" style="--i: 4"></span>
+        </div>
+      </div>
+
+      <div class="cube__container-3">
+        <div class="cube__box-3">
+          <div class="cube__top-3"></div>
+          <span class="cube__item-3" style="--i: 1">
+            <h2 class="cube__item-text"></h2>
+          </span>
+          <span class="cube__item-3" style="--i: 2">
+            <h2 class="cube__item-text"></h2>
+          </span>
+          <span class="cube__item-3" style="--i: 3">
+            <h2 class="cube__item-text"></h2
+          ></span>
+          <span class="cube__item-3" style="--i: 4">
+            <h2 class="cube__item-text"></h2
+          ></span>
+        </div>
+      </div>
+      <div class="cube__container-4">
+        <div class="cube__box-4">
+          <div class="cube__top-4"></div>
+          <span class="cube__item-4" style="--i: 1"></span>
+          <span class="cube__item-4" style="--i: 2"></span>
+          <span class="cube__item-4" style="--i: 3"></span>
+          <span class="cube__item-4" style="--i: 4"></span>
+        </div>
+      </div>
+
+      <form class="sign-in__form">
+        <div class="sign-in__form-group sign-in__btn-container">
+          <button data-set="1" class="sign-in__headline sign-in__login active">
+            Sign In
+          </button>
+          <button data-set="0" class="sign-in__headline sign-in__register">
+            Register
+          </button>
+        </div>
+        <div class="sign-in__form-group">
+          <input
+            type="text"
+            class="sign-in__input sign-in__username"
+            required
+            placeholder="Username:"
+            id="username"
+          />
+          <label for="username" class="sign-in__label"></label>
+        </div>
+        <div class="wrong-password__popup hidden">
+            <button class="wrong-password__close ">X</button>
+            <h3 class="wrong-password__headline mg-sm">Wrong pass/username</h3>
+            <p class="wrong-password__info">try again using different credentials or register yourself</p>
+        </div>
+        <div class="sign-in__form-group">
+          <input
+            type="text"
+            class="sign-in__input sign-in__password"
+            required
+            placeholder="Password:"
+            id="password"
+          />
+          <label for="password" class="sign-in__label"></label>
+        </div>
+        <div class="sign-in__form-group">
+          <p class="sign-in__paragraph pulse-text">HINT</p>
+        </div>
+        <div class="sign-in__form-group">
+          <button class="btn btn--green btn__login">Login</button>
+        </div>
+      </form>
+
+      <h1 data-text="CRYPTOBANKING" class="section-starter__headline">
+        CRYPTOBANKING
+      </h1>
+    </section>
+    <section class="section-mainPage">
+      <h3 >User logged succesfully</h3>
+    </section>
+  </body>
 </html>

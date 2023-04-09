@@ -1,32 +1,30 @@
-@keyframes moveInLeft {
+@keyframes cubeRotationLeft {
   0% {
-    opacity: 0;
-    transform: translateX(-10rem);
+    transform: rotateX(-30deg) rotateY(0deg);
   }
-
-  80% {
-    transform: translateX(1rem);
-  }
-
   100% {
-    opacity: 1;
-    transform: translate(0);
+    transform: rotateX(-30deg) rotateY(-360deg);
+  }
+}
+@keyframes cubeRotationRight {
+  0% {
+    transform: rotateX(-30deg) rotateY(0deg);
+  }
+  100% {
+    transform: rotateX(-30deg) rotateY(360deg);
   }
 }
 
-@keyframes moveInRight {
-  0% {
-    opacity: 0;
-    transform: translateX(10rem);
-  }
-
-  80% {
-    transform: translateX(-1rem);
-  }
-
+@keyframes headlineWidthScale {
+  0%,
+  10%,
   100% {
-    opacity: 1;
-    transform: translate(0);
+    width: 0;
+  }
+
+  70%,
+  90% {
+    width: 100%;
   }
 }
 
@@ -42,50 +40,6 @@
   }
 }
 
-@keyframes moveUp {
-  100% {
-    opacity: 1;
-    transform: translateY(0rem);
-  }
-  0% {
-    opacity: 0;
-    transform: translateY(2rem);
-  }
-  90% {
-    opacity: 1;
-  }
-}
-
-@keyframes moveDown {
-  100% {
-    opacity: 1;
-    transform: translateY(0rem);
-  }
-  0% {
-    opacity: 0;
-    transform: translateY(-2rem);
-  }
-  90% {
-    opacity: 1;
-  }
-}
-
-@keyframes scaleOpen {
-  0% {
-    opacity: 0;
-    transform: scale(1.25) translate(-10%, -50%);
-  }
-
-  50% {
-    opacity: 1;
-  }
-
-  100% {
-    opacity: 1;
-
-    transform: scale(1) translate(-50%, -50%);
-  }
-}
 @keyframes scale {
   0% {
     opacity: 0;
@@ -103,54 +57,35 @@
   }
 }
 
-@keyframes scaleClose {
+/* Inner Pulsing */
+@keyframes pulse {
   0% {
-    opacity: 0;
-    transform: scale(1) translate(-10%, -50%);
+    transform: scale(0.9);
   }
 
   50% {
-    opacity: 1;
-  }
-
-  100% {
-    opacity: 1;
-
-    transform: scale(0) translate(-50%, -50%);
-  }
-}
-
-@keyframes moveInRightTranslate {
-  0% {
-    transform: scale(1.5);
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
     transform: scale(1);
-    transform: translate(-50%, -50%);
-  }
-}
-@keyframes moveInLeftTranslate {
-  0% {
-    transform: scale(1.5);
-    opacity: 0;
   }
 
   100% {
-    opacity: 1;
+    transform: scale(0.9);
+  }
+}
+
+/* Outer Pulsing */
+@keyframes pulse-fade {
+  0% {
+    transform: scale(0.9);
+    box-shadow: 0 0 0 5px rgba(172, 234, 101, 0.7);
+  }
+
+  70% {
     transform: scale(1);
-    transform: translate(50%, -50%);
-  }
-}
-@keyframes scale1 {
-  0% {
-    // width: 0%;
-    transform: scaleY(1);
+    box-shadow: 0 0 0 10px rgba(234, 101, 101, 0);
   }
 
   100% {
-    transform: scaleY(2);
+    transform: scale(0.9);
+    box-shadow: 0 0 0 0 rgba(234, 101, 101, 0);
   }
 }

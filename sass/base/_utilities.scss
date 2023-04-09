@@ -4,7 +4,7 @@
   font-size: 5.2rem;
   font-weight: 600;
   text-transform: uppercase;
-  color: $color-primary-light-1;
+  // color: $color-primary-light-1;
 
   @include respond(phone) {
     font-size: 4rem;
