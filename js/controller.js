@@ -22,12 +22,12 @@
 
 const btnContainer = document.querySelector(".sign-in__btn-container");
 const btns = document.querySelectorAll(".sign-in__headline");
-const btnStarter = document.querySelector(".btn__starter");
+const btnLogin = document.querySelector(".btn__login");
 const signInParagraph = document.querySelector(".sign-in__paragraph");
 
 // starter init
 const init = function () {
-  btnStarter.textContent = "Login";
+  btnLogin.textContent = "Login";
   btns.forEach((btn) => {
     btn.classList.remove("active");
   });
@@ -45,7 +45,7 @@ btnContainer.addEventListener("click", function (e) {
 
   if (!clicked.classList.contains("active")) {
     clicked.classList.add("active");
-    btnStarter.textContent = clicked.textContent;
+    btnLogin.textContent = clicked.textContent;
   } else {
     clicked.classList.remove("active");
   }
@@ -83,6 +83,9 @@ const userNameInput = document.querySelector(".sign-in__username");
 const passwordInput = document.querySelector(".sign-in__password");
 let currentAccount;
 const wrongCredentialsPopup = document.querySelector(".wrong-password__popup");
+const sectionStarter = document.getElementById("sectionStart");
+const closePopupButton = document.querySelector(".wrong-password__close");
+const overlay = document.querySelector(".overlay");
 
 signInButton.addEventListener("click", function (e) {
   e.preventDefault();
@@ -91,16 +94,28 @@ signInButton.addEventListener("click", function (e) {
 
   if (currentAccount?.password === passwordInput.value) {
   } else {
-    wrongCredentialsPopup.classList.remove("hidden");
+    wrongCredentialsPopup.classList.add("open");
+    overlay.classList.remove("hidden");
   }
+
   userNameInput.value = passwordInput.value = "";
+});
 
-  // accounts.forEach((acc) => {
-  //   if (
-  //     acc.userName === userNameInput.value &&
-  //     acc.password === passwordInput.value
-  //   ) {
+closePopupButton.addEventListener("click", function (e) {
+  e.preventDefault();
 
-  //   }
-  // });
+  overlay.classList.add("hidden");
+  wrongCredentialsPopup.classList.remove("open");
+});
+
+overlay.addEventListener("click", function (e) {
+  wrongCredentialsPopup.classList.remove("open");
+  overlay.classList.add("hidden");
+});
+
+document.addEventListener("keydown", function (e) {
+  if (e.key === "Escape") {
+    wrongCredentialsPopup.classList.remove("open");
+    overlay.classList.add("hidden");
+  }
 });

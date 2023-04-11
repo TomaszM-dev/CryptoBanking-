@@ -14,6 +14,9 @@ $breakpoint arguement choices:
 
 1em = 16px
 */
+:root {
+  --opacity-change: 0; }
+
 @keyframes cubeRotationLeft {
   0% {
     transform: rotateX(-30deg) rotateY(0deg); }
@@ -182,41 +185,67 @@ body {
   color: #20ff03 !important;
   opacity: 1 !important; }
 
-.hidden {
-  opacity: 0;
-  display: none; }
+.open {
+  opacity: 1 !important;
+  display: block !important;
+  visibility: visible !important;
+  animation: moveInBottom 1s; }
 
-.wrong-password__popup {
+.wrong-password {
+  z-index: 10000;
   position: absolute;
+  top: 12rem;
+  left: 37rem;
+  transition: all 1s; }
+  .wrong-password__popup {
+    z-index: 1000;
+    display: none;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.2s;
+    position: absolute;
+    top: 15rem;
+    left: 10rem;
+    width: 30rem;
+    height: 16rem;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 10px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #741010; }
+  .wrong-password__close {
+    position: absolute !important;
+    top: -0.2rem;
+    right: 0rem;
+    color: #851f1f;
+    font-size: 1.6rem;
+    cursor: pointer;
+    padding: 1rem; }
+  .wrong-password__headline {
+    color: #851f1f;
+    text-transform: uppercase;
+    font-size: 2rem; }
+  .wrong-password__info {
+    color: #6b4747;
+    font-size: 1.3rem; }
+
+.overlay {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 30rem;
-  height: 16rem;
-  background-color: black;
-  border-radius: 10px;
-  padding: 2rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  border: 1px solid red; }
-
-.wrong-password__close {
-  position: absolute !important;
-  top: -0.2rem;
-  right: 0rem;
-  color: white;
-  font-size: 1.6rem;
-  padding: 1rem; }
-
-.wrong-password__headline {
-  text-transform: uppercase;
-  font-size: 2rem; }
-
-.wrong-password__info {
-  font-size: 1.3rem; }
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0; }
+  .overlay::after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-color: rgba(185, 22, 0, 0.3); }
 
 .heading-h1 {
   font-size: 5.2rem;
@@ -337,6 +366,7 @@ body {
 
 .btn--green {
   background-color: #20ff03;
+  z-index: 10000 !important;
   width: 100%;
   margin: 0 4rem;
   border-radius: 5px;

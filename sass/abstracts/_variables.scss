@@ -10,4 +10,7 @@ $color-black-light-1: rgba(#111, 0.9);
 
 $default-font-size: 1.6rem;
 $shadow: 0rem 1.5rem 4rem rgba(0, 0, 0, 0.3);
-$shadow-cube-green: 0 0 12rem rgba(0, 255, 0, 0.2);
+
+:root {
+  --opacity-change: 0;
+}
