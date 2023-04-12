@@ -9,7 +9,7 @@
 html {
   // This defines what 1rem is
   font-size: 62.5%; //1 rem = 10px; 10px/16px = 62.5%
-
+  font-family: "Michroma", sans-serif;
   @include respond(phone) {
     font-size: 45%;
   }
@@ -31,7 +31,7 @@ html {
 
 body {
   box-sizing: border-box;
-  font-family: "Genos", sans-serif;
+  font-family: "Michroma", sans-serif;
 }
 
 a {

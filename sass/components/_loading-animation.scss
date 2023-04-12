@@ -1,0 +1,52 @@
+.loading-page {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background: radial-gradient(circle at center, #060303 40%, #00e70036);
+  animation: animateBg 10s linear infinite;
+
+  &__spinner {
+    position: relative;
+    width: 12rem;
+    height: 12rem;
+
+    span {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      transform: rotate(calc(18deg * var(--i)));
+
+      &::before {
+        border-radius: 50%;
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 1.5rem;
+        height: 1.5rem;
+        background: #01a401;
+        box-shadow: 0 0 1rem #01a401, 0 0 2rem #01a401, 0 0 4rem #01a401,
+          0 0 6rem #01a401, 0 0 8rem #01a401, 0 0 10rem #01a401;
+        animation: loading 2s linear infinite;
+        animation-delay: calc((0.1s * var(--i)));
+
+        transition: all 1s;
+      }
+    }
+  }
+
+  &__headline {
+    font-size: 3rem;
+    letter-spacing: 0.3rem;
+    color: #01a401;
+    animation: textColor 3s linear infinite;
+  }
+}

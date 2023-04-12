@@ -100,7 +100,9 @@ body {
   animation: moveInBottom 1s;
 }
 
-.blur-bg {
+.hide {
+  display: none !important;
+  visibility: hidden !important;
 }
 
 .wrong-password {
@@ -118,7 +120,7 @@ body {
     transition: all 0.2s;
 
     position: absolute;
-    top: 15rem;
+    top: 27rem;
     left: 10rem;
 
     width: 30rem;
@@ -155,10 +157,9 @@ body {
 }
 
 .overlay {
-  // background-color: rgba(#000, 1);
   position: absolute;
   width: 100%;
-  height: 100vh;
+  height: 100%;
   top: 0;
   left: 0;
 
@@ -166,9 +167,14 @@ body {
     position: absolute;
     content: "";
     width: 100%;
-    height: 100vh;
+    height: 100%;
     top: 0;
     left: 0;
-    background-color: rgba(rgb(185, 22, 0), 0.3);
+    background-color: rgba(rgb(185, 22, 0), 0.2);
   }
+}
+
+#icon-loader {
+  height: 5rem;
+  width: 5rem;
 }

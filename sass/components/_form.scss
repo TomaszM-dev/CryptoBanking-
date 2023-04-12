@@ -1,21 +1,33 @@
+.registrationContainer {
+  animation: moveInBottom 0.3s;
+}
+
+.loginContainer {
+  animation: moveInBottom 0.3s;
+}
+
 .sign-in {
   position: relative;
 
   &__form {
     transform: rotateY(15deg);
     position: absolute;
-    bottom: 20%;
+    bottom: 10%;
     background-color: #222;
     opacity: 0.7;
     width: 40%;
-    height: 45rem;
+    height: auto;
+
+    max-height: 60rem;
+    transition: max-height 0.8s ease-out;
+
     z-index: 1;
     color: white;
     display: flex;
     flex-direction: column;
     border-radius: 5px;
     box-shadow: 0rem 0rem 1.4rem rgba(rgb(18, 64, 0), 1);
-    animation: moveInLeft 2s;
+    animation: moveInBottom 2s;
 
     &-group {
       display: flex;
@@ -27,7 +39,7 @@
     text-align: center;
     text-transform: uppercase;
     font-size: 3rem;
-    padding: 4rem 2rem 4rem 2rem;
+    padding: 4rem 2rem 2rem 2rem;
 
     width: 100%;
     color: transparent;
@@ -55,5 +67,23 @@
     margin: 0 4rem;
     font-size: 1.7rem;
     color: #f4f4f4;
+  }
+}
+
+.register {
+  &__input {
+    width: 100%;
+    padding: 2rem 1rem;
+    font-size: 1.7rem;
+    background-color: #333;
+    border: 1px solid #222;
+    border-radius: 5px;
+    margin: 0 4rem;
+    color: white;
+
+    &:focus {
+      outline: 2px solid;
+      outline-color: rgba(rgb(23, 184, 2), 1);
+    }
   }
 }

@@ -31,9 +31,12 @@
 @keyframes moveInBottom {
   0% {
     opacity: 0;
+
     transform: translateY(3rem);
   }
 
+  80% {
+  }
   100% {
     opacity: 1;
     transform: translate(0);
@@ -87,5 +90,40 @@
   100% {
     transform: scale(0.9);
     box-shadow: 0 0 0 0 rgba(234, 101, 101, 0);
+  }
+}
+
+@keyframes textColor {
+  50% {
+    opacity: 0;
+  }
+}
+
+@keyframes draw {
+  0% {
+    stroke-dashoffset: 4500;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes animateBg {
+  0% {
+    filter: hue-rotate(0);
+  }
+  100% {
+    filter: hue-rotate(60deg);
+  }
+}
+
+@keyframes loading {
+  0% {
+    transform: scale(0);
+  }
+
+  70%,
+  100% {
+    transform: scale(1);
   }
 }

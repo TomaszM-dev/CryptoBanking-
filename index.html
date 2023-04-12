@@ -5,6 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CRYPTOBANKING</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Michroma&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="/css/style.css" />
     <script type="module" defer src="js/controller.js"></script>
   </head>
@@ -85,41 +91,94 @@
             Register
           </button>
         </div>
-        <div class="sign-in__form-group">
-          <input
-            type="text"
-            class="sign-in__input sign-in__username"
-            required
-            placeholder="Username:"
-            id="username"
-          />
-          <label for="username" class="sign-in__label"></label>
-        </div>
+        <div class="loginContainer">
+          <div class="sign-in__form-group">
+            <input
+              type="text"
+              class="sign-in__input sign-in__username"
+              required
+              placeholder="Username:"
+              id="usernameLog"
+            />
+            <label for="username" class="sign-in__label"></label>
+          </div>
 
-        <div class="sign-in__form-group">
-          <input
-            type="text"
-            class="sign-in__input sign-in__password"
-            required
-            placeholder="Password:"
-            id="password"
-          />
-          <label for="password" class="sign-in__label"></label>
+          <div class="sign-in__form-group">
+            <input
+              type="password"
+              class="sign-in__input sign-in__password"
+              required
+              placeholder="Password:"
+              id="passwordLog"
+            />
+            <label for="password" class="sign-in__label"></label>
+          </div>
+
+          <div class="sign-in__form-group">
+            <p class="sign-in__paragraph pulse-text">HINT</p>
+          </div>
+
+          <div class="sign-in__form-group">
+            <button class="btn btn--green btn__login">Login</button>
+          </div>
         </div>
-        <div class="sign-in__form-group">
-          <p class="sign-in__paragraph pulse-text">HINT</p>
-        </div>
-        <div class="sign-in__form-group">
-          <button class="btn btn--green btn__login">Login</button>
+        <div class="registrationContainer hide">
+          <div class="sign-in__form-group">
+            <input
+              type="text"
+              class="register__input register__fullName"
+              required
+              placeholder="Full Name:"
+              id="fullname"
+            />
+            <label for="fullname" class="sign-in__label"></label>
+          </div>
+          <div class="sign-in__form-group">
+            <input
+              type="date"
+              class="register__input register__dateBirth"
+              required
+              placeholder="Birth Date"
+              id="birthDate"
+            />
+            <label for="birthDate" class="sign-in__label"></label>
+          </div>
+          <div class="sign-in__form-group">
+            <input
+              type="text"
+              class="register__input register__userName"
+              required
+              placeholder="Username:"
+              id="username"
+            />
+            <label for="username" class="sign-in__label"></label>
+          </div>
+
+          <div class="sign-in__form-group">
+            <input
+              type="password"
+              class="register__input register__password"
+              required
+              placeholder="Password:"
+              id="password"
+            />
+            <label for="password" class="sign-in__label"></label>
+          </div>
+
+          <div class="sign-in__form-group">
+            <p class="sign-in__paragraph">
+              I accept policy and terms of CRYPTOBANKING
+            </p>
+          </div>
+          <div class="sign-in__form-group">
+            <button class="btn btn--green btn__registration">Register</button>
+          </div>
         </div>
       </form>
 
-      <h1 data-text="CRYPTOBANKING" class="section-starter__headline">
+      <!-- <h1 data-text="CRYPTOBANKING" class="section-starter__headline">
         CRYPTOBANKING
-      </h1>
-    </section>
-    <section class="section-mainPage">
-      <h3>User logged succesfully</h3>
+      </h1> -->
     </section>
     <div class="wrong-password">
       <div class="wrong-password__popup close">
@@ -131,5 +190,46 @@
       </div>
     </div>
     <div id="overlay" class="overlay hidden"></div>
+    <section class="section-mainPage hide">
+      <div class="main">
+        <h3>User logged succesfully</h3>
+      </div>
+
+      <div class="loading-page">
+        <div class="loading-page__spinner mg-lm">
+          <span style="--i: 1"></span>
+          <span style="--i: 2"></span>
+          <span style="--i: 3"></span>
+          <span style="--i: 4"></span>
+          <span style="--i: 5"></span>
+          <span style="--i: 6"></span>
+          <span style="--i: 7"></span>
+          <span style="--i: 8"></span>
+          <span style="--i: 9"></span>
+          <span style="--i: 10"></span>
+          <span style="--i: 11"></span>
+          <span style="--i: 12"></span>
+          <span style="--i: 13"></span>
+          <span style="--i: 14"></span>
+          <span style="--i: 15"></span>
+          <span style="--i: 16"></span>
+          <span style="--i: 17"></span>
+          <span style="--i: 18"></span>
+          <span style="--i: 19"></span>
+          <span style="--i: 20"></span>
+        </div>
+        <div class="loading-page__headline">Logging in...</div>
+      </div>
+    </section>
+    <script
+      src="https://kit.fontawesome.com/024580a138.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"
+      integrity="sha512-cOH8ndwGgPo+K7pTvMrqYbmI8u8k6Sho3js0gOqVWTmQMlLIi6TbqGWRTpf1ga8ci9H3iPsvDLr4X7xwhC/+DQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
   </body>
 </html>
