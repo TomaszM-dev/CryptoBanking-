@@ -103,3 +103,11 @@
   border-radius: 5px;
   font-size: 1.8rem;
 }
+
+.btn--logout {
+  color: white;
+
+  &:hover {
+    background-color: green;
+  }
+}

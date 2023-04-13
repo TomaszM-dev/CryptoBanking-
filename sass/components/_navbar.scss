@@ -1,0 +1,38 @@
+///   NAVBAR /////
+
+.main {
+  &__title {
+    letter-spacing: 0.3rem;
+    text-align: center;
+    font-weight: 400;
+    line-height: 5rem;
+    margin: 3rem;
+    font-size: 3rem;
+    color: #3bc405;
+    border-bottom: 2px solid rgb(58, 58, 58);
+    padding-bottom: 2rem;
+  }
+  &__list {
+    flex: 0 0 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+  }
+  &__item {
+    font-size: 1.6rem;
+    font-weight: 300;
+    color: #f4f4f4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+
+    a:hover {
+      color: #3bc405;
+    }
+  }
+
+  &__icon {
+    margin-right: 2rem;
+  }
+}

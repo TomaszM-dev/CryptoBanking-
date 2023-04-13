@@ -1,0 +1,24 @@
+.overview {
+  display: flex;
+  flex-direction: column;
+
+  &__pairs {
+  }
+
+  &__cards {
+  }
+
+  &__card {
+    &-add {
+    }
+    &-btn {
+    }
+  }
+
+  &__spendings {
+    &-headline {
+    }
+  }
+  &__chart {
+  }
+}

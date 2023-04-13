@@ -11,11 +11,17 @@
       href="https://fonts.googleapis.com/css2?family=Michroma&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+      integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ="
+      crossorigin="anonymous"
+    />
     <link rel="stylesheet" href="/css/style.css" />
     <script type="module" defer src="js/controller.js"></script>
   </head>
   <body>
-    <section id="sectionStart" class="section-starter">
+    <section id="sectionStart" class="section-starter hide">
       <div class="bg-video">
         <video class="bg-video__content" autoplay muted loop>
           <source src="img/bg-video.mp4" type="video/mp4" />
@@ -176,9 +182,9 @@
         </div>
       </form>
 
-      <!-- <h1 data-text="CRYPTOBANKING" class="section-starter__headline">
+      <h1 data-text="CRYPTOBANKING" class="section-starter__headline">
         CRYPTOBANKING
-      </h1> -->
+      </h1>
     </section>
     <div class="wrong-password">
       <div class="wrong-password__popup close">
@@ -189,13 +195,81 @@
         </p>
       </div>
     </div>
-    <div id="overlay" class="overlay hidden"></div>
-    <section class="section-mainPage hide">
+    <div id="overlay" class="overlay hidden hide"></div>
+    <section class="section-mainPage">
+      <div class="bg-video">
+        <video class="bg-video__content" autoplay muted loop>
+          <source src="img/bg-video.mp4" type="video/mp4" />
+          <source src="img/video.webm" type="video/webm" />
+          Your browser is not supported!
+        </video>
+      </div>
       <div class="main">
-        <h3>User logged succesfully</h3>
+        <div class="main__navbar">
+          <h3 class="main__title">Crypto Banking</h3>
+          <ul class="main__list">
+            <li class="main__item mg-mm">
+              <a href="">
+                <i class="fa-solid fa-folder-open main__icon"></i>
+                Overview
+              </a>
+            </li>
+            <li class="main__item mg-mm">
+              <a href="">
+                <i class="fa-user fa-solid fa-1x main__icon"></i>Profile
+              </a>
+            </li>
+            <li class="main__item mg-mm">
+              <a href="">
+                <i class="fa-cc-visa fa-brands fa-1x main__icon"></i>Wallet
+              </a>
+            </li>
+            <li class="main__item mg-mm">
+              <a href="">
+                <i class="fa-solid fa-square-poll-vertical main__icon"></i>
+                Charts
+              </a>
+            </li>
+            <li class="main__item">
+              <a href="">
+                <i class="fa-solid fa-circle-question main__icon"></i> Spin &
+                Win
+              </a>
+            </li>
+          </ul>
+          <button class="btn btn--logout mg-mm">
+            <i
+              class="fa-solid fa-arrow-right-from-bracket fa-rotate-180 main__icon"
+            ></i>
+            Log out
+          </button>
+        </div>
+
+        <div class="main__center">
+          <div class="overview">
+            <div class="overview__pairs"></div>
+            <div class="overview__cards">
+              <div class="overview__card">
+                <h3 class="overview__card-headline headline-center">
+                  My Cards
+                </h3>
+                <span class="overview__card-add">Add</span>
+                <button class="overview__card-btn">+</button>
+              </div>
+            </div>
+            <div class="overview__spendings">
+              <h3 class="overview__spendings-headline headline-center">
+                My Spendings
+              </h3>
+              <div class="overview__chart"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="main__transaction"></div>
       </div>
 
-      <div class="loading-page">
+      <div class="loading-page hide">
         <div class="loading-page__spinner mg-lm">
           <span style="--i: 1"></span>
           <span style="--i: 2"></span>

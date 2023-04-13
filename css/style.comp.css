@@ -129,7 +129,8 @@ body {
   font-family: "Michroma", sans-serif; }
 
 a {
-  text-decoration: none; }
+  text-decoration: none;
+  color: inherit; }
 
 ul {
   list-style: none; }
@@ -318,7 +319,7 @@ body {
   margin-bottom: 1rem; }
 
 .mg-mm {
-  margin-bottom: 3rem; }
+  margin-bottom: 4rem; }
 
 .mg-lm {
   margin-bottom: 9rem; }
@@ -404,6 +405,11 @@ body {
   margin: 0 4rem;
   border-radius: 5px;
   font-size: 1.8rem; }
+
+.btn--logout {
+  color: white; }
+  .btn--logout:hover {
+    background-color: green; }
 
 .popup {
   height: 100vh;
@@ -834,18 +840,67 @@ body {
     color: #01a401;
     animation: textColor 3s linear infinite; }
 
-.main {
-  position: relative;
+.main__title {
+  letter-spacing: 0.3rem;
   text-align: center;
-  background: black;
-  color: white;
-  height: 100vh;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  font-weight: 400;
+  line-height: 5rem;
+  margin: 3rem;
   font-size: 3rem;
+  color: #3bc405;
+  border-bottom: 2px solid #3a3a3a;
+  padding-bottom: 2rem; }
+
+.main__list {
+  flex: 0 0 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: baseline; }
+
+.main__item {
+  font-size: 1.6rem;
+  font-weight: 300;
+  color: #f4f4f4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s; }
+  .main__item a:hover {
+    color: #3bc405; }
+
+.main__icon {
+  margin-right: 2rem; }
+
+.overview {
+  display: flex;
   flex-direction: column; }
+
+.main {
+  position: absolute;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 2rem;
+  box-shadow: 0rem 0rem 3.4rem #124000;
+  color: white;
+  width: 85%;
+  height: 75vh;
+  margin: auto;
+  display: flex;
+  letter-spacing: 0.2rem; }
+  .main__navbar {
+    flex: 0 0 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 50px; }
+  .main__center {
+    background-color: #064949;
+    flex: 0 0 45%; }
+  .main__transaction {
+    flex: 0 0 35%; }
 
 .section-starter {
   min-height: 100vh;
@@ -888,4 +943,6 @@ body {
       transform: translateZ(-10rem); }
 
 .section-mainPage {
-  min-height: 100vh; }
+  min-height: 100vh;
+  background: black;
+  display: flex; }
