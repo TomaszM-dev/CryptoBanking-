@@ -3,7 +3,7 @@
   @include absCenter;
 
   border-radius: 2rem;
-  box-shadow: 0rem 0rem 3.4rem #124000;
+  background-color: rgba(0, 0, 0, 0.625);
   color: white;
   width: 85%;
   height: 75vh;
@@ -11,20 +11,26 @@
   display: flex;
   letter-spacing: 0.2rem;
 
+  box-shadow: 0rem 0rem 3.4rem #124000;
+  border-radius: 20px;
+
   &__navbar {
     flex: 0 0 20%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    border-radius: 50px;
+    border-radius: 20px;
+    box-shadow: 0rem 0rem 0.3rem #124000;
   }
 
   &__center {
-    background-color: rgb(6, 73, 73);
     flex: 0 0 45%;
+    border-radius: 20px;
   }
-  &__transaction {
+  &__right {
     flex: 0 0 35%;
+    box-shadow: 0rem 0rem 0.3rem #124000;
+    border-radius: 20px;
   }
 }

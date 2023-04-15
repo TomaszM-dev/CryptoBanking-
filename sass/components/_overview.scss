@@ -1,24 +1,119 @@
 .overview {
   display: flex;
   flex-direction: column;
+  height: 100%;
+
+  justify-content: space-between;
+  align-items: center;
 
   &__pairs {
+    height: 10rem;
+    width: 100%;
   }
 
   &__cards {
+    width: 80%;
   }
 
-  &__card {
-    &-add {
+  &__info {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+
+    &-headline {
+      font-size: 2.5rem;
     }
-    &-btn {
+
+    &-add {
+      font-size: 1.5rem;
+      align-self: center;
+      margin-right: 0.5rem;
+      flex: 1;
+      text-align: end;
     }
   }
 
   &__spendings {
+    width: 80%;
     &-headline {
+      font-size: 2.5rem;
     }
   }
   &__chart {
+    height: 16rem;
+    background-color: black;
+  }
+
+  // overview (main__right)
+
+  &__top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &-logo {
+      margin-top: 5rem;
+      width: 20rem;
+    }
+    &-icon {
+      position: absolute;
+      top: 3rem;
+      right: 3rem;
+    }
+  }
+
+  &__balance {
+    font-size: 3rem;
+  }
+
+  &__transactions {
+    font-size: 2rem;
+    flex: 1;
+    width: 80%;
+    overflow: scroll;
+
+    &-info {
+      display: flex;
+      justify-content: space-between;
+    }
+    span {
+      margin-right: 2rem;
+    }
+  }
+
+  &__transactionContainer {
+    display: flex;
+    flex-direction: column;
+    overflow: scroll;
+  }
+
+  &__transaction {
+    border: 1px solid #333;
+    padding: 1rem 1.5rem;
+    border-radius: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.6rem;
+
+    &-icon {
+      background-color: #222;
+      padding: 0.7rem 1.3rem;
+      border-radius: 2rem;
+    }
+
+    &-content {
+      font-size: 1.4rem;
+      flex: 1;
+      margin-left: 1.4rem;
+    }
+
+    &-type {
+      font-weight: 300;
+    }
+
+    &-price {
+      font-size: 1.6rem;
+      font-weight: 600;
+    }
   }
 }

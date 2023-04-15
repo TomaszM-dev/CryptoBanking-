@@ -195,7 +195,7 @@
         </p>
       </div>
     </div>
-    <div id="overlay" class="overlay hidden hide"></div>
+    <div id="overlay" class="overlay hidden"></div>
     <section class="section-mainPage">
       <div class="bg-video">
         <video class="bg-video__content" autoplay muted loop>
@@ -204,6 +204,7 @@
           Your browser is not supported!
         </video>
       </div>
+
       <div class="main">
         <div class="main__navbar">
           <h3 class="main__title">Crypto Banking</h3>
@@ -248,25 +249,190 @@
         <div class="main__center">
           <div class="overview">
             <div class="overview__pairs"></div>
-            <div class="overview__cards">
-              <div class="overview__card">
-                <h3 class="overview__card-headline headline-center">
+            <div class="overview__cards mg-mm">
+              <div class="overview__info mg-sm">
+                <h3 class="overview__info-headline headline-center">
                   My Cards
                 </h3>
-                <span class="overview__card-add">Add</span>
-                <button class="overview__card-btn">+</button>
+                <span class="overview__info-add">Add</span>
+                <button class="btn btn--overview">+</button>
+              </div>
+              <div class="overview__card card">
+                <div class="card__inner">
+                  <div class="card__inner-front">
+                    <img
+                      src="img/card/map.png"
+                      alt=""
+                      class="card__inner-mapImg"
+                    />
+                    <div class="card__inner-row mg-mm">
+                      <img
+                        src="img/card/chip.png"
+                        class="card__inner-chip"
+                        alt=""
+                      />
+                      <img
+                        src="img/card/visa.png"
+                        class="card__inner-visa"
+                        alt=""
+                      />
+                    </div>
+                    <div class="card__inner-row mg-sm">
+                      <p class="card__inner-accountNumber">
+                        5432 <span></span> 3483 <span></span> 3943
+                        <span></span> 2944
+                      </p>
+                    </div>
+                    <div class="card__inner-row">
+                      <p class="card__inner-info">CARD HOLDER</p>
+                      <p class="card__inner-info">VALID TILL</p>
+                    </div>
+                    <div class="card__inner-row">
+                      <p class="card__inner-holder">Joe Alison</p>
+                      <p class="card__inner-validTo">10/27</p>
+                    </div>
+                  </div>
+                  <div class="card__inner-back">
+                    <img
+                      src="img/card/map.png"
+                      alt=""
+                      class="card__inner-mapImg"
+                    />
+                    <div class="card__inner-bar"></div>
+                    <div class="card__inner-row mg-sm">
+                      <img
+                        src="img/card//pattern.png"
+                        class="card__inner-pattern"
+                        alt=""
+                      />
+                      <p class="card__inner-cvv">749</p>
+                    </div>
+                    <div class="card__inner-row">
+                      <p class="card__inner-about">
+                        This is your virtual card, you can use it to transfer
+                        money and exchanging currencies, for more check out your
+                        wallet
+                      </p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
-            <div class="overview__spendings">
+            <div class="overview__spendings mg-lm">
               <h3 class="overview__spendings-headline headline-center">
                 My Spendings
               </h3>
-              <div class="overview__chart"></div>
+              <div class="overview__chart">
+                <canvas id="chart"></canvas>
+              </div>
             </div>
           </div>
         </div>
 
-        <div class="main__transaction"></div>
+        <div class="main__right">
+          <div class="overview">
+            <div class="pulse">
+              <i class="fa-solid fa-bell overview__top-icon fa-2x"></i>
+            </div>
+            <div class="overview__top mg-mm">
+              <img
+                src="/img/cryptobanking loog.png"
+                class="overview__top-logo mg-sm"
+                alt=""
+              />
+              <p class="overview__balance">3,500$</p>
+              <p>Current Balance</p>
+            </div>
+            <div class="overview__transactions">
+              <div class="overview__transactions-info mg-sm">
+                <p>Transactions</p>
+                <span>&cudarrr;</span>
+              </div>
+              <div class="overview__transactionContainer">
+                <div class="overview__transaction">
+                  <div class="overview__transaction-icon">
+                    <i class="fa-brands fa-spotify"></i>
+                  </div>
+                  <div class="overview__transaction-content">
+                    <p class="overview__transaction-name">Spotify</p>
+                    <p class="overview__transaction-type">Music</p>
+                  </div>
+                  <div class="overview__transaction-price">49.45$</div>
+                </div>
+                <div class="overview__transaction">
+                  <div class="overview__transaction-icon">
+                    <i class="fa-brands fa-spotify"></i>
+                  </div>
+                  <div class="overview__transaction-content">
+                    <p class="overview__transaction-name">Spotify</p>
+                    <p class="overview__transaction-type">Music</p>
+                  </div>
+                  <div class="overview__transaction-price">49.45$</div>
+                </div>
+                <div class="overview__transaction">
+                  <div class="overview__transaction-icon">
+                    <i class="fa-brands fa-spotify"></i>
+                  </div>
+                  <div class="overview__transaction-content">
+                    <p class="overview__transaction-name">Spotify</p>
+                    <p class="overview__transaction-type">Music</p>
+                  </div>
+                  <div class="overview__transaction-price">49.45$</div>
+                </div>
+                <div class="overview__transaction">
+                  <div class="overview__transaction-icon">
+                    <i class="fa-brands fa-spotify"></i>
+                  </div>
+                  <div class="overview__transaction-content">
+                    <p class="overview__transaction-name">Spotify</p>
+                    <p class="overview__transaction-type">Music</p>
+                  </div>
+                  <div class="overview__transaction-price">49.45$</div>
+                </div>
+                <div class="overview__transaction">
+                  <div class="overview__transaction-icon">
+                    <i class="fa-brands fa-spotify"></i>
+                  </div>
+                  <div class="overview__transaction-content">
+                    <p class="overview__transaction-name">Spotify</p>
+                    <p class="overview__transaction-type">Music</p>
+                  </div>
+                  <div class="overview__transaction-price">49.45$</div>
+                </div>
+                <div class="overview__transaction">
+                  <div class="overview__transaction-icon">
+                    <i class="fa-brands fa-spotify"></i>
+                  </div>
+                  <div class="overview__transaction-content">
+                    <p class="overview__transaction-name">Spotify</p>
+                    <p class="overview__transaction-type">Music</p>
+                  </div>
+                  <div class="overview__transaction-price">49.45$</div>
+                </div>
+                <div class="overview__transaction">
+                  <div class="overview__transaction-icon">
+                    <i class="fa-brands fa-spotify"></i>
+                  </div>
+                  <div class="overview__transaction-content">
+                    <p class="overview__transaction-name">Spotify</p>
+                    <p class="overview__transaction-type">Music</p>
+                  </div>
+                  <div class="overview__transaction-price">49.45$</div>
+                </div>
+                <div class="overview__transaction">
+                  <div class="overview__transaction-icon">
+                    <i class="fa-brands fa-spotify"></i>
+                  </div>
+                  <div class="overview__transaction-content">
+                    <p class="overview__transaction-name">Spotify</p>
+                    <p class="overview__transaction-type">Music</p>
+                  </div>
+                  <div class="overview__transaction-price">49.45$</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
 
       <div class="loading-page hide">

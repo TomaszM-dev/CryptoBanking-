@@ -21,6 +21,7 @@
     "postcss-cli": "^10.1.0"
   },
   "dependencies": {
+    "chart.js": "^4.2.1",
     "concat": "^1.0.3"
   }
 }

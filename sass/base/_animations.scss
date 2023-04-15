@@ -127,3 +127,20 @@
     transform: scale(1);
   }
 }
+
+// @keyframes pulse-fade {
+//   0% {
+//     transform: scale(0.9);
+//     box-shadow: 0 0 0 0 rgba(234, 101, 101, 0.7);
+//   }
+
+//   70% {
+//     transform: scale(1);
+//     box-shadow: 0 0 0 10px rgba(234, 101, 101, 0);
+//   }
+
+//   100% {
+//     transform: scale(0.9);
+//     box-shadow: 0 0 0 0 rgba(234, 101, 101, 0);
+//   }
+// }

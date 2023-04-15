@@ -111,3 +111,13 @@
     background-color: green;
   }
 }
+.btn--overview {
+  background-color: green;
+  padding: 0;
+  height: 100%;
+  width: 3rem;
+  color: white;
+  align-self: center;
+  &:hover {
+  }
+}

@@ -17,3 +17,29 @@
   &:hover {
   }
 }
+
+.pulse {
+  border-radius: 10px;
+  position: absolute;
+
+  top: 0px;
+  right: 0px;
+  width: 8px;
+  height: 8px;
+
+  &::before {
+    content: "";
+    display: block;
+    background-color: #08eb04;
+    border-radius: 20px;
+    position: absolute;
+    z-index: 1;
+    top: 2.8rem;
+    right: 2.6rem;
+
+    height: 9px;
+    width: 9px;
+    transform: scale(1);
+    animation: pulse-fade 2s infinite;
+  }
+}
