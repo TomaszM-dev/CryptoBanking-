@@ -21,6 +21,7 @@
 .pulse {
   border-radius: 10px;
   position: absolute;
+  z-index: 10;
 
   top: 0px;
   right: 0px;
@@ -28,6 +29,7 @@
   height: 8px;
 
   &::before {
+    z-index: 10;
     content: "";
     display: block;
     background-color: #08eb04;

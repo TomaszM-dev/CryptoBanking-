@@ -12,6 +12,7 @@
   }
 
   &__cards {
+    margin-top: 5rem;
     width: 80%;
   }
 
@@ -35,13 +36,14 @@
 
   &__spendings {
     width: 80%;
+    flex: 1;
+
     &-headline {
       font-size: 2.5rem;
     }
   }
   &__chart {
-    height: 16rem;
-    background-color: black;
+    height: 20rem;
   }
 
   // overview (main__right)
@@ -57,6 +59,7 @@
     &-icon {
       position: absolute;
       top: 3rem;
+      z-index: -1;
       right: 3rem;
     }
   }

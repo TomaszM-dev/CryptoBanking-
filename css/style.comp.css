@@ -651,7 +651,7 @@ body {
     left: 0;
     width: 8rem;
     height: 8rem;
-    background: #01a401;
+    background: #01a001;
     transform: translateZ(-16rem);
     filter: blur(2rem);
     box-shadow: 0 0 3rem rgba(0, 255, 0, 0.2), 0 0 4rem rgba(0, 255, 0, 0.4), 0 0 5rem rgba(0, 255, 0, 0.6), 0 0 5rem rgba(0, 255, 0, 0.8), 0 0 10rem rgba(0, 255, 0, 0.7); }
@@ -671,7 +671,7 @@ body {
     left: 0;
     width: 8rem;
     height: 8rem;
-    background: #01a401;
+    background: #01a001;
     transform: translateZ(-16rem);
     filter: blur(2rem);
     box-shadow: 0 0 3rem rgba(0, 255, 0, 0.2), 0 0 4rem rgba(0, 255, 0, 0.4), 0 0 5rem rgba(0, 255, 0, 0.6), 0 0 5rem rgba(0, 255, 0, 0.8), 0 0 10rem rgba(0, 255, 0, 0.7); }
@@ -691,7 +691,7 @@ body {
     left: 0;
     width: 4rem;
     height: 4rem;
-    background: #01a401;
+    background: #01a001;
     transform: translateZ(-10rem);
     filter: blur(2rem);
     box-shadow: 0 0 3rem rgba(0, 255, 0, 0.2), 0 0 4rem rgba(0, 255, 0, 0.4), 0 0 5rem rgba(0, 255, 0, 0.6), 0 0 5rem rgba(0, 255, 0, 0.8), 0 0 10rem rgba(0, 255, 0, 0.7); }
@@ -711,7 +711,7 @@ body {
     left: 0;
     width: 4rem;
     height: 4rem;
-    background: #01a401;
+    background: #01a001;
     transform: translateZ(-10rem);
     filter: blur(2rem);
     box-shadow: 0 0 3rem rgba(0, 255, 0, 0.2), 0 0 4rem rgba(0, 255, 0, 0.4), 0 0 5rem rgba(0, 255, 0, 0.6), 0 0 5rem rgba(0, 255, 0, 0.8), 0 0 10rem rgba(0, 255, 0, 0.7); }
@@ -813,11 +813,13 @@ body {
 .pulse {
   border-radius: 10px;
   position: absolute;
+  z-index: 10;
   top: 0px;
   right: 0px;
   width: 8px;
   height: 8px; }
   .pulse::before {
+    z-index: 10;
     content: "";
     display: block;
     background-color: #08eb04;
@@ -919,6 +921,7 @@ body {
     height: 10rem;
     width: 100%; }
   .overview__cards {
+    margin-top: 5rem;
     width: 80%; }
   .overview__info {
     display: flex;
@@ -933,12 +936,12 @@ body {
       flex: 1;
       text-align: end; }
   .overview__spendings {
-    width: 80%; }
+    width: 80%;
+    flex: 1; }
     .overview__spendings-headline {
       font-size: 2.5rem; }
   .overview__chart {
-    height: 16rem;
-    background-color: black; }
+    height: 20rem; }
   .overview__top {
     display: flex;
     flex-direction: column;
@@ -949,6 +952,7 @@ body {
     .overview__top-icon {
       position: absolute;
       top: 3rem;
+      z-index: -1;
       right: 3rem; }
   .overview__balance {
     font-size: 3rem; }
@@ -1071,6 +1075,11 @@ body {
       margin-top: 1.5rem;
       line-height: 1rem; }
 
+#chart {
+  width: 100%;
+  height: 100%;
+  color: #009d00; }
+
 .main {
   position: absolute;
   position: absolute;
@@ -1137,7 +1146,7 @@ body {
       top: 95%;
       width: 100%;
       height: 3rem;
-      background: #01a401;
+      background: #01a001;
       transform: translateZ(26rem);
       filter: blur(2rem);
       box-shadow: 0 0 3rem rgba(0, 255, 0, 0.2), 0 0 4rem rgba(0, 255, 0, 0.4), 0 0 5rem rgba(0, 255, 0, 0.6), 0, 0 4rem rgba(0, 255, 0, 0.8), 0 0 3rem rgba(0, 255, 0, 0.7);

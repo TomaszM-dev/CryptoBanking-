@@ -1,0 +1,39 @@
+//query selectors
+import * as switchPages from "./switchPages.js";
+import * as acc from "./accounts.js";
+
+const pageLoadingHeadline = document.querySelector(".loading-page__headline");
+const signInButton = document.querySelector(".btn__login");
+const userNameInput = document.querySelector(".sign-in__username");
+const passwordInput = document.querySelector(".sign-in__password");
+const popupHeadline = document.querySelector(".wrong-password__headline");
+
+let currentAccount;
+
+export const loginMechanics = function () {
+  signInButton.addEventListener("click", function (e) {
+    e.preventDefault();
+
+    currentAccount = acc.accounts.find(
+      (acc) => acc.userName === userNameInput.value
+    );
+
+    if (currentAccount === undefined) {
+      switchPages.openPopup();
+      popupHeadline.textContent = "Wrong Username";
+      return;
+    }
+
+    if (currentAccount.password === passwordInput.value) {
+      console.log("login succesfull");
+      switchPages.switchToMainPage();
+      console.log(currentAccount);
+    } else {
+      switchPages.openPopup();
+      popupHeadline.textContent = "Wrong Password";
+    }
+
+    pageLoadingHeadline.textContent = "Loggin in...";
+    userNameInput.value = passwordInput.value = "";
+  });
+};
