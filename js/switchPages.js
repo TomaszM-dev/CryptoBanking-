@@ -36,8 +36,8 @@ export const switchToMainPage = function () {
   // loading animation mechanics
   gsap.fromTo(
     ".loading-page",
-    { opacity: 1 },
-    { opacity: 0, duration: 1.3, delay: 5.5 }
+    { opacity: 1, display: "inherit" },
+    { opacity: 0, duration: 1.3, delay: 5.5, display: "none" }
   );
 
   gsap.fromTo(

@@ -1,6 +1,8 @@
 //query selectors
 import * as switchPages from "./switchPages.js";
 import * as acc from "./accounts.js";
+import * as currentUser from "./displayCurrentAcc.js";
+import * as chart from "./chart.js";
 
 const pageLoadingHeadline = document.querySelector(".loading-page__headline");
 const signInButton = document.querySelector(".btn__login");
@@ -25,15 +27,16 @@ export const loginMechanics = function () {
     }
 
     if (currentAccount.password === passwordInput.value) {
-      console.log("login succesfull");
+      currentUser.displayTransactions(currentAccount);
+      currentUser.displayCardDetails(currentAccount);
       switchPages.switchToMainPage();
-      console.log(currentAccount);
+      chart.chartDisplay(currentAccount);
+
+      pageLoadingHeadline.textContent = "Loggin in...";
+      userNameInput.value = passwordInput.value = "";
     } else {
       switchPages.openPopup();
       popupHeadline.textContent = "Wrong Password";
     }
-
-    pageLoadingHeadline.textContent = "Loggin in...";
-    userNameInput.value = passwordInput.value = "";
   });
 };

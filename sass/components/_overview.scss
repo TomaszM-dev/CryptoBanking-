@@ -71,7 +71,7 @@
   &__transactions {
     font-size: 2rem;
     flex: 1;
-    width: 80%;
+    width: 87%;
     overflow: scroll;
 
     &-info {
@@ -109,6 +109,9 @@
       flex: 1;
       margin-left: 1.4rem;
     }
+    &-name {
+      color: $color-secondary-light-1;
+    }
 
     &-type {
       font-weight: 300;
@@ -117,6 +120,14 @@
     &-price {
       font-size: 1.6rem;
       font-weight: 600;
+      color: $color-secondary-light-1;
+    }
+
+    &-date {
+      font-size: 1.4rem;
+      opacity: 0.3;
+      // color: $color-secondary-light-1;
+      margin-right: 2rem;
     }
   }
 }

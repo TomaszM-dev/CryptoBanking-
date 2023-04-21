@@ -1,20 +1,26 @@
-export const chart = function () {
+import * as current from "./displayCurrentAcc.js";
+
+export const chartDisplay = function (currentAccount) {
   const ctx = document.getElementById("chart");
 
-  new Chart(ctx, {
+  const chart = new Chart(ctx, {
     type: "line",
+
+    // data
     data: {
-      labels: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+      labels: "",
       datasets: [
         {
-          label: "# of Spendings",
-          backgroundColor: "rgb(0, 157, 0)",
-          borderColor: "rgb(0,157,0",
+          label: "# of Votes",
           data: "",
-          borderWidth: 2,
+          borderWidth: 1,
+          borderColor: "#00b300",
+          backgroundColor: "#00b300",
         },
       ],
     },
+
+    // options
     options: {
       scales: {
         y: {
@@ -22,5 +28,12 @@ export const chart = function () {
         },
       },
     },
+  });
+
+  currentAccount.transactions.forEach((t) => {
+    const dateReady = current.dateCreator(t.date);
+
+    chart.data.labels.push(dateReady);
+    chart.data.datasets[0].data.push(t.amount);
   });
 };

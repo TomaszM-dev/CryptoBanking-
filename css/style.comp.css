@@ -285,6 +285,9 @@ body {
   color: #2ea802;
   font-weight: 200; }
 
+.withdrawal {
+  color: red !important; }
+
 .heading-h1 {
   font-size: 5.2rem;
   font-weight: 600;
@@ -959,7 +962,7 @@ body {
   .overview__transactions {
     font-size: 2rem;
     flex: 1;
-    width: 80%;
+    width: 87%;
     overflow: scroll; }
     .overview__transactions-info {
       display: flex;
@@ -986,11 +989,18 @@ body {
       font-size: 1.4rem;
       flex: 1;
       margin-left: 1.4rem; }
+    .overview__transaction-name {
+      color: #01a001; }
     .overview__transaction-type {
       font-weight: 300; }
     .overview__transaction-price {
       font-size: 1.6rem;
-      font-weight: 600; }
+      font-weight: 600;
+      color: #01a001; }
+    .overview__transaction-date {
+      font-size: 1.4rem;
+      opacity: 0.3;
+      margin-right: 2rem; }
 
 .card {
   height: 23rem;

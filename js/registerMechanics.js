@@ -1,5 +1,6 @@
 import * as switchPages from "./switchPages.js";
 import * as acc from "./accounts.js";
+import * as currentUser from "./displayCurrentAcc.js";
 
 // query  selectors
 const pageLoadingHeadline = document.querySelector(".loading-page__headline");
@@ -14,6 +15,9 @@ const registerBirthDate = document.querySelector(".register__dateBirth");
 
 let createdAccount;
 let currentAccount;
+
+const currentDate = new Date();
+const currentDateIso = currentDate.toISOString();
 
 export const registerMechanics = function () {
   // register button handler
@@ -37,22 +41,27 @@ export const registerMechanics = function () {
       switchPages.openPopup();
       popupHeadline.textContent = "This user name has already been declared";
     } else {
-      // creating new account
-      createdAccount = {
-        firstName: registerFullName.value,
-        lastName: "",
-        userName: registerUserName.value,
-        password: registerPassword.value,
-        birthDate: registerBirthDate.value,
-      };
+      createdAccount = new acc.User(
+        registerFullName.value,
+        registerUserName.value,
+        registerPassword.value,
+        registerBirthDate.value,
+        `${currentDateIso}`,
+        []
+      );
 
-      // pushing account to accounts array
+      createdAccount.calcAge();
+      createdAccount.calcBalance();
+      createdAccount.calcNumbers();
+      createdAccount.calcValid();
+
+      //registered succesfully
       acc.accounts.push(createdAccount);
-      console.log("registered succesfully");
       currentAccount = createdAccount;
-      console.log(currentAccount);
-
+      currentUser.displayCardDetails(currentAccount);
+      currentUser.displayTransactions(currentAccount);
       switchPages.switchToMainPage();
+
       // text on loading headline
       pageLoadingHeadline.textContent = "Creating account...";
     }
