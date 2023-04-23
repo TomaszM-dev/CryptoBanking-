@@ -21,7 +21,7 @@
     <script type="module" defer src="js/controller.js"></script>
   </head>
   <body>
-    <section id="sectionStart" class="section-starter">
+    <section id="sectionStart" class="section-starter hide">
       <div class="bg-video">
         <video class="bg-video__content" autoplay muted loop>
           <source src="img/bg-video.mp4" type="video/mp4" />
@@ -195,27 +195,27 @@
         </p>
       </div>
     </div>
-    <div id="overlay" class="overlay hidden"></div>
-    <section class="section-mainPage hide">
-      <div class="bg-video">
+    <div id="overlay" class="overlay hidden hide"></div>
+    <section class="section-mainPage">
+      <!-- <div class="bg-video">
         <video class="bg-video__content" autoplay muted loop>
           <source src="img/bg-video.mp4" type="video/mp4" />
           <source src="img/video.webm" type="video/webm" />
           Your browser is not supported!
         </video>
-      </div>
+      </div> -->
 
       <div class="main">
         <div class="main__navbar">
           <h3 class="main__title">Crypto Banking</h3>
           <ul class="main__list">
             <li class="main__item mg-mm">
-              <a href="#" class="active">
+              <a href="#" class="">
                 <i class="fa-solid fa-folder-open main__icon"></i>Overview
               </a>
             </li>
             <li class="main__item mg-mm">
-              <a href="">
+              <a href="" class="active">
                 <i class="fa-user fa-solid fa-1x main__icon"></i>Profile
               </a>
             </li>
@@ -246,7 +246,49 @@
         </div>
 
         <div class="main__center">
-          <div class="overview">
+          <div class="profile">
+            <div class="profile__headline mg-lm">
+              <h3>My personal information</h3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Officiis, cumque.
+              </p>
+            </div>
+            <div class="profile__middleContent mg-lm">
+              <div class="profile__infoBox-container">
+                <div class="profile__infoBox mg-mm">
+                  <i class="fa-solid fa-signature profile__infoBox-icon"></i>
+                  <h4 class="profile__infoBox-header">Tomasz Malocha</h4>
+                </div>
+                <div class="profile__infoBox">
+                  <i class="fa-solid fa-signature profile__infoBox-icon"></i>
+                  <h4 class="profile__infoBox-header">Tomasz Malocha</h4>
+                </div>
+              </div>
+              <img
+                src="/img/cryptobanking loog.png"
+                class="profile__logo mg-sm"
+                alt=""
+              />
+              <div class="profile__infoBox-container">
+                <div class="profile__infoBox mg-mm">
+                  <i class="fa-solid fa-signature profile__infoBox-icon"></i>
+                  <h4 class="profile__infoBox-header">Tomasz Malocha</h4>
+                </div>
+                <div class="profile__infoBox">
+                  <i class="fa-solid fa-signature profile__infoBox-icon"></i>
+                  <h4 class="profile__infoBox-header">Tomasz Malocha</h4>
+                </div>
+              </div>
+            </div>
+            <div class="profile__infoBox-bottom">
+              <i class="fa-solid fa-signature profile__infoBox-icon"></i>
+              <h4 class="profile__infoBox-header">Tomasz Malocha</h4>
+            </div>
+            <button class="btn btn--logout">Change data</button>
+          </div>
+
+          <div class="overview hide">
             <div class="overview__cards mg-hm">
               <div class="overview__info mg-sm">
                 <h3 class="overview__info-headline headline-center">
@@ -325,7 +367,7 @@
         </div>
 
         <div class="main__right">
-          <div class="overview">
+          <div class="overview hide">
             <div class="pulse">
               <i class="fa-solid fa-bell overview__top-icon fa-2x"></i>
             </div>
@@ -360,8 +402,40 @@
           </div>
         </div>
       </div>
+      <div class="currencies-panel">
+        <!-- <div class="currencies__item">
+          <div class="currencies__item-price">123.34</div>
+          <div class="currencies__item-change">-0,001</div>
+          <div class="currencies__item-pair">USD /GBT</div>
+          <div class="currencies__item-flags"></div>
+        </div>
+        <div class="currencies__item">
+          <div class="currencies__item-price">123.34</div>
+          <div class="currencies__item-change">-0,001</div>
+          <div class="currencies__item-pair">USD /GBT</div>
+          <div class="currencies__item-flags"></div>
+        </div>
+        <div class="currencies__item">
+          <div class="currencies__item-price">123.34</div>
+          <div class="currencies__item-change">-0,001</div>
+          <div class="currencies__item-pair">USD /GBT</div>
+          <div class="currencies__item-flags"></div>
+        </div>
+        <div class="currencies__item">
+          <div class="currencies__item-price">123.34</div>
+          <div class="currencies__item-change">-0,001</div>
+          <div class="currencies__item-pair">USD /GBT</div>
+          <div class="currencies__item-flags"></div>
+        </div>
+        <div class="currencies__item">
+          <div class="currencies__item-price">123.34</div>
+          <div class="currencies__item-change">-0,001</div>
+          <div class="currencies__item-pair">USD /GBT</div>
+          <div class="currencies__item-flags"></div>
+        </div> -->
+      </div>
 
-      <div class="loading-page">
+      <div class="loading-page hide">
         <div class="loading-page__spinner mg-lm">
           <span style="--i: 1"></span>
           <span style="--i: 2"></span>

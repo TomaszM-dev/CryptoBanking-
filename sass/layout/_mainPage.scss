@@ -1,18 +1,15 @@
 .main {
-  position: absolute;
-  @include absCenter;
-
   border-radius: 2rem;
   background-color: rgba(0, 0, 0, 0.625);
   color: white;
   width: 85%;
-  height: 75vh;
+  height: 80rem;
+
   margin: auto;
   display: flex;
   letter-spacing: 0.2rem;
 
   box-shadow: 0rem 0rem 3.4rem #124000;
-  border-radius: 20px;
 
   &__navbar {
     flex: 0 0 20%;
@@ -25,12 +22,13 @@
   }
 
   &__center {
-    flex: 0 0 45%;
+    flex: 1;
     border-radius: 20px;
+    overflow: scroll;
   }
   &__right {
-    flex: 0 0 35%;
-    box-shadow: 0rem 0rem 0.3rem #124000;
+    // flex: 0 0 35%;
+    // box-shadow: 0rem 0rem 0.3rem #124000;
     border-radius: 20px;
   }
 }

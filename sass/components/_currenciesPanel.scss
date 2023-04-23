@@ -1,0 +1,44 @@
+.currencies {
+  &-panel {
+    border-radius: 2rem;
+    background-color: rgba(0, 0, 0, 0.625);
+    color: white;
+    width: 85%;
+    height: 13rem;
+    margin: 0 auto;
+    display: flex;
+    letter-spacing: 0.2rem;
+    overflow: hidden;
+
+    box-shadow: 0rem 0rem 3.4rem #124000;
+    border-radius: 20px;
+
+    // align-items: center;
+  }
+
+  &__item {
+    // border-radius: 20px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+
+    font-size: 1.5rem;
+    padding: 0rem 2rem;
+    border: 1px solid #124000;
+    align-content: center;
+    transition: all 1s;
+    grid-row-gap: 1rem;
+    animation: floatingLeft 30s linear infinite;
+
+    &-pair {
+      grid-column: 1/-1;
+    }
+
+    &-price {
+      width: 10rem;
+    }
+
+    &-change {
+    }
+  }
+}

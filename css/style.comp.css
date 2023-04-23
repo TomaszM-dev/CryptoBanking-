@@ -29,6 +29,12 @@ $breakpoint arguement choices:
   100% {
     transform: rotateX(-30deg) rotateY(360deg); } }
 
+@keyframes floatingLeft {
+  0% {
+    transform: translateX(0); }
+  100% {
+    transform: translateX(-100rem); } }
+
 @keyframes headlineWidthScale {
   0%,
   10%,
@@ -1090,22 +1096,58 @@ body {
   height: 100%;
   color: #009d00; }
 
-.main {
-  position: absolute;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+.currencies-panel {
   border-radius: 2rem;
   background-color: rgba(0, 0, 0, 0.625);
   color: white;
   width: 85%;
-  height: 75vh;
+  height: 13rem;
+  margin: 0 auto;
+  display: flex;
+  letter-spacing: 0.2rem;
+  overflow: hidden;
+  box-shadow: 0rem 0rem 3.4rem #124000;
+  border-radius: 20px; }
+
+.currencies__item {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  font-size: 1.5rem;
+  padding: 0rem 2rem;
+  border: 1px solid #124000;
+  align-content: center;
+  transition: all 1s;
+  grid-row-gap: 1rem;
+  animation: floatingLeft 30s linear infinite; }
+  .currencies__item-pair {
+    grid-column: 1/-1; }
+  .currencies__item-price {
+    width: 10rem; }
+
+.profile {
+  display: flex;
+  flex-direction: column; }
+  .profile__headline {
+    margin-top: 8rem;
+    text-align: center; }
+  .profile__middleContent {
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+  .profile__infoBox-bottom {
+    align-self: center; }
+
+.main {
+  border-radius: 2rem;
+  background-color: rgba(0, 0, 0, 0.625);
+  color: white;
+  width: 85%;
+  height: 80rem;
   margin: auto;
   display: flex;
   letter-spacing: 0.2rem;
-  box-shadow: 0rem 0rem 3.4rem #124000;
-  border-radius: 20px; }
+  box-shadow: 0rem 0rem 3.4rem #124000; }
   .main__navbar {
     flex: 0 0 20%;
     display: flex;
@@ -1115,11 +1157,10 @@ body {
     border-radius: 20px;
     box-shadow: 0rem 0rem 0.3rem #124000; }
   .main__center {
-    flex: 0 0 45%;
-    border-radius: 20px; }
+    flex: 1;
+    border-radius: 20px;
+    overflow: scroll; }
   .main__right {
-    flex: 0 0 35%;
-    box-shadow: 0rem 0rem 0.3rem #124000;
     border-radius: 20px; }
 
 .section-starter {
@@ -1166,4 +1207,5 @@ body {
   min-height: 100vh;
   background: black;
   display: flex;
-  position: relative; }
+  position: relative;
+  flex-direction: column; }

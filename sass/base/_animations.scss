@@ -15,6 +15,16 @@
   }
 }
 
+@keyframes floatingLeft {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-100rem);
+  }
+}
+
 @keyframes headlineWidthScale {
   0%,
   10%,
