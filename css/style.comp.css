@@ -88,6 +88,10 @@ $breakpoint arguement choices:
   50% {
     opacity: 0; } }
 
+@keyframes textColor2 {
+  50% {
+    opacity: 0; } }
+
 @keyframes draw {
   0% {
     stroke-dashoffset: 4500; }
@@ -1127,16 +1131,86 @@ body {
 
 .profile {
   display: flex;
-  flex-direction: column; }
+  flex-direction: column;
+  font-size: 1.8rem;
+  position: relative;
+  overflow-y: hidden; }
   .profile__headline {
-    margin-top: 8rem;
+    margin-top: 4rem;
     text-align: center; }
+    .profile__headline p {
+      width: 60%;
+      margin: 0 auto; }
   .profile__middleContent {
     display: flex;
     justify-content: center;
     align-items: center; }
-  .profile__infoBox-bottom {
-    align-self: center; }
+  .profile__logo {
+    transition: all 1s;
+    transform: translateX(-1.5rem);
+    animation: textColor2 5s linear infinite; }
+  .profile__infoBox {
+    text-align: center; }
+    .profile__infoBox-paragraph {
+      color: #01a001;
+      font-size: 1.3rem; }
+    .profile__infoBox-icon {
+      font-size: 3rem; }
+    .profile__infoBox-bottom {
+      align-self: center;
+      text-align: center; }
+    .profile__infoBox-header {
+      font-weight: 300; }
+
+.check-pairs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 7rem; }
+  .check-pairs__headline {
+    font-size: 3rem;
+    text-transform: uppercase;
+    font-weight: 300;
+    color: #01a001; }
+  .check-pairs__form {
+    padding: 3rem;
+    width: 50%;
+    border-radius: 7px;
+    font-size: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: 0rem 0rem 1.1rem #124000; }
+  .check-pairs__input {
+    width: 100%;
+    box-shadow: 0rem 0rem 1.1rem #217400;
+    height: 4.5rem;
+    padding: 1rem;
+    font-size: 2rem;
+    border-radius: 5px; }
+  .check-pairs__list {
+    display: flex;
+    margin-top: 1rem;
+    align-items: center;
+    justify-content: space-between; }
+  .check-pairs__icon {
+    font-size: 2rem;
+    color: #01a001; }
+  .check-pairs__flag {
+    width: 8rem; }
+  .check-pairs__selectionBox {
+    display: flex;
+    flex-direction: column; }
+  .check-pairs__exchangeRate {
+    align-self: center;
+    border-bottom: 1px solid #217400;
+    padding: 1rem 2.5rem;
+    border-radius: 2rem; }
+  .check-pairs__button {
+    background-color: #090b0c;
+    color: white;
+    border-radius: 5px; }
 
 .main {
   border-radius: 2rem;
@@ -1158,8 +1232,7 @@ body {
     box-shadow: 0rem 0rem 0.3rem #124000; }
   .main__center {
     flex: 1;
-    border-radius: 20px;
-    overflow: scroll; }
+    border-radius: 20px; }
   .main__right {
     border-radius: 20px; }
 

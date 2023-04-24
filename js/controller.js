@@ -20,17 +20,19 @@ const exchangeApi = async function () {
     curPanel.currencyChangeRate(latestCurrencies, oldCurrencies);
     const difference = curPanel.state.difference;
 
-    const es = function (i) {
-      latestCurrencies[i].diff = Number(difference[i]);
-    };
+    const displayCurrencies = latestCurrencies.map((o, i) => {
+      return {
+        ...o,
+        diff: difference[i],
+      };
+    });
 
-    es(2);
-    console.log(latestCurrencies[2]);
+    console.log(displayCurrencies);
 
-    latestCurrencies.forEach((c) => {
+    displayCurrencies.forEach((c) => {
       const markup = `  <div class="currencies__item">
-        <div class="currencies__item-price">${c.value}</div>
-        <div class="currencies__item-change"></div>
+        <div class="currencies__item-price">${c.value.toFixed(4)}</div>
+        <div class="currencies__item-change">${c.diff}</div>
         <div class="currencies__item-pair">USD / ${c.id}</div>
         <div class="currencies__item-flags"></div>
       </div> `;

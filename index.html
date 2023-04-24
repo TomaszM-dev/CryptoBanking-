@@ -215,13 +215,13 @@
               </a>
             </li>
             <li class="main__item mg-mm">
-              <a href="" class="active">
+              <a href="">
                 <i class="fa-user fa-solid fa-1x main__icon"></i>Profile
               </a>
             </li>
             <li class="main__item mg-mm">
-              <a href="">
-                <i class="fa-cc-visa fa-brands fa-1x main__icon"></i>Wallet
+              <a href="" class="active">
+                <i class="fa-cc-visa fa-brands fa-1x main__icon"></i>Check Pairs
               </a>
             </li>
             <li class="main__item mg-mm">
@@ -246,23 +246,100 @@
         </div>
 
         <div class="main__center">
-          <div class="profile">
-            <div class="profile__headline mg-lm">
-              <h3>My personal information</h3>
+          <div class="check-pairs">
+            <h3 class="check-pairs__headline mg-mm">currency conversion</h3>
+            <form action="#" class="check-pairs__form">
+              <div class="check-pairs__amount mg-sm">
+                <p>Enter Amount</p>
+                <input type="text" value="1" class="check-pairs__input" />
+              </div>
+              <div class="check-pairs__list mg-mm">
+                <div class="check-pairs__from">
+                  <p>From</p>
+                  <div class="check-pairs__selectionBox">
+                    <img
+                      src="https://flagsapi.com/GM/flat/64.png"
+                      class="check-pairs__flag"
+                    />
+                    <select class="check-pairs__select">
+                      <option value="USD" class="check-pairs__option">
+                        USD
+                      </option>
+                      <option value="NPR" class="check-pairs__option">
+                        NPR
+                      </option>
+                      <option value="USD" class="check-pairs__option">
+                        USD
+                      </option>
+                      <option value="USD" class="check-pairs__option">
+                        USD
+                      </option>
+                      <option value="USD" class="check-pairs__option">
+                        USD
+                      </option>
+                    </select>
+                  </div>
+                </div>
+                <div class="check-pairs__icon">
+                  <i class="fas fa-exchange-alt"></i>
+                </div>
+                <div class="check-pairs__to">
+                  <p>To</p>
+                  <div class="check-pairs__selectionBox">
+                    <img
+                      src="https://flagsapi.com/US/flat/64.png"
+                      class="check-pairs__flag"
+                    />
+                    <select class="check-pairs__select">
+                      <option value="USD" class="check-pairs__option">
+                        USD
+                      </option>
+                      <option value="NPR" class="check-pairs__option">
+                        NPR
+                      </option>
+                      <option value="USD" class="check-pairs__option">
+                        USD
+                      </option>
+                      <option value="USD" class="check-pairs__option">
+                        USD
+                      </option>
+                      <option value="USD" class="check-pairs__option">
+                        USD
+                      </option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="check-pairs__exchangeRate mg-mm">
+                1 USD = 118.75 EUR
+              </div>
+              <button class="btn check-pairs__button">Get exchange rate</button>
+            </form>
+          </div>
+          <div class="profile hide">
+            <div class="profile__headline mg-mm">
+              <h1
+                data-text="PERSONALINFORMATION"
+                class="profile__headline mg-sm"
+              >
+                PERSONAL INFORMATION
+              </h1>
               <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Officiis, cumque.
               </p>
             </div>
-            <div class="profile__middleContent mg-lm">
+            <div class="profile__middleContent mg-mm">
               <div class="profile__infoBox-container">
                 <div class="profile__infoBox mg-mm">
                   <i class="fa-solid fa-signature profile__infoBox-icon"></i>
+                  <p class="profile__infoBox-paragraph">Full Name:</p>
                   <h4 class="profile__infoBox-header">Tomasz Malocha</h4>
                 </div>
                 <div class="profile__infoBox">
-                  <i class="fa-solid fa-signature profile__infoBox-icon"></i>
-                  <h4 class="profile__infoBox-header">Tomasz Malocha</h4>
+                  <i class="fa-solid fa-key profile__infoBox-icon"></i>
+                  <p class="profile__infoBox-paragraph">Password:</p>
+                  <h4 class="profile__infoBox-header">123</h4>
                 </div>
               </div>
               <img
@@ -272,18 +349,24 @@
               />
               <div class="profile__infoBox-container">
                 <div class="profile__infoBox mg-mm">
-                  <i class="fa-solid fa-signature profile__infoBox-icon"></i>
-                  <h4 class="profile__infoBox-header">Tomasz Malocha</h4>
+                  <i class="fa-solid fa-cake-candles profile__infoBox-icon"></i>
+                  <p class="profile__infoBox-paragraph">Birth date:</p>
+
+                  <h4 class="profile__infoBox-header">2022/11/08</h4>
                 </div>
                 <div class="profile__infoBox">
-                  <i class="fa-solid fa-signature profile__infoBox-icon"></i>
-                  <h4 class="profile__infoBox-header">Tomasz Malocha</h4>
+                  <i class="fa-solid fa-folder-plus profile__infoBox-icon"></i>
+                  <p class="profile__infoBox-paragraph">Account Created:</p>
+                  <h4 class="profile__infoBox-header">2023/11/02</h4>
                 </div>
               </div>
             </div>
-            <div class="profile__infoBox-bottom">
-              <i class="fa-solid fa-signature profile__infoBox-icon"></i>
-              <h4 class="profile__infoBox-header">Tomasz Malocha</h4>
+            <div class="profile__infoBox-bottom mg-lm">
+              <i class="fa-solid fa-address-card profile__infoBox-icon"></i>
+              <p class="profile__infoBox-paragraph">Card Details:</p>
+              <h4 class="profile__infoBox-header">4534 2374 2344 2343</h4>
+              <h4 class="profile__infoBox-header">Valid till: 10/27</h4>
+              <h4 class="profile__infoBox-header">CCV: 233</h4>
             </div>
             <button class="btn btn--logout">Change data</button>
           </div>

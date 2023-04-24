@@ -8,7 +8,7 @@ export const state = {
 // yesterday date
 const yesterday = new Date();
 
-yesterday.setDate(yesterday.getDate() - 1);
+yesterday.setDate(yesterday.getDate() - 2);
 
 const formatDate = function (date) {
   const day = new Date(date).getDay();

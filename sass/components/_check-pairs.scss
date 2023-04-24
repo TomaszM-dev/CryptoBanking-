@@ -1,0 +1,72 @@
+.check-pairs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 7rem;
+
+  &__headline {
+    font-size: 3rem;
+    text-transform: uppercase;
+    font-weight: 300;
+    color: $color-secondary-light-1;
+  }
+
+  &__form {
+    padding: 3rem;
+    width: 50%;
+    border-radius: 7px;
+    font-size: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: 0rem 0rem 1.1rem #124000;
+  }
+
+  &__input {
+    width: 100%;
+    box-shadow: 0rem 0rem 1.1rem #217400;
+    height: 4.5rem;
+    padding: 1rem;
+    font-size: 2rem;
+    border-radius: 5px;
+  }
+
+  &__list {
+    display: flex;
+
+    margin-top: 1rem;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__from {
+  }
+
+  &__icon {
+    font-size: 2rem;
+    color: $color-secondary-light-1;
+  }
+
+  &__flag {
+    width: 8rem;
+  }
+
+  &__selectionBox {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__exchangeRate {
+    align-self: center;
+    border-bottom: 1px solid #217400;
+    padding: 1rem 2.5rem;
+    border-radius: 2rem;
+  }
+
+  &__button {
+    background-color: rgb(9, 11, 12);
+    color: white;
+    border-radius: 5px;
+  }
+}
