@@ -1211,13 +1211,18 @@ body {
     background-color: #090b0c;
     color: white;
     border-radius: 5px; }
+  .check-pairs__select {
+    width: auto;
+    padding: 0.5rem 1rem; }
+  .check-pairs__chartContainer {
+    margin-top: 10rem; }
 
 .main {
   border-radius: 2rem;
   background-color: rgba(0, 0, 0, 0.625);
   color: white;
   width: 85%;
-  height: 80rem;
+  height: 100rem;
   margin: auto;
   display: flex;
   letter-spacing: 0.2rem;

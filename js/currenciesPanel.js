@@ -8,10 +8,10 @@ export const state = {
 // yesterday date
 const yesterday = new Date();
 
-yesterday.setDate(yesterday.getDate() - 2);
+yesterday.setDate(yesterday.getDate() - 1);
 
-const formatDate = function (date) {
-  const day = new Date(date).getDay();
+export const formatDate = function (date) {
+  const day = new Date(date).getDate();
   const month = new Date(date).getMonth() + 1;
   const year = new Date(date).getFullYear();
   const fullDate = year + "/" + month + "/" + day;
@@ -36,6 +36,8 @@ export const loadCurrencies = async function () {
     state.currencies.push({ id: key, value: value });
   }
 };
+
+// loading currency pairs
 
 // loading day before latest
 
@@ -72,24 +74,3 @@ export const currencyChangeRate = function (array1, array2) {
     state.difference.push(p.toFixed(1));
   });
 };
-
-const array1 = [1, 2, 43, 5];
-
-const arrayofObj = [
-  {
-    key: 1,
-    value: 3,
-  },
-  {
-    key: 2,
-    value: 10,
-  },
-  {
-    key: 3,
-    value: 20,
-  },
-  {
-    id: 123,
-    value: 30,
-  },
-];

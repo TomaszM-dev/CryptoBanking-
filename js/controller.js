@@ -1,6 +1,7 @@
 import { loginMechanics } from "./loginMechanics.js";
 import { registerMechanics } from "./registerMechanics.js";
 import * as curPanel from "./currenciesPanel.js";
+import * as curConverter from "./currenciesConverter.js";
 
 loginMechanics();
 registerMechanics();
@@ -26,8 +27,6 @@ const exchangeApi = async function () {
         diff: difference[i],
       };
     });
-
-    console.log(displayCurrencies);
 
     displayCurrencies.forEach((c) => {
       const markup = `  <div class="currencies__item">

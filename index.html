@@ -258,26 +258,10 @@
                   <p>From</p>
                   <div class="check-pairs__selectionBox">
                     <img
-                      src="https://flagsapi.com/GM/flat/64.png"
+                      src="https://flagsapi.com/US/flat/64.png"
                       class="check-pairs__flag"
                     />
-                    <select class="check-pairs__select">
-                      <option value="USD" class="check-pairs__option">
-                        USD
-                      </option>
-                      <option value="NPR" class="check-pairs__option">
-                        NPR
-                      </option>
-                      <option value="USD" class="check-pairs__option">
-                        USD
-                      </option>
-                      <option value="USD" class="check-pairs__option">
-                        USD
-                      </option>
-                      <option value="USD" class="check-pairs__option">
-                        USD
-                      </option>
-                    </select>
+                    <select class="check-pairs__select select__from"></select>
                   </div>
                 </div>
                 <div class="check-pairs__icon">
@@ -287,34 +271,22 @@
                   <p>To</p>
                   <div class="check-pairs__selectionBox">
                     <img
-                      src="https://flagsapi.com/US/flat/64.png"
+                      src="https://flagsapi.com/PL/flat/64.png"
                       class="check-pairs__flag"
                     />
-                    <select class="check-pairs__select">
-                      <option value="USD" class="check-pairs__option">
-                        USD
-                      </option>
-                      <option value="NPR" class="check-pairs__option">
-                        NPR
-                      </option>
-                      <option value="USD" class="check-pairs__option">
-                        USD
-                      </option>
-                      <option value="USD" class="check-pairs__option">
-                        USD
-                      </option>
-                      <option value="USD" class="check-pairs__option">
-                        USD
-                      </option>
-                    </select>
+                    <select class="check-pairs__select select__to"></select>
                   </div>
                 </div>
               </div>
               <div class="check-pairs__exchangeRate mg-mm">
-                1 USD = 118.75 EUR
+                Getting exchange rate...
               </div>
               <button class="btn check-pairs__button">Get exchange rate</button>
             </form>
+
+            <div class="check-pairs__chartContainer">
+              <canvas id="check-pairs__chart" width="800" height="300"></canvas>
+            </div>
           </div>
           <div class="profile hide">
             <div class="profile__headline mg-mm">

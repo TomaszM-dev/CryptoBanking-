@@ -69,4 +69,16 @@
     color: white;
     border-radius: 5px;
   }
+
+  &__select {
+    width: auto;
+    padding: 0.5rem 1rem;
+  }
+
+  &__chartContainer {
+    margin-top: 10rem;
+
+    canvas {
+    }
+  }
 }
