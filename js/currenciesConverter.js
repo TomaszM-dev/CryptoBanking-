@@ -11,19 +11,12 @@ const toCurrency = document.querySelector(".select__to");
 const exchangeRateText = document.querySelector(".check-pairs__exchangeRate");
 const exchangeIcon = document.querySelector(".check-pairs__icon");
 
-exchangeIcon.addEventListener("click", function () {
-  let reverseCurr = fromCurrency.value;
-
-  fromCurrency.value = toCurrency.value;
-  toCurrency.value = reverseCurr;
-  loadFlag(fromCurrency);
-  loadFlag(toCurrency);
-  getExchangeRate();
-});
-
 dropList.innerHTML = "";
+
+// taking data from config and storing to variable
 let countries = con.country_list;
 
+// creating options on selection based on countries array
 for (let i = 0; i < dropList.length; i++) {
   for (let country in countries) {
     let selected;
@@ -39,13 +32,15 @@ for (let i = 0; i < dropList.length; i++) {
 
     dropList[i].insertAdjacentHTML("beforeend", markup);
   }
+
+  // loading flags on change
   dropList[i].addEventListener("change", function (e) {
     e.preventDefault();
-
     loadFlag(e.target);
   });
 }
 
+// loading flag mechanics
 const loadFlag = function (element) {
   for (let flag in config.country_list) {
     if (flag == element.value) {
@@ -55,21 +50,7 @@ const loadFlag = function (element) {
   }
 };
 
-function getWeekDays(locale) {
-  const baseDate = new Date();
-  const weekDays = [];
-  const days = [];
-  for (let i = 0; i < 7; i++) {
-    weekDays.push(baseDate.toLocaleDateString(locale, { weekday: "long" }));
-    baseDate.setDate(baseDate.getDate() - 1);
-
-    days.push(loadCurr.formatDate(baseDate));
-  }
-  console.log(weekDays);
-  return days;
-}
-
-const weekDays = getWeekDays("en-US");
+// loading currencies that are selected and fetching right api for them
 
 const loadCurrencies = async function (fromValue, amountValue) {
   const res = await fetch(
@@ -89,6 +70,7 @@ const loadCurrencies = async function (fromValue, amountValue) {
   )} ${toCurrency.value}`;
 };
 
+//
 const getExchangeRate = function () {
   exchangeRateText.innerHTML = "Getting exchange rate...";
   let amountValue = amount.value;
@@ -100,29 +82,23 @@ const getExchangeRate = function () {
   loadCurrencies(fromCurrency.value, amountValue);
 };
 
-window.addEventListener("load", function (e) {
-  e.preventDefault();
-  getExchangeRate();
-});
+// create last 7 days
+function getWeekDays(locale) {
+  const baseDate = new Date();
+  const weekDays = [];
+  const days = [];
+  for (let i = 0; i < 7; i++) {
+    weekDays.push(baseDate.toLocaleDateString(locale, { weekday: "long" }));
+    baseDate.setDate(baseDate.getDate() - 1);
 
-let destroyChart = function () {
-  myChart.destroy();
-};
+    days.push(loadCurr.formatDate(baseDate));
+  }
 
-let renderChart = function () {
-  let myChart = new Chart(
-    document.getElementById("check-pairs__chart"),
-    config
-  );
-};
+  return days;
+}
+const weekDays = getWeekDays("en-US");
 
-exchangeRateBtn.addEventListener("click", function (e) {
-  e.preventDefault();
-  getExchangeRate();
-
-  ratePrices().catch(essa);
-});
-
+// fetch last 7 days depended upon results from get week days function
 const ratePrices = async function () {
   let prices = [];
   for (let day of weekDays) {
@@ -139,7 +115,11 @@ const ratePrices = async function () {
   return prices;
 };
 
-ratePrices().catch(price);
+async function run() {
+  let price = await ratePrices();
+}
+
+run();
 
 //setup chart block
 const data = {
@@ -147,7 +127,7 @@ const data = {
   datasets: [
     {
       label: "# of Votes",
-      data: ratePrices(),
+      data: await ratePrices(),
       borderWidth: 1,
     },
   ],
@@ -167,8 +147,45 @@ const config = {
 };
 
 //init block
-const myChart = new Chart(
-  document.getElementById("check-pairs__chart"),
-  config
-);
-let price = await [];
+let myChart = new Chart(document.getElementById("check-pairs__chart"), config);
+
+// destroy chart
+let destroyChart = function () {
+  myChart.destroy();
+  myChart.data.datasets[0].data = [];
+};
+
+// render chart again
+let renderChart = function () {
+  myChart = new Chart(document.getElementById("check-pairs__chart"), config);
+  async function run() {
+    await ratePrices();
+
+    myChart.data.datasets[0].data.push(...(await ratePrices()));
+    myChart.update();
+  }
+  run();
+};
+
+// event handlers
+exchangeRateBtn.addEventListener("click", function (e) {
+  e.preventDefault();
+  getExchangeRate();
+  destroyChart();
+
+  renderChart();
+});
+
+window.addEventListener("load", function (e) {
+  e.preventDefault();
+  getExchangeRate();
+});
+
+exchangeIcon.addEventListener("click", function () {
+  let reverseCurr = fromCurrency.value;
+  fromCurrency.value = toCurrency.value;
+  toCurrency.value = reverseCurr;
+  loadFlag(fromCurrency);
+  loadFlag(toCurrency);
+  getExchangeRate();
+});

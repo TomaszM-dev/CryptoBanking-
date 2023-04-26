@@ -220,18 +220,18 @@
               </a>
             </li>
             <li class="main__item mg-mm">
-              <a href="" class="active">
+              <a href="">
                 <i class="fa-cc-visa fa-brands fa-1x main__icon"></i>Check Pairs
               </a>
             </li>
             <li class="main__item mg-mm">
               <a href="">
                 <i class="fa-solid fa-square-poll-vertical main__icon"></i>
-                Charts
+                Transactions
               </a>
             </li>
             <li class="main__item">
-              <a href="">
+              <a href="" class="active">
                 <i class="fa-solid fa-circle-question main__icon"></i> Spin &
                 Win
               </a>
@@ -246,7 +246,21 @@
         </div>
 
         <div class="main__center">
-          <div class="check-pairs">
+          <div class="spin-win">
+            <button class="spin-win__button btn">Spin</button>
+            <div class="spin-win__wheel">
+              <div class="spin-win__number" style="--i: 1">1020</div>
+              <div class="spin-win__number" style="--i: 2">1100</div>
+              <div class="spin-win__number" style="--i: 3">-2000</div>
+              <div class="spin-win__number" style="--i: 4">0</div>
+              <div class="spin-win__number" style="--i: 5">-250</div>
+              <div class="spin-win__number" style="--i: 6">300</div>
+              <div class="spin-win__number" style="--i: 7">1000</div>
+              <div class="spin-win__number" style="--i: 8">-200</div>
+            </div>
+          </div>
+
+          <div class="check-pairs hide">
             <h3 class="check-pairs__headline mg-mm">currency conversion</h3>
             <form action="#" class="check-pairs__form">
               <div class="check-pairs__amount mg-sm">
@@ -285,7 +299,7 @@
             </form>
 
             <div class="check-pairs__chartContainer">
-              <canvas id="check-pairs__chart" width="800" height="300"></canvas>
+              <canvas id="check-pairs__chart" width="600" height="300"></canvas>
             </div>
           </div>
           <div class="profile hide">
