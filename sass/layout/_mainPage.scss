@@ -3,7 +3,7 @@
   background-color: rgba(0, 0, 0, 0.625);
   color: white;
   width: 85%;
-  height: 100rem;
+  height: 70rem;
 
   margin: auto;
   display: flex;
@@ -24,7 +24,6 @@
   &__center {
     flex: 1;
     border-radius: 20px;
-    // overflow: scroll;
   }
   &__right {
     // flex: 0 0 35%;

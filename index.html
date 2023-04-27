@@ -246,17 +246,29 @@
         </div>
 
         <div class="main__center">
-          <div class="spin-win">
-            <button class="spin-win__button btn">Spin</button>
-            <div class="spin-win__wheel">
-              <div class="spin-win__number" style="--i: 1">1020</div>
-              <div class="spin-win__number" style="--i: 2">1100</div>
-              <div class="spin-win__number" style="--i: 3">-2000</div>
-              <div class="spin-win__number" style="--i: 4">0</div>
-              <div class="spin-win__number" style="--i: 5">-250</div>
-              <div class="spin-win__number" style="--i: 6">300</div>
-              <div class="spin-win__number" style="--i: 7">1000</div>
-              <div class="spin-win__number" style="--i: 8">-200</div>
+          <div class="spin-win"></div>
+          <h2 class="spin-win__header">
+            Lets play the game but be carefull, gambling and market
+          </h2>
+          <div class="spin-win__content">
+            <div class="spin-win__left">
+              <div class="spin-win__container">
+                <button class="spin-win__button">Spin</button>
+                <canvas id="spin-win__wheel"></canvas>
+                <i class="fa-solid fa-angles-left spin-win__arrow"></i>
+              </div>
+              <div class="spin-win__finalValue">
+                <p>Click spin to start playing</p>
+              </div>
+            </div>
+            <div class="spin-win__right">
+              <img
+                src="/img/cryptobanking loog.png"
+                class="overview__top-logo mg-sm"
+                alt=""
+              />
+              <p class="overview__balance">3,500$</p>
+              <p>Current Balance</p>
             </div>
           </div>
 
@@ -541,5 +553,11 @@
       referrerpolicy="no-referrer"
     ></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-datalabels/2.2.0/chartjs-plugin-datalabels.min.js"
+      integrity="sha512-JPcRR8yFa8mmCsfrw4TNte1ZvF1e3+1SdGMslZvmrzDYxS69J7J49vkFL8u6u8PlPJK+H3voElBtUCzaXj+6ig=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
   </body>
 </html>

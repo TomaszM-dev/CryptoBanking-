@@ -1,0 +1,66 @@
+.spin-win {
+  &__content {
+    display: flex;
+    margin-top: 5rem;
+
+    height: 100%;
+    width: 100%;
+    justify-content: end;
+    position: relative;
+  }
+  &__left {
+    width: 100%;
+    height: 100%;
+    flex: 0 0 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10rem;
+  }
+  &__right {
+    width: 100%;
+    height: 100%;
+    flex: 0 0 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__container {
+    width: 80%;
+    position: relative;
+  }
+
+  &__button {
+    position: absolute;
+    top: 40%;
+    left: 40%;
+    height: 6rem;
+    width: 6rem;
+    background: radial-gradient(#fff 50%, rgb(96, 95, 95) 85%);
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    border-radius: 50%;
+    font-weight: 600;
+  }
+
+  &__finalValue {
+    color: white;
+    margin-top: 3rem;
+    font-size: 2rem;
+  }
+
+  &__arrow {
+    font-size: 3rem;
+    position: absolute;
+    top: 44%;
+    right: -5rem;
+  }
+}
+
+#spin-win__wheel {
+  width: inherit;
+  height: inherit;
+  top: 0;
+  padding: 0;
+}

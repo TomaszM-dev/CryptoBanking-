@@ -2,6 +2,7 @@ import { loginMechanics } from "./loginMechanics.js";
 import { registerMechanics } from "./registerMechanics.js";
 import * as curPanel from "./currenciesPanel.js";
 import * as curConverter from "./currenciesConverter.js";
+import * as spinWin from "./spinWheel.js";
 
 loginMechanics();
 registerMechanics();
