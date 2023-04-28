@@ -11,24 +11,27 @@
 const spinButton = document.querySelector(".spin-win__button");
 const spinFinalValue = document.querySelector(".spin-win__finalValue");
 const spinWheel = document.getElementById("spin-win__wheel");
+const gameCurBalance = document.querySelector(".spin-win__score");
+const accountBalance = document.querySelector(".overview__balance");
+const depositButton = document.querySelector(".spin-win__deposit");
 
 const rotationValues = [
   {
     minDegree: 0,
     maxDegree: 30,
     value: 2,
-    award: 0,
+    award: 200,
   },
   {
     minDegree: 31,
     maxDegree: 91,
     value: 1,
-    award: 1000,
+    award: 2500,
   },
   {
     minDegree: 91,
     maxDegree: 150,
-    award: 300,
+    award: 500,
     value: 6,
   },
   {
@@ -53,7 +56,7 @@ const rotationValues = [
     minDegree: 331,
     maxDegree: 360,
     value: 2,
-    award: 200,
+    award: 3000,
   },
 ];
 
@@ -80,7 +83,7 @@ let myChart = new Chart(spinWheel, {
   plugins: [ChartDataLabels],
   type: "pie",
   data: {
-    labels: [1000, 200, -400, -1700, -600, 300],
+    labels: [2500, 3000, -400, -1700, -600, 500],
     datasets: [
       {
         backgroundColor: colors,
@@ -105,6 +108,7 @@ let myChart = new Chart(spinWheel, {
   },
 });
 
+let awardArr = [];
 const createRandomAngle = function (angleValue) {
   for (let i of rotationValues) {
     if (angleValue >= i.minDegree && angleValue <= i.maxDegree) {
@@ -112,7 +116,16 @@ const createRandomAngle = function (angleValue) {
         i.award
       }$</p>`;
 
-      console.log(i);
+      const award = Number(i.award);
+
+      awardArr.push(award);
+
+      const sumAward = awardArr.reduce(function (acc, cur) {
+        return acc + cur;
+      }, 0);
+
+      console.log(sumAward);
+      gameCurBalance.textContent = sumAward;
 
       break;
     }
@@ -123,7 +136,18 @@ let count = 0;
 
 let resultValue = 101;
 
+let curAccBalance = 8000;
+let curGameBalance = 0;
+
+console.log(accountBalance);
+gameCurBalance.textContent = curGameBalance;
+accountBalance.textContent = curAccBalance;
+
 const playGame = function () {
+  const playFee = 500;
+
+  accountBalance.textContent = curAccBalance -= playFee;
+
   spinFinalValue.innerHTML = " Good Luck";
 
   let randomDegree = Math.floor(Math.random() * 360);
@@ -148,3 +172,21 @@ const playGame = function () {
 };
 
 spinButton.addEventListener("click", playGame);
+
+// 1. each click on spin but will cost user 500 from his account
+
+// 2. display
+
+depositButton.addEventListener("click", function () {
+  const deposit = awardArr.reduce(function (acc, cur) {
+    return acc + cur;
+  }, 0);
+
+  console.log(curAccBalance);
+  curAccBalance += deposit;
+  console.log(curAccBalance);
+  curGameBalance = 0;
+
+  gameCurBalance.textContent = curGameBalance;
+  accountBalance.textContent = curAccBalance;
+});

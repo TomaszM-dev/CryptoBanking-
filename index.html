@@ -225,13 +225,13 @@
               </a>
             </li>
             <li class="main__item mg-mm">
-              <a href="">
+              <a href="" class="active">
                 <i class="fa-solid fa-square-poll-vertical main__icon"></i>
                 Transactions
               </a>
             </li>
             <li class="main__item">
-              <a href="" class="active">
+              <a href="">
                 <i class="fa-solid fa-circle-question main__icon"></i> Spin &
                 Win
               </a>
@@ -246,29 +246,170 @@
         </div>
 
         <div class="main__center">
-          <div class="spin-win"></div>
-          <h2 class="spin-win__header">
-            Lets play the game but be carefull, gambling and market
-          </h2>
-          <div class="spin-win__content">
-            <div class="spin-win__left">
-              <div class="spin-win__container">
-                <button class="spin-win__button">Spin</button>
-                <canvas id="spin-win__wheel"></canvas>
-                <i class="fa-solid fa-angles-left spin-win__arrow"></i>
+          <div class="transactions">
+            <div class="transactions__left">
+              <div class="transactions__header">
+                <div class="transactions__headline">
+                  Welcome (name of cur Acc)
+                </div>
+                <img
+                  src="/img/cryptobanking loog.png"
+                  class="overview__top-logo mg-sm"
+                  alt=""
+                />
               </div>
-              <div class="spin-win__finalValue">
-                <p>Click spin to start playing</p>
+              <div class="transactions__operations">
+                <div
+                  class="transaction__operation transaction__operation-transfer"
+                >
+                  <p class="transactions__operation-title">Transfer Money</p>
+                  <form class="transactions__form transactions__form-transfer">
+                    <input
+                      type="text"
+                      class="transactions__input transaction__input-to"
+                    />
+                    <input
+                      type="number"
+                      class="transactions__input transaction__input-amount"
+                    />
+                    <input
+                      type="text"
+                      class="transactions__input transaction__input-cvv"
+                    />
+                    <button
+                      class="transactions__button transaction__button-transfer"
+                    ></button>
+                    <label
+                      class="transactions__label transactions__label-transfer"
+                      >Transfer To</label
+                    >
+                    <label
+                      class="transactions__label transactions__label-transfer"
+                      >Amount</label
+                    >
+                    <label
+                      class="transactions__label transactions__label-transfer"
+                      >Cvv</label
+                    >
+                  </form>
+                </div>
+                <div
+                  class="transaction__operation transaction__operation-request"
+                >
+                  <p class="transactions__operation-title">Request Loan</p>
+                  <form class="transactions__form transactions__form-loan">
+                    <input
+                      type="number"
+                      class="transactions__input transactions__input-amount"
+                    />
+                    <button
+                      class="transactions__button transactions__button-transfer"
+                    ></button>
+                    <label class="transactions__label transactions__label-loan"
+                      >Amount</label
+                    >
+                  </form>
+                </div>
+                <div
+                  class="transaction__operation transaction__operation-close"
+                >
+                  <p class="transactions__operation-title">Close Account</p>
+                  <form class="transactions__form">
+                    <input
+                      type="text"
+                      class="transactions__input transaction__input-user"
+                    />
+                    <input
+                      type="password"
+                      class="transactions__input transaction__input-password"
+                    />
+                    <button
+                      class="transactions__button transaction__button-close"
+                    ></button>
+                  </form>
+                </div>
               </div>
             </div>
-            <div class="spin-win__right">
-              <img
-                src="/img/cryptobanking loog.png"
-                class="overview__top-logo mg-sm"
-                alt=""
-              />
-              <p class="overview__balance">3,500$</p>
-              <p>Current Balance</p>
+            <div class="transactions__right">
+              <div class="overview__transactions">
+                <div class="overview__transactions-info mg-sm">
+                  <p>Transactions</p>
+                  <span>&cudarrr;</span>
+                </div>
+                <div class="overview__transactionContainer">
+                  <div class="overview__transaction">
+                    <div class="overview__transaction-icon">
+                      <i class="fa-brands fa-spotify"></i>
+                    </div>
+                    <div class="overview__transaction-content">
+                      <p class="overview__transaction-name">Spotify</p>
+                      <p class="overview__transaction-type">Music</p>
+                    </div>
+                    <div class="overview__transaction-date">02.03.2022</div>
+                    <div class="overview__transaction-price">45$</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="spin-win hide">
+            <h2 class="spin-win__header">
+              Play the game but be carefull, gambling and stock markets are
+              inpredictable!
+            </h2>
+            <div class="spin-win__content">
+              <div class="spin-win__left">
+                <div class="spin-win__scores mg-mm">
+                  <div>
+                    <p class="overview__balance"></p>
+                    <p>Current Balance</p>
+                  </div>
+                  <div>
+                    <p class="spin-win__score">0$</p>
+                    <p>Current game balance</p>
+                  </div>
+                </div>
+                <div class="spin-win__container">
+                  <button class="spin-win__button">Spin</button>
+                  <canvas id="spin-win__wheel"></canvas>
+                  <i class="fa-solid fa-angles-left spin-win__arrow"></i>
+                </div>
+                <div class="spin-win__content">
+                  <div class="spin-win__finalValue">
+                    <p>Click spin to start playing</p>
+                  </div>
+                  <button class="spin-win__deposit">Deposit</button>
+                </div>
+              </div>
+              <div class="spin-win__right">
+                <ul class="spin-win__rules">
+                  Rules
+                  <li class="spin-win__rule">
+                    Each spin will couse you 500$ fee
+                  </li>
+                  <li class="spin-win__rule">
+                    If you win, money will be added to your currenct game
+                    balance
+                  </li>
+                  <li class="spin-win__rule">
+                    Then you can either play again or deposit to your original
+                    balance
+                  </li>
+                  <li class="spin-win__rule">
+                    if you lose the award will be deducted from your Game
+                    balance + fee for spinning
+                  </li>
+                  <li class="spin-win__rule">
+                    You can see your recent movements in transaction history
+                  </li>
+                </ul>
+
+                <img
+                  src="/img/cryptobanking loog.png"
+                  class="overview__top-logo mg-sm"
+                  alt=""
+                />
+              </div>
             </div>
           </div>
 

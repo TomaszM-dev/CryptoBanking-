@@ -1231,8 +1231,7 @@ body {
   flex: 0 0 50%;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  margin-top: 10rem; }
+  align-items: center; }
 
 .spin-win__right {
   width: 100%;
@@ -1241,10 +1240,17 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center; }
+  .spin-win__right img {
+    margin-top: 1.5rem; }
 
 .spin-win__container {
   width: 80%;
   position: relative; }
+
+.spin-win__header {
+  text-align: center;
+  font-weight: 300;
+  margin: 5rem 0; }
 
 .spin-win__button {
   position: absolute;
@@ -1260,14 +1266,63 @@ body {
 
 .spin-win__finalValue {
   color: white;
-  margin-top: 3rem;
-  font-size: 2rem; }
+  flex: 0 0 80%;
+  font-size: 2rem;
+  animation: moveInBottom 1s;
+  padding-left: 2.6rem; }
 
 .spin-win__arrow {
   font-size: 3rem;
   position: absolute;
   top: 44%;
   right: -5rem; }
+
+.spin-win__rules {
+  color: #00b300;
+  text-align: center;
+  font-size: 2rem;
+  text-transform: uppercase; }
+
+.spin-win__rule {
+  width: 80%;
+  margin: 0 auto;
+  color: #fff;
+  text-transform: none;
+  font-size: 1.2rem;
+  padding: 0.9rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 0 0.3rem #00b300;
+  border-radius: 5px;
+  transition: all 0.3s; }
+  .spin-win__rule:first-child {
+    margin-top: 1rem; }
+  .spin-win__rule:hover {
+    transform: translateY(-0.4rem); }
+
+.spin-win__scores {
+  display: flex;
+  align-items: center;
+  width: 80%;
+  justify-content: space-between;
+  text-align: center; }
+
+.spin-win__score {
+  font-size: 3rem; }
+
+.spin-win__deposit {
+  color: white;
+  box-shadow: 0 0 0.3rem #00b300;
+  font-size: 1.4rem;
+  padding: 1rem 2rem;
+  text-transform: uppercase;
+  border-radius: 5px; }
+
+.spin-win__content {
+  width: fit-content;
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
 
 #spin-win__wheel {
   width: inherit;
