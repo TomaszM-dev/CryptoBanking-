@@ -3,6 +3,8 @@ import { registerMechanics } from "./registerMechanics.js";
 import * as curPanel from "./currenciesPanel.js";
 import * as curConverter from "./currenciesConverter.js";
 import * as spinWin from "./spinWheel.js";
+import * as transactions from "./transactions.js";
+import * as switchSection from "./switchSections.js";
 
 loginMechanics();
 registerMechanics();

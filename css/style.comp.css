@@ -598,7 +598,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(#000 15%, #00b300);
+  background: linear-gradient(#000 15%, #047804);
   transform: rotateY(calc(90deg * var(--i))) translateZ(4rem); }
 
 .cube__item-2 {
@@ -607,7 +607,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(#000 15%, #00b300);
+  background: linear-gradient(#000 15%, #047804);
   transform: rotateY(calc(90deg * var(--i))) translateZ(4rem); }
 
 .cube__item-3 {
@@ -616,7 +616,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(#000 15%, #00b300);
+  background: linear-gradient(#000 15%, #047804);
   transform: rotateY(calc(90deg * var(--i))) translateZ(2.5rem); }
 
 .cube__item-4 {
@@ -625,7 +625,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(#000 15%, #00b300);
+  background: linear-gradient(#000 15%, #047804);
   transform: rotateY(calc(90deg * var(--i))) translateZ(2.5rem); }
 
 .cube__top-text-1 {
@@ -1278,7 +1278,7 @@ body {
   right: -5rem; }
 
 .spin-win__rules {
-  color: #00b300;
+  color: #047804;
   text-align: center;
   font-size: 2rem;
   text-transform: uppercase; }
@@ -1291,7 +1291,7 @@ body {
   font-size: 1.2rem;
   padding: 0.9rem;
   margin-bottom: 2rem;
-  box-shadow: 0 0 0.3rem #00b300;
+  box-shadow: 0 0 0.3rem #047804;
   border-radius: 5px;
   transition: all 0.3s; }
   .spin-win__rule:first-child {
@@ -1311,7 +1311,7 @@ body {
 
 .spin-win__deposit {
   color: white;
-  box-shadow: 0 0 0.3rem #00b300;
+  box-shadow: 0 0 0.3rem #047804;
   font-size: 1.4rem;
   padding: 1rem 2rem;
   text-transform: uppercase;
@@ -1329,6 +1329,134 @@ body {
   height: inherit;
   top: 0;
   padding: 0; }
+
+.transactions {
+  width: 100%;
+  height: 100%;
+  display: flex; }
+  .transactions__left {
+    flex: 1;
+    margin: 0 2rem; }
+  .transactions__right {
+    flex: 0 0 50%;
+    text-align: center; }
+  .transactions__header {
+    margin-left: 3rem;
+    text-transform: uppercase;
+    letter-spacing: 0.8rem;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center; }
+    .transactions__header img {
+      margin: 1rem; }
+  .transactions__headline {
+    font-size: 3rem; }
+  .transactions__operations {
+    display: flex;
+    flex-direction: column; }
+  .transactions__operation {
+    box-shadow: 0 0 0.3rem #01a001;
+    padding: 3rem 3rem;
+    border-radius: 1rem;
+    margin-bottom: 2.3rem;
+    position: relative; }
+    .transactions__operation-title {
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+      text-transform: uppercase;
+      color: #01a001; }
+  .transactions__form {
+    display: grid;
+    grid-template-columns: 3fr 3fr 1.8fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 0.4rem 1rem; }
+    .transactions__form-loan {
+      grid-template-columns: 3fr 2fr 1fr;
+      grid-template-rows: 1fr 1fr; }
+    .transactions__form-close {
+      grid-column: 2fr 2fr 1fr; }
+  .transactions__input {
+    width: 100%;
+    border: none;
+    background-color: rgba(73, 73, 73, 0.4);
+    font-family: inherit;
+    font-size: 1.5rem;
+    text-align: center;
+    color: white;
+    padding: 0.3rem 1rem;
+    border-radius: 0.7rem;
+    transition: all 0.3s; }
+  .transactions__button {
+    color: white;
+    font-size: 2rem;
+    transition: all 0.3s;
+    padding: 0.6rem;
+    width: 59%; }
+    .transactions__button:hover {
+      color: #01a001;
+      border-radius: 3rem; }
+  .transactions__label {
+    font-size: 1.3rem;
+    text-align: center; }
+    .transactions__label-loan {
+      grid-row: 2; }
+    .transactions__label-user {
+      grid-row: 2; }
+    .transactions__label-password {
+      grid-row: 2; }
+  .transactions__popup {
+    z-index: 10000;
+    position: absolute;
+    top: 1rem;
+    left: 4.5rem;
+    transition: all 1s; }
+    .transactions__popup-wrong {
+      z-index: 1000;
+      display: none;
+      visibility: hidden;
+      opacity: 0;
+      transition: all 0.2s;
+      position: absolute;
+      width: 28rem;
+      height: 13rem;
+      background-color: black;
+      border-radius: 10px;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid #741010; }
+    .transactions__popup-close {
+      position: absolute !important;
+      top: -0.2rem;
+      right: 0rem;
+      color: #851f1f;
+      font-size: 1.6rem;
+      cursor: pointer;
+      padding: 1rem; }
+    .transactions__popup-headline {
+      color: #851f1f;
+      text-transform: uppercase;
+      font-size: 2rem; }
+    .transactions__popup-info {
+      color: #6b4747;
+      font-size: 1.3rem; }
+  .transactions__overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0; }
+    .transactions__overlay::after {
+      position: absolute;
+      content: "";
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background-color: rgba(185, 22, 0, 0.2); }
 
 .main {
   border-radius: 2rem;

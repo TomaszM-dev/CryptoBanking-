@@ -173,10 +173,6 @@ const playGame = function () {
 
 spinButton.addEventListener("click", playGame);
 
-// 1. each click on spin but will cost user 500 from his account
-
-// 2. display
-
 depositButton.addEventListener("click", function () {
   const deposit = awardArr.reduce(function (acc, cur) {
     return acc + cur;

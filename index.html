@@ -21,7 +21,7 @@
     <script type="module" defer src="js/controller.js"></script>
   </head>
   <body>
-    <section id="sectionStart" class="section-starter hide">
+    <section id="sectionStart" class="section-starter">
       <div class="bg-video">
         <video class="bg-video__content" autoplay muted loop>
           <source src="img/bg-video.mp4" type="video/mp4" />
@@ -195,8 +195,8 @@
         </p>
       </div>
     </div>
-    <div id="overlay" class="overlay hidden hide"></div>
-    <section class="section-mainPage">
+    <div id="overlay" class="overlay hidden"></div>
+    <section class="section-mainPage hide">
       <!-- <div class="bg-video">
         <video class="bg-video__content" autoplay muted loop>
           <source src="img/bg-video.mp4" type="video/mp4" />
@@ -246,39 +246,54 @@
         </div>
 
         <div class="main__center">
+          <div class="transactions__header mg-sm">
+            <div class="transactions__headline">Welcome (name)</div>
+            <img
+              src="/img/cryptobanking loog.png"
+              class="overview__top-logo mg-sm"
+              alt=""
+            />
+          </div>
           <div class="transactions">
+            <div id="" class="transactions__overlay hide"></div>
             <div class="transactions__left">
-              <div class="transactions__header">
-                <div class="transactions__headline">
-                  Welcome (name of cur Acc)
-                </div>
-                <img
-                  src="/img/cryptobanking loog.png"
-                  class="overview__top-logo mg-sm"
-                  alt=""
-                />
-              </div>
               <div class="transactions__operations">
                 <div
-                  class="transaction__operation transaction__operation-transfer"
+                  class="transactions__operation transaction__operation-transfer"
                 >
                   <p class="transactions__operation-title">Transfer Money</p>
+                  <div class="transactions__popup">
+                    <div class="transactions__popup-wrong close">
+                      <button class="transactions__popup-close">X</button>
+                      <h3 class="transactions__popup-headline mg-sm">
+                        Wrong pass
+                      </h3>
+                      <p class="transactions__popup-info">
+                        try again using different credentials or register
+                        yourself
+                      </p>
+                    </div>
+                  </div>
+
                   <form class="transactions__form transactions__form-transfer">
                     <input
                       type="text"
-                      class="transactions__input transaction__input-to"
+                      class="transactions__input transactions__input-to"
                     />
                     <input
                       type="number"
-                      class="transactions__input transaction__input-amount"
+                      class="transactions__input transactions__input-amount"
                     />
                     <input
                       type="text"
-                      class="transactions__input transaction__input-cvv"
+                      class="transactions__input transactions__input-cvv"
                     />
                     <button
-                      class="transactions__button transaction__button-transfer"
-                    ></button>
+                      type="submit"
+                      class="transactions__button transactions__button-transfer"
+                    >
+                      <i class="fa-solid fa-angles-left"></i>
+                    </button>
                     <label
                       class="transactions__label transactions__label-transfer"
                       >Transfer To</label
@@ -294,7 +309,7 @@
                   </form>
                 </div>
                 <div
-                  class="transaction__operation transaction__operation-request"
+                  class="transactions__operation transactions__operation-request"
                 >
                   <p class="transactions__operation-title">Request Loan</p>
                   <form class="transactions__form transactions__form-loan">
@@ -303,15 +318,17 @@
                       class="transactions__input transactions__input-amount"
                     />
                     <button
-                      class="transactions__button transactions__button-transfer"
-                    ></button>
+                      class="transactions__button transactions__button-loan"
+                    >
+                      <i class="fa-solid fa-angles-left"></i>
+                    </button>
                     <label class="transactions__label transactions__label-loan"
                       >Amount</label
                     >
                   </form>
                 </div>
                 <div
-                  class="transaction__operation transaction__operation-close"
+                  class="transactions__operation transaction__operation-close"
                 >
                   <p class="transactions__operation-title">Close Account</p>
                   <form class="transactions__form">
@@ -325,12 +342,23 @@
                     />
                     <button
                       class="transactions__button transaction__button-close"
-                    ></button>
+                    >
+                      <i class="fa-solid fa-angles-left"></i>
+                    </button>
+                    <label class="transactions__label transactions__label-user"
+                      >Username</label
+                    >
+                    <label
+                      class="transactions__label transactions__label-password"
+                      >Password</label
+                    >
                   </form>
                 </div>
               </div>
             </div>
             <div class="transactions__right">
+              <p class="overview__balance">3,500$</p>
+              <p class="mg-mm">Current Balance</p>
               <div class="overview__transactions">
                 <div class="overview__transactions-info mg-sm">
                   <p>Transactions</p>
@@ -657,7 +685,7 @@
         </div> -->
       </div>
 
-      <div class="loading-page hide">
+      <div class="loading-page">
         <div class="loading-page__spinner mg-lm">
           <span style="--i: 1"></span>
           <span style="--i: 2"></span>
