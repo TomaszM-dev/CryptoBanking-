@@ -35,6 +35,8 @@ export const chartDisplay = function (currentAccount) {
 
     chart.data.labels.push(dateReady);
     chart.data.datasets[0].data.push(t.amount);
-    console.log(chart.data.datasets[0].data);
+    chart.update();
   });
+  console.log(chart.data.datasets[0].data);
+  console.log(chart.data.labels);
 };

@@ -6,7 +6,7 @@
   overflow-y: hidden;
 
   &__headline {
-    margin-top: 4rem;
+    margin-top: 2rem;
     text-align: center;
 
     p {
@@ -47,5 +47,10 @@
     &-header {
       font-weight: 300;
     }
+  }
+
+  &__button {
+    width: 30%;
+    margin: 0 auto;
   }
 }

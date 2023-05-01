@@ -196,7 +196,7 @@
       </div>
     </div>
     <div id="overlay" class="overlay hidden"></div>
-    <section class="section-mainPage hide">
+    <section class="section-mainPage">
       <!-- <div class="bg-video">
         <video class="bg-video__content" autoplay muted loop>
           <source src="img/bg-video.mp4" type="video/mp4" />
@@ -210,28 +210,28 @@
           <h3 class="main__title">Crypto Banking</h3>
           <ul class="main__list">
             <li class="main__item mg-mm">
-              <a href="#" class="">
+              <a href="overview" class="main__link main__link-overview">
                 <i class="fa-solid fa-folder-open main__icon"></i>Overview
               </a>
             </li>
             <li class="main__item mg-mm">
-              <a href="">
+              <a href="profile" class="main__link">
                 <i class="fa-user fa-solid fa-1x main__icon"></i>Profile
               </a>
             </li>
             <li class="main__item mg-mm">
-              <a href="">
+              <a href="check-pairs" class="main__link">
                 <i class="fa-cc-visa fa-brands fa-1x main__icon"></i>Check Pairs
               </a>
             </li>
             <li class="main__item mg-mm">
-              <a href="" class="active">
+              <a href="transactions" class="main__link">
                 <i class="fa-solid fa-square-poll-vertical main__icon"></i>
                 Transactions
               </a>
             </li>
             <li class="main__item">
-              <a href="">
+              <a href="spin-win" class="main__link">
                 <i class="fa-solid fa-circle-question main__icon"></i> Spin &
                 Win
               </a>
@@ -246,15 +246,31 @@
         </div>
 
         <div class="main__center">
-          <div class="transactions__header mg-sm">
-            <div class="transactions__headline">Welcome (name)</div>
+          <div
+            id="transactions"
+            class="main-section transactions__header mg-sm hide"
+          >
+            <div class="transactions__headline">
+              <h1
+                data-text="WELCOME"
+                class="section-starter__headline transactions__headline-1"
+              >
+                WELCOME
+              </h1>
+              <h1
+                data-text="TOMAS"
+                class="section-starter__headline transactions__headline-2"
+              >
+                TOMAS
+              </h1>
+            </div>
             <img
               src="/img/cryptobanking loog.png"
               class="overview__top-logo mg-sm"
               alt=""
             />
           </div>
-          <div class="transactions">
+          <div id="transactions" class="main-section transactions hide">
             <div id="" class="transactions__overlay hide"></div>
             <div class="transactions__left">
               <div class="transactions__operations">
@@ -262,17 +278,19 @@
                   class="transactions__operation transaction__operation-transfer"
                 >
                   <p class="transactions__operation-title">Transfer Money</p>
-                  <div class="transactions__popup">
-                    <div class="transactions__popup-wrong close">
-                      <button class="transactions__popup-close">X</button>
-                      <h3 class="transactions__popup-headline mg-sm">
-                        Wrong pass
-                      </h3>
-                      <p class="transactions__popup-info">
-                        try again using different credentials or register
-                        yourself
-                      </p>
-                    </div>
+                  <div class="transactions__popupContainer">
+                    <!-- <div class="transactions__popup">
+                      <div class="transactions__popup-wrong close">
+                        <button class="transactions__popup-close">X</button>
+                        <h3 class="transactions__popup-headline mg-sm">
+                          Wrong pass
+                        </h3>
+                        <p class="transactions__popup-info">
+                          try again using different credentials or register
+                          yourself
+                        </p>
+                      </div>
+                    </div> -->
                   </div>
 
                   <form class="transactions__form transactions__form-transfer">
@@ -285,7 +303,7 @@
                       class="transactions__input transactions__input-amount"
                     />
                     <input
-                      type="text"
+                      type="number"
                       class="transactions__input transactions__input-cvv"
                     />
                     <button
@@ -357,14 +375,14 @@
               </div>
             </div>
             <div class="transactions__right">
-              <p class="overview__balance">3,500$</p>
+              <p class="transactions__balance">3,500$</p>
               <p class="mg-mm">Current Balance</p>
               <div class="overview__transactions">
                 <div class="overview__transactions-info mg-sm">
                   <p>Transactions</p>
                   <span>&cudarrr;</span>
                 </div>
-                <div class="overview__transactionContainer">
+                <!-- <div class="overview__transactionContainer">
                   <div class="overview__transaction">
                     <div class="overview__transaction-icon">
                       <i class="fa-brands fa-spotify"></i>
@@ -376,11 +394,11 @@
                     <div class="overview__transaction-date">02.03.2022</div>
                     <div class="overview__transaction-price">45$</div>
                   </div>
-                </div>
+                </div> -->
               </div>
             </div>
           </div>
-          <div class="spin-win hide">
+          <div id="spin-win" class="main-section spin-win hide">
             <h2 class="spin-win__header">
               Play the game but be carefull, gambling and stock markets are
               inpredictable!
@@ -389,7 +407,7 @@
               <div class="spin-win__left">
                 <div class="spin-win__scores mg-mm">
                   <div>
-                    <p class="overview__balance"></p>
+                    <p class="spin-win__balance">3500$</p>
                     <p>Current Balance</p>
                   </div>
                   <div>
@@ -441,8 +459,20 @@
             </div>
           </div>
 
-          <div class="check-pairs hide">
-            <h3 class="check-pairs__headline mg-mm">currency conversion</h3>
+          <div id="check-pairs" class="main-section check-pairs hide">
+            <h1
+              data-text="CURRENCY"
+              class="section-starter__headline check-pairs__headline check-pairs__headline-1"
+            >
+              CONVERSION
+            </h1>
+            <h1
+              data-text="CONVERSION"
+              class="section-starter__headline check-pairs__headline check-pairs__headline-2"
+            >
+              CONVERSION
+            </h1>
+
             <form action="#" class="check-pairs__form">
               <div class="check-pairs__amount mg-sm">
                 <p>Enter Amount</p>
@@ -480,10 +510,10 @@
             </form>
 
             <div class="check-pairs__chartContainer">
-              <canvas id="check-pairs__chart" width="600" height="300"></canvas>
+              <canvas id="check-pairs__chart" width="580" height="300"></canvas>
             </div>
           </div>
-          <div class="profile hide">
+          <div id="profile" class="main-section profile hide">
             <div class="profile__headline mg-mm">
               <h1
                 data-text="PERSONALINFORMATION"
@@ -535,118 +565,117 @@
               <h4 class="profile__infoBox-header">Valid till: 10/27</h4>
               <h4 class="profile__infoBox-header">CCV: 233</h4>
             </div>
-            <button class="btn btn--logout">Change data</button>
+            <button class="profile__button btn btn--logout">Change data</button>
           </div>
 
-          <div class="overview hide">
-            <div class="overview__cards mg-hm">
-              <div class="overview__info mg-sm">
-                <h3 class="overview__info-headline headline-center">
-                  My Cards
-                </h3>
-                <span class="overview__info-add">Add</span>
-                <button class="btn btn--overview">+</button>
-              </div>
-              <div class="overview__card card">
-                <div class="card__inner">
-                  <div class="card__inner-front">
-                    <img
-                      src="img/card/map.png"
-                      alt=""
-                      class="card__inner-mapImg"
-                    />
-                    <div class="card__inner-row mg-mm">
+          <div id="overview" class="main-section overview">
+            <div class="overview__left">
+              <div class="overview__cards mg-mm">
+                <div class="overview__info mg-sm">
+                  <h3 class="overview__info-headline headline-center">
+                    My Cards
+                  </h3>
+                  <span class="overview__info-add">Add</span>
+                  <button class="btn btn--overview">+</button>
+                </div>
+                <div class="overview__card card">
+                  <div class="card__inner">
+                    <div class="card__inner-front">
                       <img
-                        src="img/card/chip.png"
-                        class="card__inner-chip"
+                        src="img/card/map.png"
                         alt=""
+                        class="card__inner-mapImg"
                       />
+                      <div class="card__inner-row mg-mm">
+                        <img
+                          src="img/card/chip.png"
+                          class="card__inner-chip"
+                          alt=""
+                        />
+                        <img
+                          src="img/card/visa.png"
+                          class="card__inner-visa"
+                          alt=""
+                        />
+                      </div>
+                      <div class="card__inner-row mg-sm">
+                        <p class="card__inner-accountNumber"></p>
+                      </div>
+                      <div class="card__inner-row">
+                        <p class="card__inner-info">CARD HOLDER</p>
+                        <p class="card__inner-info">VALID TILL</p>
+                      </div>
+                      <div class="card__inner-row">
+                        <p class="card__inner-holder"></p>
+                        <p class="card__inner-validTo"></p>
+                      </div>
+                    </div>
+                    <div class="card__inner-back">
                       <img
-                        src="img/card/visa.png"
-                        class="card__inner-visa"
+                        src="img/card/map.png"
                         alt=""
+                        class="card__inner-mapImg"
                       />
-                    </div>
-                    <div class="card__inner-row mg-sm">
-                      <p class="card__inner-accountNumber"></p>
-                    </div>
-                    <div class="card__inner-row">
-                      <p class="card__inner-info">CARD HOLDER</p>
-                      <p class="card__inner-info">VALID TILL</p>
-                    </div>
-                    <div class="card__inner-row">
-                      <p class="card__inner-holder"></p>
-                      <p class="card__inner-validTo"></p>
-                    </div>
-                  </div>
-                  <div class="card__inner-back">
-                    <img
-                      src="img/card/map.png"
-                      alt=""
-                      class="card__inner-mapImg"
-                    />
-                    <div class="card__inner-bar"></div>
-                    <div class="card__inner-row mg-sm">
-                      <img
-                        src="img/card//pattern.png"
-                        class="card__inner-pattern"
-                        alt=""
-                      />
-                      <p class="card__inner-cvv"></p>
-                    </div>
-                    <div class="card__inner-row">
-                      <p class="card__inner-about">
-                        This is your virtual card, you can use it to transfer
-                        money and exchanging currencies, for more check out your
-                        wallet
-                      </p>
+                      <div class="card__inner-bar"></div>
+                      <div class="card__inner-row mg-sm">
+                        <img
+                          src="img/card//pattern.png"
+                          class="card__inner-pattern"
+                          alt=""
+                        />
+                        <p class="card__inner-cvv"></p>
+                      </div>
+                      <div class="card__inner-row">
+                        <p class="card__inner-about">
+                          This is your virtual card, you can use it to transfer
+                          money and exchanging currencies, for more check out
+                          your wallet
+                        </p>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <div class="overview__spendings mg-sm">
-              <h3 class="overview__spendings-headline headline-center mg-mm">
-                My Spendings
-              </h3>
-              <div class="overview__chart">
-                <canvas id="chart"></canvas>
+              <div class="overview__spendings mg-sm">
+                <h3 class="overview__spendings-headline headline-center mg-mm">
+                  My Spendings
+                </h3>
+                <div class="overview__chart">
+                  <canvas id="chart"></canvas>
+                </div>
               </div>
             </div>
-          </div>
-        </div>
-
-        <div class="main__right">
-          <div class="overview hide">
-            <div class="pulse">
-              <i class="fa-solid fa-bell overview__top-icon fa-2x"></i>
-            </div>
-            <div class="overview__top mg-mm">
-              <img
-                src="/img/cryptobanking loog.png"
-                class="overview__top-logo mg-sm"
-                alt=""
-              />
-              <p class="overview__balance">3,500$</p>
-              <p>Current Balance</p>
-            </div>
-            <div class="overview__transactions">
-              <div class="overview__transactions-info mg-sm">
-                <p>Transactions</p>
-                <span>&cudarrr;</span>
+            <div class="overview__right">
+              <div class="pulse">
+                <i class="fa-solid fa-bell overview__top-icon fa-2x"></i>
               </div>
-              <div class="overview__transactionContainer">
-                <!-- <div class="overview__transaction">
-                  <div class="overview__transaction-icon">
-                    <i class="fa-brands fa-spotify"></i>
+              <div class="overview__top mg-mm">
+                <img
+                  src="/img/cryptobanking loog.png"
+                  class="overview__top-logo mg-sm"
+                  alt=""
+                />
+                <p class="overview__balance">3,500$</p>
+                <p>Current Balance</p>
+              </div>
+              <div class="overview__transactions">
+                <div class="overview__transactions-info mg-sm">
+                  <p>Transactions</p>
+                  <span>&cudarrr;</span>
+                </div>
+                <div class="overview__transactionContainer">
+                  <div class="overview__transaction">
+                    <div class="overview__transaction-icon">
+                      <i class="fa-brands fa-spotify"></i>
+                    </div>
+                    <div class="overview__transaction-content">
+                      <p class="overview__transaction-name">Spotify</p>
+                      <p class="overview__transaction-type">Music</p>
+                    </div>
+                    <div class="overview__transaction-date">02.03.2022</div>
+                    <div class="overview__transaction-price">45$</div>
                   </div>
-                  <div class="overview__transaction-content">
-                    <p class="overview__transaction-name">Spotify</p>
-                    <p class="overview__transaction-type">Music</p>
-                  </div>
-                  <div class="overview__transaction-date">02.03.2022</div>
-                  <div class="overview__transaction-price">45$</div>
-                </div> -->
+                </div>
               </div>
             </div>
           </div>
@@ -685,7 +714,7 @@
         </div> -->
       </div>
 
-      <div class="loading-page">
+      <div class="loading-page hide">
         <div class="loading-page__spinner mg-lm">
           <span style="--i: 1"></span>
           <span style="--i: 2"></span>

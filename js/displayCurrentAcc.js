@@ -39,7 +39,9 @@ export const displayTransactions = function (currentAccount) {
       <div class="overview__transaction-date">${dateCreator(t.date)}</div>
       <div class="overview__transaction-price">${t.amount}$</div>
     </div>
+   
     `;
+
     transactionsContainer.insertAdjacentHTML("afterbegin", html);
   });
 };

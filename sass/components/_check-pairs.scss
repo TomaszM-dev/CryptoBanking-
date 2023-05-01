@@ -3,13 +3,34 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-top: 7rem;
+  margin-top: 3rem;
+  position: relative;
 
   &__headline {
-    font-size: 3rem;
+    position: absolute;
+    font-size: 2rem !important;
     text-transform: uppercase;
     font-weight: 300;
     color: $color-secondary-light-1;
+
+    &::after {
+      width: 0% !important;
+    }
+
+    &-1 {
+      top: 45% !important;
+      left: -10rem;
+      font-size: 4rem !important;
+      letter-spacing: 1.1rem !important;
+      transform: rotate(90deg);
+    }
+    &-2 {
+      font-size: 4rem !important;
+      letter-spacing: 1.3rem !important;
+      top: 45% !important;
+      right: -10rem;
+      transform: rotate(-90deg);
+    }
   }
 
   &__form {
@@ -76,7 +97,7 @@
   }
 
   &__chartContainer {
-    margin-top: 10rem;
+    margin-top: 2rem;
 
     canvas {
     }

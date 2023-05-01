@@ -113,7 +113,7 @@ userTomson.cardNumberLayout();
 const userMark = new User(
   "Mark Smith",
   "mark123",
-  123,
+  "123",
   [2001, 12, 8],
   "2021-11-03T03:13:34Z",
   [

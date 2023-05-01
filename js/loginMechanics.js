@@ -3,6 +3,7 @@ import * as switchPages from "./switchPages.js";
 import * as acc from "./accounts.js";
 import * as currentUser from "./displayCurrentAcc.js";
 import * as chart from "./chart.js";
+import * as transactions from "./transactions.js";
 
 const pageLoadingHeadline = document.querySelector(".loading-page__headline");
 const signInButton = document.querySelector(".btn__login");
@@ -29,6 +30,7 @@ export const loginMechanics = function () {
     if (currentAccount.password === passwordInput.value) {
       currentUser.displayTransactions(currentAccount);
       currentUser.displayCardDetails(currentAccount);
+      transactions.transactions(currentAccount);
       switchPages.switchToMainPage();
       chart.chartDisplay(currentAccount);
 

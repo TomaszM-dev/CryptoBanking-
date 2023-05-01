@@ -360,6 +360,9 @@ body {
   opacity: 0;
   transform: translateY(5rem); }
 
+.main-section {
+  animation: moveInBottom 1s; }
+
 .btn, .btn:link, .btn:visited {
   text-transform: uppercase;
   text-decoration: none;
@@ -839,8 +842,8 @@ body {
     border-radius: 20px;
     position: absolute;
     z-index: 1;
-    top: 2.8rem;
-    right: 2.6rem;
+    top: 1.8rem;
+    right: 10.6rem;
     height: 9px;
     width: 9px;
     transform: scale(1);
@@ -925,11 +928,20 @@ body {
   margin-right: 2rem; }
 
 .overview {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  justify-content: space-between;
-  align-items: center; }
+  display: flex; }
+  .overview__left {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    flex: 0 0 55%;
+    justify-content: space-between;
+    align-items: center; }
+  .overview__right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 45%; }
   .overview__pairs {
     height: 10rem;
     width: 100%; }
@@ -964,9 +976,9 @@ body {
       width: 20rem; }
     .overview__top-icon {
       position: absolute;
-      top: 3rem;
+      top: 2rem;
       z-index: -1;
-      right: 3rem; }
+      right: 11rem; }
   .overview__balance {
     font-size: 3rem; }
   .overview__transactions {
@@ -982,7 +994,8 @@ body {
   .overview__transactionContainer {
     display: flex;
     flex-direction: column;
-    overflow: scroll; }
+    overflow: scroll;
+    width: 100%; }
   .overview__transaction {
     border: 1px solid #333;
     padding: 1rem 1.5rem;
@@ -1013,7 +1026,7 @@ body {
       margin-right: 2rem; }
 
 .card {
-  height: 23rem;
+  height: 21rem;
   width: 100%;
   margin: 0 auto;
   justify-self: center;
@@ -1066,7 +1079,7 @@ body {
     .card__inner-accountNumber {
       flex: 1;
       text-align: center;
-      font-size: 2.5rem; }
+      font-size: 2.1rem; }
       .card__inner-accountNumber span {
         margin: 0 1.2rem; }
     .card__inner-info {
@@ -1105,7 +1118,7 @@ body {
   background-color: rgba(0, 0, 0, 0.625);
   color: white;
   width: 85%;
-  height: 13rem;
+  height: 10rem;
   margin: 0 auto;
   display: flex;
   letter-spacing: 0.2rem;
@@ -1136,7 +1149,7 @@ body {
   position: relative;
   overflow-y: hidden; }
   .profile__headline {
-    margin-top: 4rem;
+    margin-top: 2rem;
     text-align: center; }
     .profile__headline p {
       width: 60%;
@@ -1161,18 +1174,37 @@ body {
       text-align: center; }
     .profile__infoBox-header {
       font-weight: 300; }
+  .profile__button {
+    width: 30%;
+    margin: 0 auto; }
 
 .check-pairs {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-top: 7rem; }
+  margin-top: 3rem;
+  position: relative; }
   .check-pairs__headline {
-    font-size: 3rem;
+    position: absolute;
+    font-size: 2rem !important;
     text-transform: uppercase;
     font-weight: 300;
     color: #01a001; }
+    .check-pairs__headline::after {
+      width: 0% !important; }
+    .check-pairs__headline-1 {
+      top: 45% !important;
+      left: -10rem;
+      font-size: 4rem !important;
+      letter-spacing: 1.1rem !important;
+      transform: rotate(90deg); }
+    .check-pairs__headline-2 {
+      font-size: 4rem !important;
+      letter-spacing: 1.3rem !important;
+      top: 45% !important;
+      right: -10rem;
+      transform: rotate(-90deg); }
   .check-pairs__form {
     padding: 3rem;
     width: 50%;
@@ -1215,7 +1247,7 @@ body {
     width: auto;
     padding: 0.5rem 1rem; }
   .check-pairs__chartContainer {
-    margin-top: 10rem; }
+    margin-top: 2rem; }
 
 .spin-win__content {
   display: flex;
@@ -1324,6 +1356,9 @@ body {
   align-items: center;
   justify-content: center; }
 
+.spin-win__balance {
+  font-size: 3rem; }
+
 #spin-win__wheel {
   width: inherit;
   height: inherit;
@@ -1347,11 +1382,25 @@ body {
     display: flex;
     width: 100%;
     justify-content: space-between;
-    align-items: center; }
+    align-items: center;
+    margin-bottom: 3rem; }
     .transactions__header img {
       margin: 1rem; }
   .transactions__headline {
-    font-size: 3rem; }
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 7rem; }
+    .transactions__headline-1 {
+      position: relative !important;
+      font-size: 4rem !important;
+      margin-right: 5rem; }
+      .transactions__headline-1::after {
+        width: 0 !important; }
+    .transactions__headline-2 {
+      position: relative !important;
+      font-size: 4rem !important; }
+      .transactions__headline-2::after {
+        width: 0 !important; }
   .transactions__operations {
     display: flex;
     flex-direction: column; }
@@ -1457,13 +1506,15 @@ body {
       top: 0;
       left: 0;
       background-color: rgba(185, 22, 0, 0.2); }
+  .transactions__balance {
+    font-size: 2.5rem; }
 
 .main {
   border-radius: 2rem;
   background-color: rgba(0, 0, 0, 0.625);
   color: white;
   width: 85%;
-  height: 70rem;
+  height: 78rem;
   margin: auto;
   display: flex;
   letter-spacing: 0.2rem;

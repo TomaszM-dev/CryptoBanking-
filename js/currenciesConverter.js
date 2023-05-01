@@ -126,9 +126,11 @@ const data = {
   labels: weekDays,
   datasets: [
     {
-      label: "# of Votes",
+      label: "# of Amount",
       data: await ratePrices(),
       borderWidth: 1,
+      borderColor: "#01a001",
+      backgroundColor: "#01a001",
     },
   ],
 };

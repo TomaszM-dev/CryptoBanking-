@@ -23,13 +23,33 @@
     width: 100%;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 3rem;
 
     img {
       margin: 1rem;
     }
   }
   &__headline {
-    font-size: 3rem;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 7rem;
+
+    &-1 {
+      position: relative !important;
+      font-size: 4rem !important;
+      margin-right: 5rem;
+
+      &::after {
+        width: 0 !important;
+      }
+    }
+    &-2 {
+      &::after {
+        width: 0 !important;
+      }
+      position: relative !important;
+      font-size: 4rem !important;
+    }
   }
   &__operations {
     display: flex;
@@ -168,5 +188,9 @@
       left: 0;
       background-color: rgba(rgb(185, 22, 0), 0.2);
     }
+  }
+
+  &__balance {
+    font-size: 2.5rem;
   }
 }
