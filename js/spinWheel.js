@@ -12,7 +12,7 @@ const spinButton = document.querySelector(".spin-win__button");
 const spinFinalValue = document.querySelector(".spin-win__finalValue");
 const spinWheel = document.getElementById("spin-win__wheel");
 const gameCurBalance = document.querySelector(".spin-win__score");
-const accountBalance = document.querySelector(".overview__balance");
+const accountBalance = document.querySelector(".spin-win__balance");
 const depositButton = document.querySelector(".spin-win__deposit");
 
 const rotationValues = [
@@ -139,7 +139,6 @@ let resultValue = 101;
 let curAccBalance = 8000;
 let curGameBalance = 0;
 
-console.log(accountBalance);
 gameCurBalance.textContent = curGameBalance;
 accountBalance.textContent = curAccBalance;
 

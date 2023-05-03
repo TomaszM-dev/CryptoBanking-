@@ -4,6 +4,10 @@ import * as chart from "./chart.js";
 const transactionsContainer = document.querySelector(
   ".overview__transactionContainer"
 );
+const transactionsContainer2 = document.querySelector(
+  ".transactions__transactionContainer"
+);
+
 const accountNumber = document.querySelector(".card__inner-accountNumber");
 const accountHolder = document.querySelector(".card__inner-holder");
 const accountValid = document.querySelector(".card__inner-validTo");
@@ -23,7 +27,7 @@ export const dateCreator = function (date) {
 // display transactions
 export const currentTransactionsAmount = [200, 1200];
 
-export const displayTransactions = function (currentAccount) {
+export const displayTransactionsOverview = function (currentAccount) {
   transactionsContainer.innerHTML = "";
 
   currentAccount.transactions.forEach((t) => {
@@ -43,6 +47,28 @@ export const displayTransactions = function (currentAccount) {
     `;
 
     transactionsContainer.insertAdjacentHTML("afterbegin", html);
+  });
+};
+export const displayTransactionsTransaction = function (currentAccount) {
+  transactionsContainer2.innerHTML = "";
+
+  currentAccount.transactions.forEach((t) => {
+    const html = `
+    <div class="overview__transaction">
+      <div class="overview__transaction-icon">
+      <i class="fa-brands fa-spotify"></i>
+      </div>
+      <div class="overview__transaction-content">
+        <p class="overview__transaction-name">${t.company}</p>
+        <p class="overview__transaction-type">${t.category}</p>
+      </div>
+      <div class="overview__transaction-date">${dateCreator(t.date)}</div>
+      <div class="overview__transaction-price">${t.amount}$</div>
+    </div>
+   
+    `;
+
+    transactionsContainer2.insertAdjacentHTML("afterbegin", html);
   });
 };
 

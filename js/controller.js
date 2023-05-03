@@ -5,6 +5,7 @@ import * as curPanel from "./currenciesPanel.js";
 import * as curConverter from "./currenciesConverter.js";
 import * as spinWin from "./spinWheel.js";
 import * as transactions from "./transactions.js";
+import * as update from "./updateUI.js";
 
 loginMechanics();
 registerMechanics();

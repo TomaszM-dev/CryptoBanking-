@@ -1,24 +1,33 @@
 import * as acc from "./accounts.js";
+import { loadCurrencies } from "./currenciesPanel.js";
+import * as update from "./updateUI.js";
+import * as switchPage from "./switchPages.js";
 
 // query selectors
+const transactionsOverlay = document.querySelector(".transactions__overlay");
+const pageLoadingHeadline = document.querySelector(".loading-page__headline");
+
 // transfer
 const transferBtn = document.querySelector(".transactions__button-transfer");
 const transferToInput = document.querySelector(".transactions__input-to");
 const transferToAmount = document.querySelector(".transactions__input-amount");
 const transferToCvv = document.querySelector(".transactions__input-cvv");
-const transactionsPopupContainer = document.querySelector(
-  ".transactions__popupContainer"
+const transferPopupContainer = document.querySelector(
+  ".transfer__popupContainer"
 );
-const transactionsOverlay = document.querySelector(".transactions__overlay");
-const transactionsBalance = document.querySelector(".transactions__balance");
+// amount
+const loanButton = document.querySelector(".transactions__button-loan");
+const loanAmount = document.querySelector(".transactions__input-loan");
+const loanPopupContainer = document.querySelector(".loan__popupContainer");
+
+// delete acc
+const deleteUser = document.querySelector(".transactions__input-user");
+const deletePass = document.querySelector(".transactions__input-password");
+const deletePopupContainer = document.querySelector(".delete__popupContainer");
+const deleteButton = document.querySelector(".transactions__button-close");
 
 export const transactions = function (currentAccount) {
-  transactionsBalance.textContent = `${currentAccount.balance}$`;
-  console.log(transactionsBalance.textContent);
-
-  console.log(currentAccount);
-
-  const openPopup = function (headline, info) {
+  const openPopupTransfer = function (headline, info) {
     const markup = `
   <div class="transactions__popup open">
   <div class="transactions__popup-wrong open ">
@@ -34,9 +43,46 @@ export const transactions = function (currentAccount) {
   `;
     transactionsOverlay.classList.remove("hide");
 
-    transactionsPopupContainer.insertAdjacentHTML("afterbegin", markup);
+    transferPopupContainer.insertAdjacentHTML("afterbegin", markup);
   };
   let transferUser;
+
+  const openPopupLoan = function (headline, info) {
+    const markup = `
+    <div class="transactions__popup open">
+    <div class="transactions__popup-wrong open ">
+    <button class="transactions__popup-close">X</button>
+    <h3 class="transactions__popup-headline mg-sm">
+    ${headline}
+    </h3>
+    <p class="transactions__popup-info">
+    ${info}
+    </p>
+    </div>
+    </div>
+    `;
+    transactionsOverlay.classList.remove("hide");
+
+    loanPopupContainer.insertAdjacentHTML("afterbegin", markup);
+  };
+  const openPopupDelete = function (headline, info) {
+    const markup = `
+    <div class="transactions__popup open">
+    <div class="transactions__popup-wrong open ">
+    <button class="transactions__popup-close">X</button>
+    <h3 class="transactions__popup-headline mg-sm">
+    ${headline}
+    </h3>
+    <p class="transactions__popup-info">
+    ${info}
+    </p>
+    </div>
+    </div>
+    `;
+    transactionsOverlay.classList.remove("hide");
+
+    deletePopupContainer.insertAdjacentHTML("afterbegin", markup);
+  };
 
   const transferTo = function (e) {
     e.preventDefault();
@@ -49,8 +95,8 @@ export const transactions = function (currentAccount) {
     ) {
       const headline = "Try again";
       const info = "All imputs must be filled";
-      transactionsOverlay.classList.remove("hidden");
-      openPopup(headline, info);
+      transactionsOverlay.classList.remove("hide");
+      openPopupTransfer(headline, info);
     } else {
     }
 
@@ -62,17 +108,56 @@ export const transactions = function (currentAccount) {
     if (transferUser === undefined) {
       const headline = "Wrong Username";
       const info = "There is no this username in data base";
-      transactionsOverlay.classList.remove("hidden");
-      openPopup(headline, info);
+      transactionsOverlay.classList.remove("hide");
+      openPopupTransfer(headline, info);
+      return;
     }
 
     // amount too high
     if (currentAccount.balance < transferToAmount.value) {
       const headline = "Invalid Amount";
       const info = "You dont have enougth money on bank account";
-      transactionsOverlay.classList.remove("hidden");
-      openPopup(headline, info);
+      transactionsOverlay.classList.remove("hide");
+      openPopupTransfer(headline, info);
+      return;
     }
+
+    // wrong cvv
+    if (Number(currentAccount.ccv) !== Number(transferToCvv.value)) {
+      const headline = "Invalid Cvv";
+      const info = "Check your card cvv and try again";
+      transactionsOverlay.classList.remove("hide");
+      openPopupTransfer(headline, info);
+
+      return;
+    }
+
+    // transfer succesfull
+
+    let newDepositTransaction;
+    let newWithdrawalTransaction;
+
+    newDepositTransaction = {
+      type: "deposit",
+      amount: +transferToAmount.value,
+      date: new Date().toISOString(),
+      category: "transfer",
+      company: "cryptobank",
+    };
+
+    newWithdrawalTransaction = {
+      type: "withdrawal",
+      amount: -transferToAmount.value,
+      date: new Date().toISOString(),
+      category: "transfer",
+      company: "cryptobank",
+    };
+
+    currentAccount.transactions.push(newWithdrawalTransaction);
+    transferUser.transactions.push(newDepositTransaction);
+
+    update.updateUI(currentAccount);
+    console.log(currentAccount);
 
     // clear input fields
     transferToInput.value = transferToCvv.value = transferToAmount.value = "";
@@ -85,24 +170,114 @@ export const transactions = function (currentAccount) {
     const target = e.target.closest(".transactions__popup-close");
 
     if (target) {
-      transactionsPopupContainer.innerHTML = "";
-      transactionsOverlay.classList.add("hidden");
+      transferPopupContainer.innerHTML = "";
+      deletePopupContainer.innerHTML = "";
+      loanPopupContainer.innerHTML = "";
+      transactionsOverlay.classList.add("hide");
     }
   });
 
   // closing popup on background
 
   transactionsOverlay.addEventListener("click", function (e) {
-    transactionsPopupContainer.innerHTML = "";
-    transactionsOverlay.classList.add("hidden");
+    transferPopupContainer.innerHTML = "";
+    loanPopupContainer.innerHTML = "";
+    deletePopupContainer.innerHTML = "";
+
+    transactionsOverlay.classList.add("hide");
   });
 
   // closing popup on keystroke
 
   document.addEventListener("keydown", function (e) {
     if (e.key === "Escape") {
-      transactionsPopupContainer.innerHTML = "";
-      transactionsOverlay.classList.add("hidden");
+      transferPopupContainer.innerHTML = "";
+      loanPopupContainer.innerHTML = "";
+      deletePopupContainer.innerHTML = "";
+      transactionsOverlay.classList.add("hide");
     }
   });
+
+  // loan function
+  const loan = function (e) {
+    e.preventDefault();
+
+    const loanA = Number(loanAmount.value);
+
+    if (loanAmount.value === "" || currentAccount.balance * 0.8 < loanA) {
+      const headline = "Invalid Amount ";
+      const info = "Please try again";
+      transactionsOverlay.classList.remove("hide");
+      openPopupLoan(headline, info);
+    }
+
+    let loanTransaction;
+
+    if (loanA > 0 && currentAccount.balance * 0.8 > loanA) {
+      loanTransaction = {
+        type: "deposit",
+        amount: loanA,
+        date: new Date().toISOString(),
+        category: "loan",
+        company: "cryptobank",
+      };
+      currentAccount.transactions.push(loanTransaction);
+      update.updateUI(currentAccount);
+      update.updateBalance(currentAccount);
+
+      console.log(currentAccount.balance);
+    }
+  };
+
+  loanButton.addEventListener("click", loan);
+
+  const deleteUserAcc = function (e) {
+    e.preventDefault();
+
+    const user = deleteUser.value;
+    const password = deletePass.value;
+
+    if (user === "" || password === "") {
+      const headline = "Try again";
+      const info = "All inputs must be filled";
+      transactionsOverlay.classList.remove("hide");
+      openPopupDelete(headline, info);
+    }
+
+    if (
+      user === currentAccount.userName &&
+      password === currentAccount.password
+    ) {
+      const index = acc.accounts.findIndex((acc) => acc.userName === user);
+      acc.accounts.splice(index, 1);
+      switchPage.switchToStarterPage();
+      pageLoadingHeadline.textContent = "Deleting Account...";
+    } else {
+      const headline = "Error";
+      const info = "Wrong credentials. Please try again";
+      transactionsOverlay.classList.remove("hide");
+      openPopupDelete(headline, info);
+    }
+  };
+
+  deleteButton.addEventListener("click", deleteUserAcc);
 };
+
+let currentAccount;
+
+currentAccount = acc.accounts.find((acc) => acc.userName === "tom123");
+
+transactions(currentAccount);
+
+// const calcBalance = function (currentAccount) {
+//   let amounts = [];
+
+//   currentAccount.transactions.forEach((t) => amounts.push(t.amount));
+
+//   currentAccount.balance = amounts.reduce(function (acc, cur) {
+//     return acc + cur;
+//   }, 0);
+
+// };
+
+console.log(currentAccount.balance);

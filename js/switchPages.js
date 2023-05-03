@@ -10,7 +10,9 @@ const closePopupButton = document.querySelector(".wrong-password__close");
 const overlay = document.querySelector(".overlay");
 const mainPage = document.querySelector(".section-mainPage");
 const starterPage = document.querySelector(".section-starter");
-
+const logOutButton = document.querySelector(".btn--logout");
+const currencyPanel = document.querySelector(".currencies-panel");
+const pageLoadingHeadline = document.querySelector(".loading-page__headline");
 // init function
 const init = function () {
   btnLogin.textContent = "Login";
@@ -24,7 +26,7 @@ const init = function () {
 // open popup function
 export const openPopup = function () {
   wrongCredentialsPopup.classList.add("open");
-  overlay.classList.remove("hidden");
+  overlay.classList.remove("hide");
 };
 
 // switch to main page
@@ -39,6 +41,38 @@ export const switchToMainPage = function () {
     { opacity: 1, display: "inherit" },
     { opacity: 0, duration: 1.3, delay: 5.5, display: "none" }
   );
+
+  setTimeout(() => {
+    currencyPanel.classList.remove("hide");
+  }, 6000);
+
+  gsap.fromTo(
+    ".loading-page__headline",
+    { y: 50, opacity: 0 },
+    {
+      opacity: 1,
+      duration: 2,
+      y: 0,
+    }
+  );
+
+  gsap.fromTo(".main", { opacity: 0 }, { opacity: 0.8, duration: 1, delay: 6 });
+};
+export const switchToStarterPage = function () {
+  overlay.classList.add("hide");
+  currencyPanel.classList.add("hide");
+
+  // loading animation mechanics
+  gsap.fromTo(
+    ".loading-page",
+    { opacity: 1, display: "inherit" },
+    { opacity: 0, duration: 1.3, delay: 5.5, display: "none" }
+  );
+
+  setTimeout(() => {
+    mainPage.classList.add("hide");
+    starterPage.classList.remove("hide");
+  }, 6000);
 
   gsap.fromTo(
     ".loading-page__headline",
@@ -58,7 +92,7 @@ export const switchToMainPage = function () {
 closePopupButton.addEventListener("click", function (e) {
   e.preventDefault();
 
-  overlay.classList.add("hidden");
+  overlay.classList.add("hide");
   wrongCredentialsPopup.classList.remove("open");
 });
 
@@ -66,7 +100,7 @@ closePopupButton.addEventListener("click", function (e) {
 
 overlay.addEventListener("click", function (e) {
   wrongCredentialsPopup.classList.remove("open");
-  overlay.classList.add("hidden");
+  overlay.classList.add("hide");
 });
 
 // closing popup on keystroke
@@ -74,7 +108,7 @@ overlay.addEventListener("click", function (e) {
 document.addEventListener("keydown", function (e) {
   if (e.key === "Escape") {
     wrongCredentialsPopup.classList.remove("open");
-    overlay.classList.add("hidden");
+    overlay.classList.add("hide");
   }
 });
 
@@ -101,4 +135,11 @@ btnContainer.addEventListener("click", function (e) {
     loginContainer.classList.remove("hide");
     registrationContainer.classList.add("hide");
   }
+});
+
+logOutButton.addEventListener("click", function (e) {
+  e.preventDefault();
+
+  pageLoadingHeadline.textContent = "Logging Out...";
+  switchToStarterPage();
 });

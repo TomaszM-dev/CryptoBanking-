@@ -195,8 +195,8 @@
         </p>
       </div>
     </div>
-    <div id="overlay" class="overlay hidden"></div>
-    <section class="section-mainPage">
+    <div id="overlay" class="overlay hide"></div>
+    <section class="section-mainPage hide">
       <!-- <div class="bg-video">
         <video class="bg-video__content" autoplay muted loop>
           <source src="img/bg-video.mp4" type="video/mp4" />
@@ -278,7 +278,7 @@
                   class="transactions__operation transaction__operation-transfer"
                 >
                   <p class="transactions__operation-title">Transfer Money</p>
-                  <div class="transactions__popupContainer">
+                  <div class="transfer__popupContainer">
                     <!-- <div class="transactions__popup">
                       <div class="transactions__popup-wrong close">
                         <button class="transactions__popup-close">X</button>
@@ -303,7 +303,7 @@
                       class="transactions__input transactions__input-amount"
                     />
                     <input
-                      type="number"
+                      type="text"
                       class="transactions__input transactions__input-cvv"
                     />
                     <button
@@ -330,10 +330,11 @@
                   class="transactions__operation transactions__operation-request"
                 >
                   <p class="transactions__operation-title">Request Loan</p>
+                  <div class="loan__popupContainer"></div>
                   <form class="transactions__form transactions__form-loan">
                     <input
                       type="number"
-                      class="transactions__input transactions__input-amount"
+                      class="transactions__input transactions__input-loan"
                     />
                     <button
                       class="transactions__button transactions__button-loan"
@@ -349,17 +350,18 @@
                   class="transactions__operation transaction__operation-close"
                 >
                   <p class="transactions__operation-title">Close Account</p>
+                  <div class="delete__popupContainer"></div>
                   <form class="transactions__form">
                     <input
                       type="text"
-                      class="transactions__input transaction__input-user"
+                      class="transactions__input transactions__input-user"
                     />
                     <input
                       type="password"
-                      class="transactions__input transaction__input-password"
+                      class="transactions__input transactions__input-password"
                     />
                     <button
-                      class="transactions__button transaction__button-close"
+                      class="transactions__button transactions__button-close"
                     >
                       <i class="fa-solid fa-angles-left"></i>
                     </button>
@@ -375,26 +377,14 @@
               </div>
             </div>
             <div class="transactions__right">
-              <p class="transactions__balance">3,500$</p>
+              <p class="transactions__balance">1000</p>
               <p class="mg-mm">Current Balance</p>
               <div class="overview__transactions">
                 <div class="overview__transactions-info mg-sm">
                   <p>Transactions</p>
                   <span>&cudarrr;</span>
                 </div>
-                <!-- <div class="overview__transactionContainer">
-                  <div class="overview__transaction">
-                    <div class="overview__transaction-icon">
-                      <i class="fa-brands fa-spotify"></i>
-                    </div>
-                    <div class="overview__transaction-content">
-                      <p class="overview__transaction-name">Spotify</p>
-                      <p class="overview__transaction-type">Music</p>
-                    </div>
-                    <div class="overview__transaction-date">02.03.2022</div>
-                    <div class="overview__transaction-price">45$</div>
-                  </div>
-                </div> -->
+                <div class="transactions__transactionContainer"></div>
               </div>
             </div>
           </div>
@@ -407,7 +397,7 @@
               <div class="spin-win__left">
                 <div class="spin-win__scores mg-mm">
                   <div>
-                    <p class="spin-win__balance">3500$</p>
+                    <p class="spin-win__balance">1000</p>
                     <p>Current Balance</p>
                   </div>
                   <div>
@@ -655,7 +645,7 @@
                   class="overview__top-logo mg-sm"
                   alt=""
                 />
-                <p class="overview__balance">3,500$</p>
+                <p class="overview__balance">1000</p>
                 <p>Current Balance</p>
               </div>
               <div class="overview__transactions">
@@ -681,7 +671,7 @@
           </div>
         </div>
       </div>
-      <div class="currencies-panel">
+      <div class="currencies-panel hide">
         <!-- <div class="currencies__item">
           <div class="currencies__item-price">123.34</div>
           <div class="currencies__item-change">-0,001</div>
@@ -714,7 +704,7 @@
         </div> -->
       </div>
 
-      <div class="loading-page hide">
+      <div class="loading-page">
         <div class="loading-page__spinner mg-lm">
           <span style="--i: 1"></span>
           <span style="--i: 2"></span>
