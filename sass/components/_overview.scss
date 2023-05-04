@@ -142,5 +142,12 @@
       // color: $color-secondary-light-1;
       margin-right: 2rem;
     }
+
+    &-deposit {
+      color: $color-secondary-light-1;
+    }
+    &-withdrawal {
+      color: red;
+    }
   }
 }

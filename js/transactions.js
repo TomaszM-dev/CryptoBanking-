@@ -141,16 +141,16 @@ export const transactions = function (currentAccount) {
       type: "deposit",
       amount: +transferToAmount.value,
       date: new Date().toISOString(),
-      category: "transfer",
-      company: "cryptobank",
+      category: "Transfer",
+      company: "Cryptobank",
     };
 
     newWithdrawalTransaction = {
       type: "withdrawal",
       amount: -transferToAmount.value,
       date: new Date().toISOString(),
-      category: "transfer",
-      company: "cryptobank",
+      category: "Transfer",
+      company: "Cryptobank",
     };
 
     currentAccount.transactions.push(newWithdrawalTransaction);
@@ -214,16 +214,19 @@ export const transactions = function (currentAccount) {
     let loanTransaction;
 
     if (loanA > 0 && currentAccount.balance * 0.8 > loanA) {
-      loanTransaction = {
-        type: "deposit",
-        amount: loanA,
-        date: new Date().toISOString(),
-        category: "loan",
-        company: "cryptobank",
-      };
-      currentAccount.transactions.push(loanTransaction);
-      update.updateUI(currentAccount);
-      update.updateBalance(currentAccount);
+      setTimeout(() => {
+        loanTransaction = {
+          type: "deposit",
+          amount: loanA,
+          date: new Date().toISOString(),
+          category: "Loan",
+          company: "Cryptobank",
+        };
+
+        currentAccount.transactions.push(loanTransaction);
+        update.updateUI(currentAccount);
+        update.updateBalance(currentAccount);
+      }, 1000);
 
       console.log(currentAccount.balance);
     }
@@ -269,15 +272,4 @@ currentAccount = acc.accounts.find((acc) => acc.userName === "tom123");
 
 transactions(currentAccount);
 
-// const calcBalance = function (currentAccount) {
-//   let amounts = [];
-
-//   currentAccount.transactions.forEach((t) => amounts.push(t.amount));
-
-//   currentAccount.balance = amounts.reduce(function (acc, cur) {
-//     return acc + cur;
-//   }, 0);
-
-// };
-
-console.log(currentAccount.balance);
+console.log(currentAccount);

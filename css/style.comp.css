@@ -1028,6 +1028,10 @@ body {
       font-size: 1.4rem;
       opacity: 0.3;
       margin-right: 2rem; }
+    .overview__transaction-deposit {
+      color: #01a001; }
+    .overview__transaction-withdrawal {
+      color: red; }
 
 .card {
   height: 21rem;
@@ -1142,9 +1146,15 @@ body {
   grid-row-gap: 1rem;
   animation: floatingLeft 30s linear infinite; }
   .currencies__item-pair {
-    grid-column: 1/-1; }
+    grid-column: 1/-1;
+    color: transparent;
+    -webkit-text-stroke: 0.1vh #ffffff; }
   .currencies__item-price {
     width: 10rem; }
+  .currencies__item-positive {
+    color: #01a001; }
+  .currencies__item-negative {
+    color: red; }
 
 .profile {
   display: flex;
@@ -1187,8 +1197,8 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-top: 3rem;
-  position: relative; }
+  position: relative;
+  height: 100%; }
   .check-pairs__headline {
     position: absolute;
     font-size: 2rem !important;
@@ -1211,7 +1221,7 @@ body {
       transform: rotate(-90deg); }
   .check-pairs__form {
     padding: 3rem;
-    width: 50%;
+    width: 61%;
     border-radius: 7px;
     font-size: 1.5rem;
     display: flex;
@@ -1234,15 +1244,16 @@ body {
     font-size: 2rem;
     color: #01a001; }
   .check-pairs__flag {
-    width: 8rem; }
+    width: 6rem; }
   .check-pairs__selectionBox {
     display: flex;
     flex-direction: column; }
   .check-pairs__exchangeRate {
     align-self: center;
     border-bottom: 1px solid #217400;
-    padding: 1rem 2.5rem;
-    border-radius: 2rem; }
+    padding: 1rem 2rem;
+    border-radius: 2rem;
+    margin-bottom: 2rem; }
   .check-pairs__button {
     background-color: #090b0c;
     color: white;
@@ -1251,7 +1262,9 @@ body {
     width: auto;
     padding: 0.5rem 1rem; }
   .check-pairs__chartContainer {
-    margin-top: 2rem; }
+    margin-top: 2rem;
+    padding: 1rem;
+    box-shadow: 0rem 0rem 1.1rem #124000; }
 
 .spin-win__content {
   display: flex;

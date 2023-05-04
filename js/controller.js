@@ -6,6 +6,7 @@ import * as curConverter from "./currenciesConverter.js";
 import * as spinWin from "./spinWheel.js";
 import * as transactions from "./transactions.js";
 import * as update from "./updateUI.js";
+import * as profile from "./profile.js";
 
 loginMechanics();
 registerMechanics();
@@ -33,9 +34,13 @@ const exchangeApi = async function () {
     });
 
     displayCurrencies.forEach((c) => {
+      const type = c.diff >= 0 ? "positive" : "negative";
+
       const markup = `  <div class="currencies__item">
         <div class="currencies__item-price">${c.value.toFixed(4)}</div>
-        <div class="currencies__item-change">${c.diff}</div>
+        <div class="currencies__item-change currencies__item-${type}">${
+        c.diff
+      }</div>
         <div class="currencies__item-pair">USD / ${c.id}</div>
         <div class="currencies__item-flags"></div>
       </div> `;

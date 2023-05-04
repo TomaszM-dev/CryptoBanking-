@@ -32,10 +32,19 @@
 
     &-pair {
       grid-column: 1/-1;
+      color: transparent;
+      -webkit-text-stroke: 0.1vh #ffffff;
     }
 
     &-price {
       width: 10rem;
+    }
+
+    &-positive {
+      color: $color-secondary-light-1;
+    }
+    &-negative {
+      color: red;
     }
 
     &-change {

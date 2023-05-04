@@ -31,6 +31,8 @@ export const displayTransactionsOverview = function (currentAccount) {
   transactionsContainer.innerHTML = "";
 
   currentAccount.transactions.forEach((t) => {
+    const type = t.amount > 0 ? "deposit" : "withdrawal";
+
     const html = `
     <div class="overview__transaction">
       <div class="overview__transaction-icon">
@@ -41,7 +43,9 @@ export const displayTransactionsOverview = function (currentAccount) {
         <p class="overview__transaction-type">${t.category}</p>
       </div>
       <div class="overview__transaction-date">${dateCreator(t.date)}</div>
-      <div class="overview__transaction-price">${t.amount}$</div>
+      <div class="overview__transaction-price overview__transaction-${type}">${
+      t.amount
+    }$</div>
     </div>
    
     `;
@@ -53,6 +57,8 @@ export const displayTransactionsTransaction = function (currentAccount) {
   transactionsContainer2.innerHTML = "";
 
   currentAccount.transactions.forEach((t) => {
+    const type = t.amount > 0 ? "deposit" : "withdrawal";
+
     const html = `
     <div class="overview__transaction">
       <div class="overview__transaction-icon">
@@ -63,7 +69,9 @@ export const displayTransactionsTransaction = function (currentAccount) {
         <p class="overview__transaction-type">${t.category}</p>
       </div>
       <div class="overview__transaction-date">${dateCreator(t.date)}</div>
-      <div class="overview__transaction-price">${t.amount}$</div>
+      <div class="overview__transaction-price overview__transaction-${type}">${
+      t.amount
+    }$</div>
     </div>
    
     `;

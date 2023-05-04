@@ -29,11 +29,7 @@ export const loginMechanics = function () {
     }
 
     if (currentAccount.password === passwordInput.value) {
-      currentUser.displayTransactionsOverview(currentAccount);
-      currentUser.displayTransactionsTransaction(currentAccount);
-      currentUser.displayCardDetails(currentAccount);
-      transactions.transactions(currentAccount);
-      update.updateBalance(currentAccount);
+      update.initSettings(currentAccount);
       switchPages.switchToMainPage();
       chart.chartDisplay(currentAccount);
 

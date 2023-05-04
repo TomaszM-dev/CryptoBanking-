@@ -3,8 +3,9 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-top: 3rem;
+  // margin-top: 0rem;
   position: relative;
+  height: 100%;
 
   &__headline {
     position: absolute;
@@ -35,7 +36,7 @@
 
   &__form {
     padding: 3rem;
-    width: 50%;
+    width: 61%;
     border-radius: 7px;
     font-size: 1.5rem;
     display: flex;
@@ -70,7 +71,7 @@
   }
 
   &__flag {
-    width: 8rem;
+    width: 6rem;
   }
 
   &__selectionBox {
@@ -81,8 +82,9 @@
   &__exchangeRate {
     align-self: center;
     border-bottom: 1px solid #217400;
-    padding: 1rem 2.5rem;
+    padding: 1rem 2rem;
     border-radius: 2rem;
+    margin-bottom: 2rem;
   }
 
   &__button {
@@ -98,8 +100,7 @@
 
   &__chartContainer {
     margin-top: 2rem;
-
-    canvas {
-    }
+    padding: 1rem;
+    box-shadow: 0rem 0rem 1.1rem #124000;
   }
 }
