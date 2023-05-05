@@ -623,7 +623,11 @@ body {
   width: 100%;
   height: 100%;
   background: linear-gradient(#000 15%, #047804);
-  transform: rotateY(calc(90deg * var(--i))) translateZ(2.5rem); }
+  transform: rotateY(calc(90deg * var(--i))) translateZ(2.5rem);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform-style: preserve-3d; }
 
 .cube__item-4 {
   position: absolute;
@@ -632,13 +636,28 @@ body {
   width: 100%;
   height: 100%;
   background: linear-gradient(#000 15%, #047804);
-  transform: rotateY(calc(90deg * var(--i))) translateZ(2.5rem); }
+  transform: rotateY(calc(90deg * var(--i))) translateZ(2.5rem);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform-style: preserve-3d; }
+
+.cube__item-text {
+  top: 30%;
+  left: 12%;
+  position: absolute;
+  -webkit-text-stroke: 0.1rem #28f200;
+  color: transparent;
+  font-size: 1.9rem;
+  transform: translateZ(0.7rem);
+  transform-style: preserve-3d; }
 
 .cube__top-text-1 {
-  fill: white;
-  position: relative;
-  font-size: 5rem;
-  transform: translateZ(10rem) rotateX(270deg);
+  -webkit-text-stroke: 0.1rem #28f200;
+  color: transparent;
+  position: inherit;
+  font-size: 9rem;
+  transform: translateZ(10rem) rotateX(270deg) translateX(1rem);
   transform-style: preserve-3d; }
 
 .cube__top-icon {
@@ -750,7 +769,8 @@ body {
     object-fit: cover; }
 
 .registrationContainer {
-  animation: moveInBottom 0.3s; }
+  animation: moveInBottom 0.3s;
+  backface-visibility: hidden; }
 
 .loginContainer {
   animation: moveInBottom 0.3s; }
@@ -758,7 +778,8 @@ body {
 .sign-in {
   position: relative; }
   .sign-in__form {
-    transform: rotateY(15deg);
+    transform: rotateY(15deg) translateY(-5rem);
+    transition: all 1s;
     position: absolute;
     bottom: 10%;
     background-color: #222;
@@ -773,7 +794,7 @@ body {
     flex-direction: column;
     border-radius: 5px;
     box-shadow: 0rem 0rem 1.4rem #124000;
-    animation: moveInBottom 2s; }
+    backface-visibility: hidden; }
     .sign-in__form-group {
       display: flex;
       margin-bottom: 2rem; }
@@ -816,25 +837,28 @@ body {
     outline: 2px solid;
     outline-color: #17b802; }
 
-.pulse-text::before {
-  content: "";
-  display: block;
-  background-color: #00b300;
-  border-radius: 20px;
-  position: absolute;
-  bottom: 31%;
-  left: 16%;
-  height: 10px;
-  width: 10px;
-  transform: scale(1);
-  animation: pulse-fade 2s infinite; }
+.pulse-text {
+  position: relative; }
+  .pulse-text::before {
+    content: "";
+    display: block;
+    background-color: #00b300;
+    border-radius: 20px;
+    position: absolute;
+    top: 1%;
+    right: -15%;
+    z-index: 10000;
+    height: 10px;
+    width: 10px;
+    transform: scale(1);
+    animation: pulse-fade 2s infinite; }
 
 .pulse {
   border-radius: 10px;
   position: absolute;
   z-index: 10;
-  top: 0px;
-  right: 0px;
+  top: 0rem;
+  right: -5rem;
   width: 8px;
   height: 8px; }
   .pulse::before {
@@ -936,15 +960,14 @@ body {
     display: flex;
     flex-direction: column;
     height: 100%;
-    flex: 0 0 55%;
+    flex: 0 0 57%;
     justify-content: space-between;
     align-items: center; }
   .overview__right {
+    position: relative;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    flex: 0 0 45%; }
+    flex: 0 0 48%; }
   .overview__pairs {
     height: 10rem;
     width: 100%; }
@@ -969,7 +992,7 @@ body {
     .overview__spendings-headline {
       font-size: 2.5rem; }
   .overview__chart {
-    height: 20rem; }
+    height: 25rem; }
   .overview__top {
     display: flex;
     flex-direction: column;
@@ -999,7 +1022,7 @@ body {
     flex-direction: column;
     overflow: scroll;
     width: 100%;
-    height: 37.5rem; }
+    height: 30rem; }
   .overview__transaction {
     border: 1px solid #333;
     padding: 1rem 1.5rem;
@@ -1087,7 +1110,7 @@ body {
     .card__inner-accountNumber {
       flex: 1;
       text-align: center;
-      font-size: 2.1rem; }
+      font-size: 1.9rem; }
       .card__inner-accountNumber span {
         margin: 0 1.2rem; }
     .card__inner-info {
@@ -1128,6 +1151,7 @@ body {
   width: 85%;
   height: 10rem;
   margin: 0 auto;
+  margin-top: 1rem;
   display: flex;
   letter-spacing: 0.2rem;
   overflow: hidden;
@@ -1209,7 +1233,7 @@ body {
       width: 0% !important; }
     .check-pairs__headline-1 {
       top: 45% !important;
-      left: -10rem;
+      left: -9rem !important;
       font-size: 4rem !important;
       letter-spacing: 1.1rem !important;
       transform: rotate(90deg); }
@@ -1217,11 +1241,11 @@ body {
       font-size: 4rem !important;
       letter-spacing: 1.3rem !important;
       top: 45% !important;
-      right: -10rem;
+      right: -13rem !important;
       transform: rotate(-90deg); }
   .check-pairs__form {
     padding: 3rem;
-    width: 61%;
+    width: 65%;
     border-radius: 7px;
     font-size: 1.5rem;
     display: flex;
@@ -1244,7 +1268,7 @@ body {
     font-size: 2rem;
     color: #01a001; }
   .check-pairs__flag {
-    width: 6rem; }
+    width: 7rem; }
   .check-pairs__selectionBox {
     display: flex;
     flex-direction: column; }
@@ -1262,6 +1286,7 @@ body {
     width: auto;
     padding: 0.5rem 1rem; }
   .check-pairs__chartContainer {
+    width: 65%;
     margin-top: 2rem;
     padding: 1rem;
     box-shadow: 0rem 0rem 1.1rem #124000; }
@@ -1386,6 +1411,9 @@ body {
   width: 100%;
   height: 100%;
   display: flex; }
+  .transactions__transactionContainer {
+    height: 41rem;
+    overflow: scroll; }
   .transactions__left {
     flex: 1;
     margin: 0 2rem; }
@@ -1531,8 +1559,8 @@ body {
   background-color: rgba(0, 0, 0, 0.625);
   color: white;
   width: 85%;
-  height: 78rem;
-  margin: auto;
+  flex: 1;
+  margin: 0 auto;
   display: flex;
   letter-spacing: 0.2rem;
   box-shadow: 0rem 0rem 3.4rem #124000; }
@@ -1595,4 +1623,6 @@ body {
   background: black;
   display: flex;
   position: relative;
+  align-items: center;
+  padding: 2rem;
   flex-direction: column; }

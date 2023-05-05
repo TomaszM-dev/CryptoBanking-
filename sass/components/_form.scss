@@ -1,5 +1,6 @@
 .registrationContainer {
   animation: moveInBottom 0.3s;
+  backface-visibility: hidden;
 }
 
 .loginContainer {
@@ -10,7 +11,9 @@
   position: relative;
 
   &__form {
-    transform: rotateY(15deg);
+    transform: rotateY(15deg) translateY(-5rem);
+    transition: all 1s;
+
     position: absolute;
     bottom: 10%;
     background-color: #222;
@@ -27,7 +30,8 @@
     flex-direction: column;
     border-radius: 5px;
     box-shadow: 0rem 0rem 1.4rem rgba(rgb(18, 64, 0), 1);
-    animation: moveInBottom 2s;
+    // animation: moveInBottom 2są
+    backface-visibility: hidden;
 
     &-group {
       display: flex;

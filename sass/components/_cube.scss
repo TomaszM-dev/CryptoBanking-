@@ -136,6 +136,10 @@
     height: 100%;
     background: linear-gradient($color-black 15%, $color-secondary);
     transform: rotateY(calc(90deg * var(--i))) translateZ(2.5rem);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform-style: preserve-3d;
   }
 
   &__item-4 {
@@ -146,18 +150,36 @@
     height: 100%;
     background: linear-gradient($color-black 15%, $color-secondary);
     transform: rotateY(calc(90deg * var(--i))) translateZ(2.5rem);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform-style: preserve-3d;
   }
 
   // cube item
+  &__item-text {
+    top: 30%;
+    left: 12%;
+    position: absolute;
+    -webkit-text-stroke: 0.1rem rgb(40, 242, 0);
+    color: transparent;
+    font-size: 1.9rem;
+
+    transform: translateZ(0.7rem);
+    transform-style: preserve-3d;
+  }
 
   // cube top and bottom side
 
   &__top-text-1 {
-    fill: white;
-    position: relative;
-    font-size: 5rem;
+    -webkit-text-stroke: 0.1rem rgb(40, 242, 0);
+    color: transparent;
 
-    transform: translateZ(10rem) rotateX(270deg);
+    position: inherit;
+
+    font-size: 9rem;
+
+    transform: translateZ(10rem) rotateX(270deg) translateX(1rem);
     transform-style: preserve-3d;
   }
 

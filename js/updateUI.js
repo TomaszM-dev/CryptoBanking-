@@ -15,13 +15,13 @@ export const initSettings = function (currentAccount) {
   transactions.transactions(currentAccount);
   profile.profileSettings(currentAccount);
   updateBalance(currentAccount);
-  spin.spin(currentAccount);
+
+  chart.chartDisplay(currentAccount);
 };
 
 export const updateUI = function (currentAccount) {
   currentUser.displayTransactionsOverview(currentAccount);
   currentUser.displayTransactionsTransaction(currentAccount);
-  // chart.chartDisplay(currentAccount);
 };
 
 export const updateBalance = function (currentAccount) {

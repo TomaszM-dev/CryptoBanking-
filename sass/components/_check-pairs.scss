@@ -3,7 +3,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  // margin-top: 0rem;
+
   position: relative;
   height: 100%;
 
@@ -20,7 +20,7 @@
 
     &-1 {
       top: 45% !important;
-      left: -10rem;
+      left: -9rem !important;
       font-size: 4rem !important;
       letter-spacing: 1.1rem !important;
       transform: rotate(90deg);
@@ -29,14 +29,14 @@
       font-size: 4rem !important;
       letter-spacing: 1.3rem !important;
       top: 45% !important;
-      right: -10rem;
+      right: -13rem !important;
       transform: rotate(-90deg);
     }
   }
 
   &__form {
     padding: 3rem;
-    width: 61%;
+    width: 65%;
     border-radius: 7px;
     font-size: 1.5rem;
     display: flex;
@@ -71,7 +71,7 @@
   }
 
   &__flag {
-    width: 6rem;
+    width: 7rem;
   }
 
   &__selectionBox {
@@ -99,6 +99,7 @@
   }
 
   &__chartContainer {
+    width: 65%;
     margin-top: 2rem;
     padding: 1rem;
     box-shadow: 0rem 0rem 1.1rem #124000;

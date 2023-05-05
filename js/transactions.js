@@ -265,11 +265,3 @@ export const transactions = function (currentAccount) {
 
   deleteButton.addEventListener("click", deleteUserAcc);
 };
-
-let currentAccount;
-
-currentAccount = acc.accounts.find((acc) => acc.userName === "tom123");
-
-transactions(currentAccount);
-
-console.log(currentAccount);

@@ -38,3 +38,13 @@ export const chartDisplay = function (currentAccount) {
     chart.update();
   });
 };
+
+// export const updateCh = function (currentAccount) {
+//   currentAccount.transactions.forEach((t) => {
+//     const dateReady = current.dateCreator(t.date);
+
+//     chart.data.labels.push(dateReady);
+//     chart.data.datasets[0].data.push(t.amount);
+//     chart.update();
+//   });
+// };

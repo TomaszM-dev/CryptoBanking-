@@ -217,6 +217,7 @@ export const spin = function (currentAccount) {
     };
 
     currentAccount.transactions.push(depositTransaction);
+    update.updateUI(currentAccount);
     update.updateBalance(currentAccount);
     awardArr = [];
     deposit = 0;

@@ -31,7 +31,7 @@ export const loginMechanics = function () {
     if (currentAccount.password === passwordInput.value) {
       update.initSettings(currentAccount);
       switchPages.switchToMainPage();
-      chart.chartDisplay(currentAccount);
+      // chart.chartDisplay(currentAccount);
 
       pageLoadingHeadline.textContent = "Loggin in...";
       userNameInput.value = passwordInput.value = "";

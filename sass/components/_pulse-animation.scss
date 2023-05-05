@@ -1,13 +1,14 @@
 .pulse-text {
+  position: relative;
   &::before {
     content: "";
     display: block;
     background-color: #00b300;
     border-radius: 20px;
     position: absolute;
-    bottom: 31%;
-    left: 16%;
-
+    top: 1%;
+    right: -15%;
+    z-index: 10000;
     height: 10px;
     width: 10px;
     transform: scale(1);
@@ -23,8 +24,8 @@
   position: absolute;
   z-index: 10;
 
-  top: 0px;
-  right: 0px;
+  top: 0rem;
+  right: -5rem;
   width: 8px;
   height: 8px;
 

@@ -1,5 +1,6 @@
-// query selectors
+import * as display from "./displayCurrentAcc.js";
 
+// query selectors
 const fullNameProfile = document.querySelector(".profile__fullName");
 const passwordProfile = document.querySelector(".profile__password");
 const birthDateProfile = document.querySelector(".profile__birthDate");
@@ -12,8 +13,10 @@ export const profileSettings = function (currentAccount) {
   fullNameProfile.textContent = currentAccount.fullName;
   passwordProfile.textContent = currentAccount.password;
   birthDateProfile.textContent = currentAccount.birthDate;
-  createdProfile.textContent = currentAccount.accountCreated;
-  cardNumberProfile.textContent = currentAccount.cardNumber;
-  cardValidProfile.textContent = currentAccount.validTill;
-  ccvProfile.textContent = currentAccount.ccv;
+  createdProfile.textContent = display.dateCreator(
+    currentAccount.accountCreated
+  );
+  cardNumberProfile.textContent = `Card Number: ${currentAccount.cardNumber}`;
+  cardValidProfile.textContent = `Valid: ${currentAccount.validTill}`;
+  ccvProfile.textContent = `CCV: ${currentAccount.ccv}`;
 };

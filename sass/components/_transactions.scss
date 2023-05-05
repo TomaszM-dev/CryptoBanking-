@@ -5,6 +5,12 @@
 
   // flex-direction: column;
 
+  &__transactionContainer {
+    height: 41rem;
+
+    overflow: scroll;
+  }
+
   &__left {
     flex: 1;
     margin: 0 2rem;

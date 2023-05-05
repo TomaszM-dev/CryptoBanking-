@@ -21,7 +21,7 @@
     <script type="module" defer src="js/controller.js"></script>
   </head>
   <body>
-    <section id="sectionStart" class="section-starter hide">
+    <section id="sectionStart" class="section-starter">
       <div class="bg-video">
         <video class="bg-video__content" autoplay muted loop>
           <source src="img/bg-video.mp4" type="video/mp4" />
@@ -34,12 +34,10 @@
         <div class="cube__box-1">
           <div class="cube__top-1">
             <div class="cube__top-text-1">
-              <svg class="icon icon-bitcoin">
-                <use xlink:href="img/sprite.svg#icon-bitcoin"></use>
-              </svg>
+              <i class="fa-solid fa-dollar-sign"></i>
             </div>
           </div>
-          <span class="cube__item-1" style="--i: 1"> </span>
+          <span class="cube__item-1" style="--i: 1"></span>
           <span class="cube__item-1" style="--i: 2"></span>
           <span class="cube__item-1" style="--i: 3"></span>
           <span class="cube__item-1" style="--i: 4"></span>
@@ -48,9 +46,9 @@
       <div class="cube__container-2">
         <div class="cube__box-2">
           <div class="cube__top-2">
-            <div class="cube__top-text-2">
+            <div class="cube__top-text-1">
               <svg class="cube__top-icon">
-                <use xlink:href="img/sprite.svg#icon-dollar-sign"></use>
+                <i class="fa-solid fa-euro-sign"></i>
               </svg>
             </div>
           </div>
@@ -65,26 +63,34 @@
         <div class="cube__box-3">
           <div class="cube__top-3"></div>
           <span class="cube__item-3" style="--i: 1">
-            <h2 class="cube__item-text"></h2>
+            <h2 class="cube__item-text">EUR</h2>
           </span>
           <span class="cube__item-3" style="--i: 2">
-            <h2 class="cube__item-text"></h2>
+            <h2 class="cube__item-text">EUR</h2>
           </span>
           <span class="cube__item-3" style="--i: 3">
-            <h2 class="cube__item-text"></h2
-          ></span>
+            <h2 class="cube__item-text">EUR</h2></span
+          >
           <span class="cube__item-3" style="--i: 4">
-            <h2 class="cube__item-text"></h2
-          ></span>
+            <h2 class="cube__item-text">EUR</h2></span
+          >
         </div>
       </div>
       <div class="cube__container-4">
         <div class="cube__box-4">
           <div class="cube__top-4"></div>
-          <span class="cube__item-4" style="--i: 1"></span>
-          <span class="cube__item-4" style="--i: 2"></span>
-          <span class="cube__item-4" style="--i: 3"></span>
-          <span class="cube__item-4" style="--i: 4"></span>
+          <span class="cube__item-4" style="--i: 1">
+            <h2 class="cube__item-text">PLN</h2></span
+          >
+          <span class="cube__item-4" style="--i: 2">
+            <h2 class="cube__item-text">PLN</h2></span
+          >
+          <span class="cube__item-4" style="--i: 3">
+            <h2 class="cube__item-text">PLN</h2></span
+          >
+          <span class="cube__item-4" style="--i: 4">
+            <h2 class="cube__item-text">PLN</h2></span
+          >
         </div>
       </div>
 
@@ -196,7 +202,7 @@
       </div>
     </div>
     <div id="overlay" class="overlay hide"></div>
-    <section class="section-mainPage">
+    <section class="section-mainPage hide">
       <!-- <div class="bg-video">
         <video class="bg-video__content" autoplay muted loop>
           <source src="img/bg-video.mp4" type="video/mp4" />
@@ -554,7 +560,7 @@
                 </div>
               </div>
             </div>
-            <div class="profile__infoBox-bottom mg-lm">
+            <div class="profile__infoBox-bottom profile__infoBox-card mg-lm">
               <i class="fa-solid fa-address-card profile__infoBox-icon"></i>
               <p class="profile__infoBox-paragraph">Card Details:</p>
               <h4 class="profile__infoBox-header profile__cardNumber">
@@ -641,7 +647,7 @@
                   My Spendings
                 </h3>
                 <div class="overview__chart">
-                  <canvas id="chart"></canvas>
+                  <canvas id="chart" height="300" width="500"></canvas>
                 </div>
               </div>
             </div>
@@ -666,7 +672,7 @@
                 <div class="overview__transactionContainer">
                   <div class="overview__transaction">
                     <div class="overview__transaction-icon">
-                      <i class="fa-brands fa-spotify"></i>
+                      <i class="fa-solid fa-money-from-bracket"></i>
                     </div>
                     <div class="overview__transaction-content">
                       <p class="overview__transaction-name">Spotify</p>
@@ -714,7 +720,7 @@
         </div> -->
       </div>
 
-      <div class="loading-page hide">
+      <div class="loading-page">
         <div class="loading-page__spinner mg-lm">
           <span style="--i: 1"></span>
           <span style="--i: 2"></span>
