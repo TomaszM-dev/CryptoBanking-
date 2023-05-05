@@ -48,7 +48,7 @@ export class User {
 
   calcNumbers() {
     this.cardNumber = Math.floor(
-      10000000000000 + Math.random() * 1600000000000000
+      10000000000000 + Math.random() * 160000000000000
     );
     this.ccv = Math.floor(100 + Math.random() * 900);
     return this.cardNumber, this.ccv;
@@ -68,8 +68,8 @@ export class User {
 
 const userTomson = new User(
   "Tomasz Malocha",
-  "tom123",
-  "123",
+  "admin",
+  "admin",
   [2000, 8, 11],
   "2022-11-03T03:13:34Z",
   [

@@ -28,6 +28,7 @@ export const dateCreator = function (date) {
 export const currentTransactionsAmount = [200, 1200];
 
 export const displayTransactionsOverview = function (currentAccount) {
+  console.log(currentAccount);
   transactionsContainer.innerHTML = "";
 
   currentAccount.transactions.forEach((t) => {

@@ -1,6 +1,6 @@
 import * as switchPages from "./switchPages.js";
 import * as acc from "./accounts.js";
-import * as currentUser from "./displayCurrentAcc.js";
+import * as update from "./updateUI.js";
 
 // query  selectors
 const pageLoadingHeadline = document.querySelector(".loading-page__headline");
@@ -58,8 +58,20 @@ export const registerMechanics = function () {
       //registered succesfully
       acc.accounts.push(createdAccount);
       currentAccount = createdAccount;
-      currentUser.displayCardDetails(currentAccount);
-      currentUser.displayTransactions(currentAccount);
+      let starterDepositTransaction;
+
+      starterDepositTransaction = {
+        type: "deposit",
+        amount: 2000,
+        date: new Date().toISOString(),
+        category: "Starter Pack",
+        company: "Cryptobank",
+      };
+
+      currentAccount.transactions.push(starterDepositTransaction);
+
+      console.log(currentAccount);
+      update.initSettings(currentAccount);
       switchPages.switchToMainPage();
 
       // text on loading headline

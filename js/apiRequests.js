@@ -1,27 +1,40 @@
-//exchange rate app
+import * as curPanel from "./currenciesPanel.js";
 
-// fear greed request api
-export const fearGreedApi = function () {
-  const data = null;
+const currContainer = document.querySelector(".currencies-panel");
+currContainer.innerHTML = "";
 
-  const xhr = new XMLHttpRequest();
-  xhr.withCredentials = true;
+export const exchangeApi = async function () {
+  try {
+    // load currencies
+    await curPanel.loadOldCurrencies();
+    await curPanel.loadCurrencies();
+    const latestCurrencies = curPanel.state.currencies;
+    const oldCurrencies = curPanel.state.oldCurrencies;
+    curPanel.currencyChangeRate(latestCurrencies, oldCurrencies);
+    const difference = curPanel.state.difference;
 
-  xhr.addEventListener("readystatechange", function () {
-    if (this.readyState === this.DONE) {
-      console.log(this.responseText);
-    }
-  });
+    const displayCurrencies = latestCurrencies.map((o, i) => {
+      return {
+        ...o,
+        diff: difference[i],
+      };
+    });
 
-  xhr.open("GET", "https://fear-and-greed-index.p.rapidapi.com/v1/fgi");
-  xhr.setRequestHeader(
-    "X-RapidAPI-Key",
-    "e69884d78amsh448bfc5b6c91337p16c2cejsnfe6f5e3278c6"
-  );
-  xhr.setRequestHeader(
-    "X-RapidAPI-Host",
-    "fear-and-greed-index.p.rapidapi.com"
-  );
+    displayCurrencies.forEach((c) => {
+      const type = c.diff >= 0 ? "positive" : "negative";
 
-  xhr.send(data);
+      const markup = `  <div class="currencies__item">
+        <div class="currencies__item-price">${c.value.toFixed(4)}</div>
+        <div class="currencies__item-change currencies__item-${type}">${
+        c.diff
+      }</div>
+        <div class="currencies__item-pair">USD / ${c.id}</div>
+        <div class="currencies__item-flags"></div>
+      </div> `;
+
+      currContainer.insertAdjacentHTML("afterbegin", markup);
+    });
+  } catch (err) {
+    alert(err);
+  }
 };

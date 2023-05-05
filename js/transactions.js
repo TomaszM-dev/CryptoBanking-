@@ -27,6 +27,7 @@ const deletePopupContainer = document.querySelector(".delete__popupContainer");
 const deleteButton = document.querySelector(".transactions__button-close");
 
 export const transactions = function (currentAccount) {
+  console.log(currentAccount);
   const openPopupTransfer = function (headline, info) {
     const markup = `
   <div class="transactions__popup open">

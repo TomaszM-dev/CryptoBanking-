@@ -7,6 +7,7 @@
 /////////////////////////////
 /////////////////////////////
 import * as acc from "./accounts.js";
+import * as current from "./displayCurrentAcc.js";
 import * as update from "./updateUI.js";
 
 // query selectors
@@ -18,7 +19,6 @@ const accountBalance = document.querySelector(".spin-win__balance");
 const depositButton = document.querySelector(".spin-win__deposit");
 
 export const spin = function (currentAccount) {
-  console.log(currentAccount);
   const rotationValues = [
     {
       minDegree: 0,
@@ -224,9 +224,3 @@ export const spin = function (currentAccount) {
     gameCurBalance.textContent = 0;
   });
 };
-
-let currentAccount;
-
-currentAccount = acc.accounts.find((acc) => acc.userName === "tom123");
-
-spin(currentAccount);
