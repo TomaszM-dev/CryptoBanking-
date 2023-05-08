@@ -20,6 +20,10 @@
 }
 
 .pulse {
+  @include respond(tab-land) {
+    display: none;
+  }
+
   border-radius: 10px;
   position: absolute;
   z-index: 10;

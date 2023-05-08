@@ -7,6 +7,20 @@
   position: relative;
   height: 100%;
 
+  &__header {
+    display: none;
+
+    @include respond(tab-land) {
+      display: block;
+      font-size: 3rem;
+      text-transform: uppercase;
+      color: $color-secondary-light-1;
+      font-weight: 300;
+      margin: 3rem 0;
+      animation: textColor 3s ease-in infinite;
+    }
+  }
+
   &__headline {
     position: absolute;
     font-size: 2rem !important;
@@ -19,6 +33,10 @@
     }
 
     &-1 {
+      @include respond(tab-land) {
+        display: none;
+      }
+
       top: 45% !important;
       left: -9rem !important;
       font-size: 4rem !important;
@@ -26,6 +44,9 @@
       transform: rotate(90deg);
     }
     &-2 {
+      @include respond(tab-land) {
+        display: none;
+      }
       font-size: 4rem !important;
       letter-spacing: 1.3rem !important;
       top: 45% !important;
@@ -43,6 +64,10 @@
     flex-direction: column;
     justify-content: center;
     box-shadow: 0rem 0rem 1.1rem #124000;
+
+    @include respond(big-desktop) {
+      max-width: 58%;
+    }
   }
 
   &__input {
@@ -99,6 +124,9 @@
   }
 
   &__chartContainer {
+    @include respond(big-desktop) {
+      max-width: 58%;
+    }
     width: 65%;
     margin-top: 2rem;
     padding: 1rem;

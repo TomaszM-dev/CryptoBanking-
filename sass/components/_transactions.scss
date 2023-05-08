@@ -3,16 +3,23 @@
   height: 100%;
   display: flex;
 
-  // flex-direction: column;
+  @include respond(tab-land) {
+    flex-direction: column;
+    width: 80%;
+    margin: 0 auto;
+  }
 
   &__transactionContainer {
     height: 41rem;
-
     overflow: scroll;
   }
 
   &__left {
     flex: 1;
+    @include respond(tab-land) {
+      flex: none;
+      margin-bottom: 3rem;
+    }
     margin: 0 2rem;
   }
 
@@ -27,11 +34,20 @@
     letter-spacing: 0.8rem;
     display: flex;
     width: 100%;
+
     justify-content: space-between;
     align-items: center;
     margin-bottom: 3rem;
 
+    @include respond(tab-land) {
+      flex-direction: column-reverse;
+      margin-left: 0;
+    }
+
     img {
+      @include respond(tab-land) {
+        width: 30%;
+      }
       margin: 1rem;
     }
   }
@@ -45,11 +61,18 @@
       font-size: 4rem !important;
       margin-right: 5rem;
 
+      @include respond(tab-land) {
+        font-size: 3rem !important;
+      }
+
       &::after {
         width: 0 !important;
       }
     }
     &-2 {
+      @include respond(tab-land) {
+        font-size: 3rem !important;
+      }
       &::after {
         width: 0 !important;
       }

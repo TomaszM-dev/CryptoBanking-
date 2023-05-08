@@ -8,6 +8,14 @@
   perspective: 150rem;
   transition: all 1s;
 
+  @include respond(tab-land) {
+    height: 28rem;
+  }
+
+  @include respond(XL-desktop) {
+    height: 24rem;
+  }
+
   &:hover &__inner-front {
     transform: rotateY(-180deg);
   }

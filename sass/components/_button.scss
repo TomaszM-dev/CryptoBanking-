@@ -107,6 +107,11 @@
 .btn--logout {
   color: white;
 
+  @include respond(tab-land) {
+    position: absolute;
+    bottom: 10rem;
+  }
+
   &:hover {
     background-color: green;
   }

@@ -29,9 +29,9 @@ $breakpoint arguement choices:
     } //400px
   }
   @if $breakpoint == phone {
-    @media only screen and (max-width: 37.5em) {
+    @media only screen and (max-width: 41em) {
       @content;
-    } //600px
+    } //680px
   }
   @if $breakpoint == tab-port {
     @media only screen and (max-width: 56.25em) {

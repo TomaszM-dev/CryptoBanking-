@@ -6,7 +6,28 @@
     height: 100%;
     width: 100%;
     justify-content: end;
+    align-items: center;
     position: relative;
+
+    @include respond(tab-port) {
+      flex-direction: column-reverse;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  &__headline {
+    display: none;
+
+    @include respond(tab-port) {
+      display: block;
+      text-align: center;
+      font-size: 3rem;
+      text-transform: uppercase;
+      color: $color-secondary-light-1;
+      margin: 4rem 0;
+      animation: textColor 3s;
+    }
   }
   &__left {
     width: 100%;
@@ -44,7 +65,7 @@
   &__button {
     position: absolute;
     top: 40%;
-    left: 40%;
+    left: 41%;
     height: 6rem;
     width: 6rem;
     background: radial-gradient(#fff 50%, rgb(96, 95, 95) 85%);
@@ -52,6 +73,21 @@
     text-transform: uppercase;
     border-radius: 50%;
     font-weight: 600;
+    @include respond(big-desktop) {
+      top: 40%;
+      left: 41%;
+    }
+
+    @include respond(tab-land) {
+      top: 40%;
+      left: 41%;
+    }
+    @include respond(tab-port) {
+      top: 40%;
+      left: 42%;
+      height: 8rem;
+      width: 8rem;
+    }
   }
 
   &__finalValue {
@@ -59,7 +95,13 @@
     flex: 0 0 80%;
     font-size: 2rem;
     animation: moveInBottom 1s;
-    padding-left: 2.6rem;
+    // padding-left: 2.6rem;
+    text-align: center;
+
+    @include respond(tab-port) {
+      padding-left: 0;
+      margin-bottom: 4rem;
+    }
   }
 
   &__arrow {
@@ -74,6 +116,10 @@
     text-align: center;
     font-size: 2rem;
     text-transform: uppercase;
+
+    @include respond(tab-land) {
+      margin-top: 3rem;
+    }
   }
   &__rule {
     &:first-child {
@@ -115,14 +161,26 @@
     padding: 1rem 2rem;
     text-transform: uppercase;
     border-radius: 5px;
+
+    @include respond(tab-land) {
+      font-size: 2.3rem;
+      padding: 1.5rem 2.5rem;
+      margin: 3rem 0;
+    }
   }
 
   &__content {
     width: fit-content;
+    margin: 2 auto;
     height: fit-content;
     display: flex;
     align-items: center;
     justify-content: center;
+
+    @include respond(tab-port) {
+      width: 80%;
+      margin: 0 auto;
+    }
   }
 
   &__balance {

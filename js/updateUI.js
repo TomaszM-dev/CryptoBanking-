@@ -1,9 +1,12 @@
 import * as currentUser from "./displayCurrentAcc.js";
-// import * as chart from "./chart.js";
+
 import * as transactions from "./transactions.js";
 import * as profile from "./profile.js";
 import * as spin from "./spinWheel.js";
 import * as acc from "./accounts.js";
+import * as switchSection from "./switchSections.js";
+import * as curPanel from "./currenciesPanel.js";
+import * as curConverter from "./currenciesConverter.js";
 
 const transactionsBalance = document.querySelector(".transactions__balance");
 const overviewBalance = document.querySelector(".overview__balance");
@@ -17,11 +20,12 @@ export const initSettings = function (currentAccount) {
   profile.profileSettings(currentAccount);
   updateBalance(currentAccount);
   spin.spin(currentAccount);
+  initChart(currentAccount);
 };
 
 export const updateUI = function (currentAccount) {
-  destroyChart();
-  renderChart();
+  destroy(chartUI);
+  render(currentAccount, chartUI);
   currentUser.displayTransactionsOverview(currentAccount);
   currentUser.displayTransactionsTransaction(currentAccount);
 };
@@ -41,24 +45,13 @@ export const updateBalance = function (currentAccount) {
   spinwinBalance.textContent = `${currentAccount.balance}$`;
 };
 
-let currentAccount;
+////////////////////////////////////
 
-currentAccount = acc.accounts.find((acc) => acc.userName === "admin");
-
-console.log(currentAccount);
-
+let labelArr = [];
 let dataArr = [];
-let labelsArr = [];
 
-currentAccount.transactions.forEach((t) => {
-  const dateReady = currentUser.dateCreator(t.date);
-  labelsArr.push(dateReady);
-  dataArr.push(t.amount);
-});
-
-// setup chart block
-const data = {
-  labels: labelsArr,
+let data = {
+  labels: labelArr,
   datasets: [
     {
       data: dataArr,
@@ -70,8 +63,7 @@ const data = {
   ],
 };
 
-// config block
-const config = {
+let config = {
   type: "line",
   data,
   options: {
@@ -83,35 +75,34 @@ const config = {
   },
 };
 
-// init block
-let chart = new Chart(document.getElementById("chart"), config);
+function initChart(currentAccount) {
+  currentAccount.transactions.forEach((t) => {
+    const dateReady = currentUser.dateCreator(t.date);
+    labelArr.push(dateReady);
+    dataArr.push(t.amount);
+  });
+}
 
-// destroy chart
-export let destroyChart = function () {
-  chart.destroy();
-  chart.data.datasets[0].data = [];
-  chart.data.labels = [];
-  labelsArr = [];
+let chartUI = new Chart(document.getElementById("chart"), config);
+
+function destroy(chartUI) {
+  chartUI.data.datasets[0].data = [];
+  chartUI.data.labels = [];
+  labelArr = [];
   dataArr = [];
-};
+  chartUI.destroy();
+}
 
-// render chart again
-let renderChart = function () {
-  chart = new Chart(document.getElementById("chart"), config);
+function render(currentAccount, chartUI) {
+  chartUI = new Chart(document.getElementById("chart"), config);
 
   currentAccount.transactions.forEach((t) => {
     const dateReady = currentUser.dateCreator(t.date);
-    labelsArr.push(dateReady);
-
+    labelArr.push(dateReady);
     dataArr.push(t.amount);
-    chart.data.datasets[0].data = dataArr;
-    chart.data.labels = labelsArr;
-    chart.update();
+
+    chartUI.data.datasets[0].data = dataArr;
+    chartUI.data.labels = labelArr;
   });
-};
-
-// chart needs to be displayed when currenct account is set ( when user is logged in )
-
-// then chart need to update it self when new transaction is added
-
-// new transaction must be displayed on chart with the amount of transaction and date of it.
+  chartUI.update();
+}

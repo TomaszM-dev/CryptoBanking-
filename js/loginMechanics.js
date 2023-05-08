@@ -2,7 +2,7 @@
 import * as switchPages from "./switchPages.js";
 import * as acc from "./accounts.js";
 import * as currentUser from "./displayCurrentAcc.js";
-import * as chart from "./chart.js";
+
 import * as transactions from "./transactions.js";
 import * as update from "./updateUI.js";
 
@@ -31,7 +31,6 @@ export const loginMechanics = function () {
     if (currentAccount.password === passwordInput.value) {
       update.initSettings(currentAccount);
       switchPages.switchToMainPage();
-      // chart.chartDisplay(currentAccount);
 
       pageLoadingHeadline.textContent = "Loggin in...";
       userNameInput.value = passwordInput.value = "";

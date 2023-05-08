@@ -5,6 +5,10 @@
   position: relative;
   overflow-y: hidden;
 
+  @include respond(tab-land) {
+    padding: 3rem;
+  }
+
   &__headline {
     margin-top: 2rem;
     text-align: center;
@@ -22,6 +26,10 @@
   }
 
   &__logo {
+    @include respond(tab-land) {
+      width: 43%;
+    }
+
     transition: all 1s;
     transform: translateX(-1.5rem);
     animation: textColor2 5s linear infinite;

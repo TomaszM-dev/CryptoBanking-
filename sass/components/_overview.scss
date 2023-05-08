@@ -1,6 +1,12 @@
 .overview {
   display: flex;
 
+  @include respond(tab-land) {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
   &__left {
     display: flex;
     flex-direction: column;
@@ -8,14 +14,25 @@
     flex: 0 0 57%;
     justify-content: space-between;
     align-items: center;
+
+    @include respond(tab-land) {
+      width: 80%;
+    }
+    @include respond(tab-port) {
+      width: 100%;
+    }
   }
   &__right {
     position: relative;
     display: flex;
     flex-direction: column;
 
-    // justify-content: center;
     flex: 0 0 48%;
+    @include respond(tab-land) {
+      width: 80%;
+      justify-self: center;
+      margin-bottom: 4rem;
+    }
   }
 
   &__pairs {
@@ -56,6 +73,11 @@
   }
   &__chart {
     height: 25rem;
+
+    @include respond(tab-land) {
+      width: 50rem;
+      align-self: center;
+    }
   }
 
   // overview (main__right)
@@ -81,6 +103,11 @@
   }
 
   &__transactions {
+    @include respond(tab-land) {
+      align-self: center;
+      width: 100%;
+    }
+
     font-size: 2rem;
     flex: 1;
     width: 87%;
@@ -140,8 +167,12 @@
     &-date {
       font-size: 1.4rem;
       opacity: 0.3;
-      // color: $color-secondary-light-1;
+
       margin-right: 2rem;
+
+      @include respond(tab-land) {
+        margin-right: 4rem;
+      }
     }
 
     &-deposit {

@@ -23,7 +23,7 @@ formatDate(yesterday);
 // loading latest prices
 export const loadCurrencies = async function () {
   const res = await fetch(
-    " https://v6.exchangerate-api.com/v6/619f54c3a77115dd5d7d53d8/latest/USD"
+    " https://v6.exchangerate-api.com/v6/912b37ae75699e3c78fa344b/latest/USD"
   );
 
   const data = await res.json();
@@ -43,7 +43,7 @@ export const loadCurrencies = async function () {
 
 export const loadOldCurrencies = async function () {
   const res = await fetch(
-    `https://v6.exchangerate-api.com/v6/619f54c3a77115dd5d7d53d8/history/USD/${formatDate(
+    `https://v6.exchangerate-api.com/v6/912b37ae75699e3c78fa344b/history/USD/${formatDate(
       yesterday
     )}`
   );

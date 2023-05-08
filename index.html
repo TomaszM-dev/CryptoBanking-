@@ -21,7 +21,7 @@
     <script type="module" defer src="js/controller.js"></script>
   </head>
   <body>
-    <section id="sectionStart" class="section-starter">
+    <section id="sectionStart" class="section-starter hide">
       <div class="bg-video">
         <video class="bg-video__content" autoplay muted loop>
           <source src="img/bg-video.mp4" type="video/mp4" />
@@ -202,7 +202,7 @@
       </div>
     </div>
     <div id="overlay" class="overlay hide"></div>
-    <section class="section-mainPage hide">
+    <section class="section-mainPage">
       <!-- <div class="bg-video">
         <video class="bg-video__content" autoplay muted loop>
           <source src="img/bg-video.mp4" type="video/mp4" />
@@ -249,6 +249,19 @@
             ></i>
             Log out
           </button>
+        </div>
+        <div class="main__hamburger">
+          <h3 class="main__hamburger-tittle">CryptoBank</h3>
+          <button class="hamburger">
+            <div class="bar"></div>
+          </button>
+        </div>
+        <div class="main__mobile-nav">
+          <a href="overview" class="mobile-nav__link -overview"> Overview </a>
+          <a href="profile" class="mobile-nav__link"> Profile </a>
+          <a href="check-pairs" class="mobile-nav__link"> Check Pairs </a>
+          <a href="transactions" class="mobile-nav__link"> Transactions </a>
+          <a href="spin-win" class="mobile-nav__link"> Spin & Win </a>
         </div>
 
         <div class="main__center">
@@ -382,6 +395,7 @@
             </div>
           </div>
           <div id="spin-win" class="main-section spin-win hide">
+            <h3 class="spin-win__headline">Lets Play!</h3>
             <h2 class="spin-win__header">
               Play the game but be carefull, gambling and stock markets are
               inpredictable!
@@ -455,6 +469,7 @@
             >
               CONVERSION
             </h1>
+            <h3 class="check-pairs__header">Currency Conversion</h3>
 
             <form action="#" class="check-pairs__form">
               <div class="check-pairs__amount mg-sm">
@@ -558,7 +573,7 @@
               </h4>
               <h4 class="profile__infoBox-header profile__ccv">CCV: 233</h4>
             </div>
-            <button class="profile__button btn btn--logout">Change data</button>
+            <button class="profile__button btn">Change data</button>
           </div>
 
           <div id="overview" class="main-section overview">
@@ -634,7 +649,7 @@
                   My Spendings
                 </h3>
                 <div class="overview__chart">
-                  <canvas id="chart" height="300" width="500"></canvas>
+                  <canvas id="chart"></canvas>
                 </div>
               </div>
             </div>
@@ -674,9 +689,9 @@
           </div>
         </div>
       </div>
-      <div class="currencies-panel hide"></div>
+      <div class="currencies-panel"></div>
 
-      <div class="loading-page">
+      <div class="loading-page hide">
         <div class="loading-page__spinner mg-lm">
           <span style="--i: 1"></span>
           <span style="--i: 2"></span>

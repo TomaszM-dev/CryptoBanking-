@@ -121,7 +121,7 @@ $breakpoint arguement choices:
 html {
   font-size: 62.5%;
   font-family: "Michroma", sans-serif; }
-  @media only screen and (max-width: 37.5em) {
+  @media only screen and (max-width: 41em) {
     html {
       font-size: 45%; } }
   @media only screen and (max-width: 75em) {
@@ -179,7 +179,7 @@ body {
       animation-delay: 3s;
       animation-iteration-count: 3;
       */ }
-    @media only screen and (max-width: 37.5em) {
+    @media only screen and (max-width: 41em) {
       .heading-primary--main {
         letter-spacing: 1rem;
         font-family: 5rem; } }
@@ -189,7 +189,7 @@ body {
     font-weight: 700;
     letter-spacing: 1.75rem;
     animation: moveInRight 1s ease-out; }
-    @media only screen and (max-width: 37.5em) {
+    @media only screen and (max-width: 41em) {
       .heading-primary--sub {
         letter-spacing: 0.5rem; } }
 
@@ -205,7 +205,7 @@ body {
   @media only screen and (max-width: 56.25em) {
     .heading-secondary {
       font-size: 3rem; } }
-  @media only screen and (max-width: 37.5em) {
+  @media only screen and (max-width: 41em) {
     .heading-secondary {
       font-size: 2.5rem; } }
   .heading-secondary:hover {
@@ -234,8 +234,8 @@ body {
 .wrong-password {
   z-index: 10000;
   position: absolute;
-  top: 12rem;
-  left: 37rem;
+  top: 15rem;
+  left: 34.5rem;
   transition: all 1s; }
   .wrong-password__popup {
     z-index: 1000;
@@ -305,7 +305,7 @@ body {
   font-size: 5.2rem;
   font-weight: 600;
   text-transform: uppercase; }
-  @media only screen and (max-width: 37.5em) {
+  @media only screen and (max-width: 41em) {
     .heading-h1 {
       font-size: 4rem; } }
 
@@ -313,7 +313,7 @@ body {
   font-size: 3.4rem;
   text-transform: uppercase;
   transition: all 0.3s; }
-  @media only screen and (max-width: 37.5em) {
+  @media only screen and (max-width: 41em) {
     .heading-h2 {
       font-size: 2.5rem; } }
   .heading-h2:hover {
@@ -327,7 +327,7 @@ body {
   .heading-h4:hover {
     transform: skewY(2deg) skewX(15deg) scale(1.1);
     text-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0.2); }
-  @media only screen and (max-width: 37.5em) {
+  @media only screen and (max-width: 41em) {
     .heading-h4 {
       font-size: 2rem; } }
 
@@ -431,6 +431,10 @@ body {
 
 .btn--logout {
   color: white; }
+  @media only screen and (max-width: 75em) {
+    .btn--logout {
+      position: absolute;
+      bottom: 10rem; } }
   .btn--logout:hover {
     background-color: green; }
 
@@ -861,6 +865,9 @@ body {
   right: -5rem;
   width: 8px;
   height: 8px; }
+  @media only screen and (max-width: 75em) {
+    .pulse {
+      display: none; } }
   .pulse::before {
     z-index: 10;
     content: "";
@@ -918,6 +925,29 @@ body {
     color: #01a401;
     animation: textColor 3s linear infinite; }
 
+.main__hamburger {
+  display: none; }
+  @media only screen and (max-width: 41em) {
+    .main__hamburger {
+      display: flex;
+      flex-direction: row-reverse;
+      width: 100%;
+      justify-content: space-between;
+      align-items: center;
+      height: 10rem;
+      position: relative;
+      padding: 1rem 3rem;
+      border-bottom: 1px solid #777;
+      z-index: 1999; } }
+  .main__hamburger-tittle {
+    font-weight: 600;
+    margin-right: 35rem;
+    text-transform: uppercase;
+    letter-spacing: 1rem;
+    font-size: 3.2rem;
+    color: transparent;
+    -webkit-text-stroke: 0.2vh #23ba0f; }
+
 .main__title {
   letter-spacing: 0.3rem;
   text-align: center;
@@ -933,12 +963,24 @@ body {
   box-shadow: 0rem 1.5rem 4rem rgba(0, 0, 0, 0.3);
   stroke-dasharray: 4500;
   animation: draw 8s linear infinite; }
+  @media only screen and (max-width: 56.25em) {
+    .main__title {
+      font-size: 3rem; } }
+  @media only screen and (max-width: 75em) {
+    .main__title {
+      position: fixed;
+      width: 10%;
+      margin: 3rem 2rem 0 0rem; } }
 
 .main__list {
   flex: 0 0 60%;
   display: flex;
   flex-direction: column;
   align-items: baseline; }
+  @media only screen and (max-width: 75em) {
+    .main__list {
+      margin: 19rem 0 20rem 0;
+      position: fixed; } }
 
 .main__item {
   font-size: 1.6rem;
@@ -952,10 +994,95 @@ body {
     color: #3bc405; }
 
 .main__icon {
+  text-align: center;
   margin-right: 2rem; }
+
+.main__mobile-nav {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0%;
+  width: 30%;
+  min-height: 100vh;
+  display: block;
+  z-index: 98;
+  background-color: #000;
+  padding-top: 120px;
+  transition: 0.2s;
+  opacity: 0;
+  transform: translateX(30rem);
+  box-shadow: 0 0 0.4rem #01a001; }
+  @media only screen and (max-width: 41em) {
+    .main__mobile-nav {
+      display: block; } }
+
+.main__mobile-nav.is-active {
+  opacity: 1;
+  transform: translateX(0rem);
+  display: none; }
+  @media only screen and (max-width: 41em) {
+    .main__mobile-nav.is-active {
+      display: block; } }
+
+.main__mobile-nav a {
+  display: block;
+  width: 80%;
+  backface-visibility: hidden;
+  margin: 0 auto 16px;
+  text-align: center;
+  margin-bottom: 3rem;
+  padding: 2.1rem 1rem;
+  font-size: 1.7rem;
+  text-transform: uppercase;
+  font-weight: 400;
+  border-bottom: 1px solid #01930d;
+  border-radius: 2rem;
+  color: #117b03;
+  text-decoration: none;
+  transition: all 1s; }
+
+.main__mobile-nav a:hover {
+  transition: all 1s;
+  border: 1px solid #01a001; }
+
+.hamburger {
+  position: relative;
+  position: fixed;
+  display: block;
+  width: 35px;
+  cursor: pointer;
+  appearance: none;
+  background: none;
+  outline: none;
+  border: none; }
+
+.hamburger .bar,
+.hamburger:after,
+.hamburger:before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 5px;
+  border: 1px solid #01a001;
+  margin: 6px 0px;
+  transition: 0.4s; }
+
+.hamburger.is-active:before {
+  transform: rotate(-45deg) translate(-8px, 6px); }
+
+.hamburger.is-active:after {
+  transform: rotate(45deg) translate(-9px, -8px); }
+
+.hamburger.is-active .bar {
+  opacity: 0; }
 
 .overview {
   display: flex; }
+  @media only screen and (max-width: 75em) {
+    .overview {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center; } }
   .overview__left {
     display: flex;
     flex-direction: column;
@@ -963,11 +1090,22 @@ body {
     flex: 0 0 57%;
     justify-content: space-between;
     align-items: center; }
+    @media only screen and (max-width: 75em) {
+      .overview__left {
+        width: 80%; } }
+    @media only screen and (max-width: 56.25em) {
+      .overview__left {
+        width: 100%; } }
   .overview__right {
     position: relative;
     display: flex;
     flex-direction: column;
     flex: 0 0 48%; }
+    @media only screen and (max-width: 75em) {
+      .overview__right {
+        width: 80%;
+        justify-self: center;
+        margin-bottom: 4rem; } }
   .overview__pairs {
     height: 10rem;
     width: 100%; }
@@ -993,6 +1131,10 @@ body {
       font-size: 2.5rem; }
   .overview__chart {
     height: 25rem; }
+    @media only screen and (max-width: 75em) {
+      .overview__chart {
+        width: 50rem;
+        align-self: center; } }
   .overview__top {
     display: flex;
     flex-direction: column;
@@ -1012,6 +1154,10 @@ body {
     flex: 1;
     width: 87%;
     overflow: scroll; }
+    @media only screen and (max-width: 75em) {
+      .overview__transactions {
+        align-self: center;
+        width: 100%; } }
     .overview__transactions-info {
       display: flex;
       justify-content: space-between; }
@@ -1051,6 +1197,9 @@ body {
       font-size: 1.4rem;
       opacity: 0.3;
       margin-right: 2rem; }
+      @media only screen and (max-width: 75em) {
+        .overview__transaction-date {
+          margin-right: 4rem; } }
     .overview__transaction-deposit {
       color: #01a001; }
     .overview__transaction-withdrawal {
@@ -1064,6 +1213,12 @@ body {
   cursor: pointer;
   perspective: 150rem;
   transition: all 1s; }
+  @media only screen and (max-width: 75em) {
+    .card {
+      height: 28rem; } }
+  @media only screen and (min-width: 112em) {
+    .card {
+      height: 24rem; } }
   .card:hover .card__inner-front {
     transform: rotateY(-180deg); }
   .card:hover .card__inner-back {
@@ -1157,6 +1312,16 @@ body {
   overflow: hidden;
   box-shadow: 0rem 0rem 3.4rem #124000;
   border-radius: 20px; }
+  @media only screen and (min-width: 87em) {
+    .currencies-panel {
+      width: 80%; } }
+  @media only screen and (min-width: 112em) {
+    .currencies-panel {
+      width: 75%; } }
+  @media only screen and (max-width: 56.25em) {
+    .currencies-panel {
+      width: 100%;
+      border-radius: 0; } }
 
 .currencies__item {
   width: 100%;
@@ -1186,6 +1351,9 @@ body {
   font-size: 1.8rem;
   position: relative;
   overflow-y: hidden; }
+  @media only screen and (max-width: 75em) {
+    .profile {
+      padding: 3rem; } }
   .profile__headline {
     margin-top: 2rem;
     text-align: center; }
@@ -1200,6 +1368,9 @@ body {
     transition: all 1s;
     transform: translateX(-1.5rem);
     animation: textColor2 5s linear infinite; }
+    @media only screen and (max-width: 75em) {
+      .profile__logo {
+        width: 43%; } }
   .profile__infoBox {
     text-align: center; }
     .profile__infoBox-paragraph {
@@ -1223,6 +1394,17 @@ body {
   justify-content: center;
   position: relative;
   height: 100%; }
+  .check-pairs__header {
+    display: none; }
+    @media only screen and (max-width: 75em) {
+      .check-pairs__header {
+        display: block;
+        font-size: 3rem;
+        text-transform: uppercase;
+        color: #01a001;
+        font-weight: 300;
+        margin: 3rem 0;
+        animation: textColor 3s ease-in infinite; } }
   .check-pairs__headline {
     position: absolute;
     font-size: 2rem !important;
@@ -1237,12 +1419,18 @@ body {
       font-size: 4rem !important;
       letter-spacing: 1.1rem !important;
       transform: rotate(90deg); }
+      @media only screen and (max-width: 75em) {
+        .check-pairs__headline-1 {
+          display: none; } }
     .check-pairs__headline-2 {
       font-size: 4rem !important;
       letter-spacing: 1.3rem !important;
       top: 45% !important;
       right: -13rem !important;
       transform: rotate(-90deg); }
+      @media only screen and (max-width: 75em) {
+        .check-pairs__headline-2 {
+          display: none; } }
   .check-pairs__form {
     padding: 3rem;
     width: 65%;
@@ -1252,6 +1440,9 @@ body {
     flex-direction: column;
     justify-content: center;
     box-shadow: 0rem 0rem 1.1rem #124000; }
+    @media only screen and (min-width: 87em) {
+      .check-pairs__form {
+        max-width: 58%; } }
   .check-pairs__input {
     width: 100%;
     box-shadow: 0rem 0rem 1.1rem #217400;
@@ -1290,6 +1481,9 @@ body {
     margin-top: 2rem;
     padding: 1rem;
     box-shadow: 0rem 0rem 1.1rem #124000; }
+    @media only screen and (min-width: 87em) {
+      .check-pairs__chartContainer {
+        max-width: 58%; } }
 
 .spin-win__content {
   display: flex;
@@ -1297,7 +1491,25 @@ body {
   height: 100%;
   width: 100%;
   justify-content: end;
+  align-items: center;
   position: relative; }
+  @media only screen and (max-width: 56.25em) {
+    .spin-win__content {
+      flex-direction: column-reverse;
+      align-items: center;
+      justify-content: center; } }
+
+.spin-win__headline {
+  display: none; }
+  @media only screen and (max-width: 56.25em) {
+    .spin-win__headline {
+      display: block;
+      text-align: center;
+      font-size: 3rem;
+      text-transform: uppercase;
+      color: #01a001;
+      margin: 4rem 0;
+      animation: textColor 3s; } }
 
 .spin-win__left {
   width: 100%;
@@ -1329,7 +1541,7 @@ body {
 .spin-win__button {
   position: absolute;
   top: 40%;
-  left: 40%;
+  left: 41%;
   height: 6rem;
   width: 6rem;
   background: radial-gradient(#fff 50%, #605f5f 85%);
@@ -1337,13 +1549,31 @@ body {
   text-transform: uppercase;
   border-radius: 50%;
   font-weight: 600; }
+  @media only screen and (min-width: 87em) {
+    .spin-win__button {
+      top: 40%;
+      left: 41%; } }
+  @media only screen and (max-width: 75em) {
+    .spin-win__button {
+      top: 40%;
+      left: 41%; } }
+  @media only screen and (max-width: 56.25em) {
+    .spin-win__button {
+      top: 40%;
+      left: 42%;
+      height: 8rem;
+      width: 8rem; } }
 
 .spin-win__finalValue {
   color: white;
   flex: 0 0 80%;
   font-size: 2rem;
   animation: moveInBottom 1s;
-  padding-left: 2.6rem; }
+  text-align: center; }
+  @media only screen and (max-width: 56.25em) {
+    .spin-win__finalValue {
+      padding-left: 0;
+      margin-bottom: 4rem; } }
 
 .spin-win__arrow {
   font-size: 3rem;
@@ -1356,6 +1586,9 @@ body {
   text-align: center;
   font-size: 2rem;
   text-transform: uppercase; }
+  @media only screen and (max-width: 75em) {
+    .spin-win__rules {
+      margin-top: 3rem; } }
 
 .spin-win__rule {
   width: 80%;
@@ -1390,13 +1623,23 @@ body {
   padding: 1rem 2rem;
   text-transform: uppercase;
   border-radius: 5px; }
+  @media only screen and (max-width: 75em) {
+    .spin-win__deposit {
+      font-size: 2.3rem;
+      padding: 1.5rem 2.5rem;
+      margin: 3rem 0; } }
 
 .spin-win__content {
   width: fit-content;
+  margin: 2 auto;
   height: fit-content;
   display: flex;
   align-items: center;
   justify-content: center; }
+  @media only screen and (max-width: 56.25em) {
+    .spin-win__content {
+      width: 80%;
+      margin: 0 auto; } }
 
 .spin-win__balance {
   font-size: 3rem; }
@@ -1411,12 +1654,21 @@ body {
   width: 100%;
   height: 100%;
   display: flex; }
+  @media only screen and (max-width: 75em) {
+    .transactions {
+      flex-direction: column;
+      width: 80%;
+      margin: 0 auto; } }
   .transactions__transactionContainer {
     height: 41rem;
     overflow: scroll; }
   .transactions__left {
     flex: 1;
     margin: 0 2rem; }
+    @media only screen and (max-width: 75em) {
+      .transactions__left {
+        flex: none;
+        margin-bottom: 3rem; } }
   .transactions__right {
     flex: 0 0 50%;
     text-align: center; }
@@ -1429,8 +1681,15 @@ body {
     justify-content: space-between;
     align-items: center;
     margin-bottom: 3rem; }
+    @media only screen and (max-width: 75em) {
+      .transactions__header {
+        flex-direction: column-reverse;
+        margin-left: 0; } }
     .transactions__header img {
       margin: 1rem; }
+      @media only screen and (max-width: 75em) {
+        .transactions__header img {
+          width: 30%; } }
   .transactions__headline {
     display: flex;
     justify-content: space-between;
@@ -1439,11 +1698,17 @@ body {
       position: relative !important;
       font-size: 4rem !important;
       margin-right: 5rem; }
+      @media only screen and (max-width: 75em) {
+        .transactions__headline-1 {
+          font-size: 3rem !important; } }
       .transactions__headline-1::after {
         width: 0 !important; }
     .transactions__headline-2 {
       position: relative !important;
       font-size: 4rem !important; }
+      @media only screen and (max-width: 75em) {
+        .transactions__headline-2 {
+          font-size: 3rem !important; } }
       .transactions__headline-2::after {
         width: 0 !important; }
   .transactions__operations {
@@ -1564,6 +1829,19 @@ body {
   display: flex;
   letter-spacing: 0.2rem;
   box-shadow: 0rem 0rem 3.4rem #124000; }
+  @media only screen and (max-width: 41em) {
+    .main {
+      flex-direction: column; } }
+  @media only screen and (max-width: 56.25em) {
+    .main {
+      width: 100%;
+      border-radius: 0; } }
+  @media only screen and (min-width: 87em) {
+    .main {
+      width: 80%; } }
+  @media only screen and (min-width: 112em) {
+    .main {
+      width: 75%; } }
   .main__navbar {
     flex: 0 0 20%;
     display: flex;
@@ -1572,10 +1850,15 @@ body {
     align-items: center;
     border-radius: 20px;
     box-shadow: 0rem 0rem 0.3rem #124000; }
+    @media only screen and (max-width: 75em) {
+      .main__navbar {
+        border-radius: 0;
+        flex: 0 0 27%; } }
+    @media only screen and (max-width: 41em) {
+      .main__navbar {
+        display: none; } }
   .main__center {
     flex: 1;
-    border-radius: 20px; }
-  .main__right {
     border-radius: 20px; }
 
 .section-starter {
@@ -1626,3 +1909,6 @@ body {
   align-items: center;
   padding: 2rem;
   flex-direction: column; }
+  @media only screen and (max-width: 75em) {
+    .section-mainPage {
+      padding: 0; } }

@@ -56,5 +56,9 @@
     align-items: center;
     padding: 2rem;
     flex-direction: column;
+
+    @include respond(tab-land) {
+      padding: 0;
+    }
   }
 }

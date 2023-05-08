@@ -14,7 +14,17 @@
     box-shadow: 0rem 0rem 3.4rem #124000;
     border-radius: 20px;
 
-    // align-items: center;
+    @include respond(big-desktop) {
+      width: 80%;
+    }
+    @include respond(XL-desktop) {
+      width: 75%;
+    }
+
+    @include respond(tab-port) {
+      width: 100%;
+      border-radius: 0;
+    }
   }
 
   &__item {

@@ -1,11 +1,12 @@
 import * as acc from "./accounts.js";
-import { loadCurrencies } from "./currenciesPanel.js";
+// import { loadCurrencies } from "./currenciesPanel.js";
 import * as update from "./updateUI.js";
 import * as switchPage from "./switchPages.js";
 
 // query selectors
 const transactionsOverlay = document.querySelector(".transactions__overlay");
 const pageLoadingHeadline = document.querySelector(".loading-page__headline");
+const headline = document.querySelector(".transactions__headline-2");
 
 // transfer
 const transferBtn = document.querySelector(".transactions__button-transfer");
@@ -27,7 +28,12 @@ const deletePopupContainer = document.querySelector(".delete__popupContainer");
 const deleteButton = document.querySelector(".transactions__button-close");
 
 export const transactions = function (currentAccount) {
-  console.log(currentAccount);
+  let name = currentAccount.fullName;
+  name = name.split(" ").slice(0, -1).join("");
+
+  headline.dataset.text = name;
+  headline.textContent = name;
+
   const openPopupTransfer = function (headline, info) {
     const markup = `
   <div class="transactions__popup open">
@@ -266,3 +272,7 @@ export const transactions = function (currentAccount) {
 
   deleteButton.addEventListener("click", deleteUserAcc);
 };
+
+let currentAccount;
+currentAccount = acc.accounts.find((acc) => acc.userName === "admin");
+transactions(currentAccount);
