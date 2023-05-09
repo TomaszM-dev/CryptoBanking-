@@ -25,7 +25,7 @@ export const initSettings = function (currentAccount) {
 
 export const updateUI = function (currentAccount) {
   destroy(chartUI);
-  render(currentAccount, chartUI);
+  chartUI = render(currentAccount, chartUI);
   currentUser.displayTransactionsOverview(currentAccount);
   currentUser.displayTransactionsTransaction(currentAccount);
 };
@@ -67,6 +67,7 @@ let config = {
   type: "line",
   data,
   options: {
+    responsive: true,
     scales: {
       y: {
         beginAtZero: false,
@@ -105,4 +106,5 @@ function render(currentAccount, chartUI) {
     chartUI.data.labels = labelArr;
   });
   chartUI.update();
+  return chartUI;
 }

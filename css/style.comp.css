@@ -234,9 +234,27 @@ body {
 .wrong-password {
   z-index: 10000;
   position: absolute;
-  top: 15rem;
-  left: 34.5rem;
+  top: -16rem;
+  left: 4rem;
   transition: all 1s; }
+  @media only screen and (min-width: 87em) {
+    .wrong-password {
+      top: -14rem;
+      left: 0rem; } }
+  @media only screen and (min-width: 112em) {
+    .wrong-password {
+      left: 14rem; } }
+  @media only screen and (max-width: 75em) {
+    .wrong-password {
+      left: 13rem;
+      top: -10rem; } }
+  @media only screen and (max-width: 75em) {
+    .wrong-password {
+      left: 7rem;
+      top: -12rem; } }
+  @media only screen and (max-width: 56.25em) {
+    .wrong-password {
+      left: -5rem; } }
   .wrong-password__popup {
     z-index: 1000;
     display: none;
@@ -520,6 +538,9 @@ body {
   left: 12rem;
   opacity: 0.7;
   animation: moveInBottom 2s; }
+  @media only screen and (max-width: 75em) {
+    .cube__container-1 {
+      display: none; } }
 
 .cube__container-2 {
   position: absolute;
@@ -527,6 +548,9 @@ body {
   right: 12rem;
   animation: moveInBottom 2s;
   opacity: 0.7; }
+  @media only screen and (max-width: 75em) {
+    .cube__container-2 {
+      display: none; } }
 
 .cube__container-3 {
   position: absolute;
@@ -534,6 +558,9 @@ body {
   left: 18rem;
   animation: moveInBottom 2s;
   opacity: 0.7; }
+  @media only screen and (max-width: 75em) {
+    .cube__container-3 {
+      display: none; } }
 
 .cube__container-4 {
   position: absolute;
@@ -541,6 +568,9 @@ body {
   right: 18rem;
   animation: moveInBottom 2s;
   opacity: 0.7; }
+  @media only screen and (max-width: 75em) {
+    .cube__container-4 {
+      display: none; } }
 
 .cube__box-1 {
   position: relative;
@@ -779,54 +809,63 @@ body {
 .loginContainer {
   animation: moveInBottom 0.3s; }
 
-.sign-in {
-  position: relative; }
-  .sign-in__form {
-    transform: rotateY(15deg) translateY(-5rem);
-    transition: all 1s;
-    position: absolute;
-    bottom: 10%;
-    background-color: #222;
-    opacity: 0.7;
-    width: 40%;
-    height: auto;
-    max-height: 60rem;
-    transition: max-height 0.8s ease-out;
-    z-index: 1;
-    color: white;
+.sign-in__form {
+  position: relative;
+  transform: rotateY(15deg) translateY(-16rem);
+  transition: all 1s;
+  position: absolute;
+  bottom: 10%;
+  background-color: #222;
+  opacity: 0.7;
+  width: 40%;
+  height: auto;
+  max-height: 60rem;
+  transition: max-height 0.8s ease-out;
+  z-index: 1;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  box-shadow: 0rem 0rem 1.4rem #124000;
+  backface-visibility: hidden; }
+  @media only screen and (min-width: 87em) {
+    .sign-in__form {
+      transform: translateY(-3rem); } }
+  @media only screen and (max-width: 75em) {
+    .sign-in__form {
+      width: 60%;
+      padding: 2rem 0; } }
+  .sign-in__form-group {
     display: flex;
-    flex-direction: column;
-    border-radius: 5px;
-    box-shadow: 0rem 0rem 1.4rem #124000;
-    backface-visibility: hidden; }
-    .sign-in__form-group {
-      display: flex;
-      margin-bottom: 2rem; }
-  .sign-in__headline {
-    text-align: center;
-    text-transform: uppercase;
-    font-size: 3rem;
-    padding: 4rem 2rem 2rem 2rem;
-    width: 100%;
-    color: transparent;
-    opacity: 0.5;
-    -webkit-text-stroke: 0.2vh #20ff03; }
-  .sign-in__input {
-    width: 100%;
-    padding: 2rem 1rem;
-    font-size: 1.7rem;
-    background-color: #333;
-    border: 1px solid #222;
-    border-radius: 5px;
-    margin: 0 4rem;
-    color: white; }
-    .sign-in__input:focus {
-      outline: 2px solid;
-      outline-color: #17b802; }
-  .sign-in__paragraph {
-    margin: 0 4rem;
-    font-size: 1.7rem;
-    color: #f4f4f4; }
+    margin-bottom: 2rem; }
+
+.sign-in__headline {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 3rem;
+  padding: 4rem 2rem 2rem 2rem;
+  width: 100%;
+  color: transparent;
+  opacity: 0.5;
+  -webkit-text-stroke: 0.2vh #20ff03; }
+
+.sign-in__input {
+  width: 100%;
+  padding: 2rem 1rem;
+  font-size: 1.7rem;
+  background-color: #333;
+  border: 1px solid #222;
+  border-radius: 5px;
+  margin: 0 4rem;
+  color: white; }
+  .sign-in__input:focus {
+    outline: 2px solid;
+    outline-color: #17b802; }
+
+.sign-in__paragraph {
+  margin: 0 4rem;
+  font-size: 1.7rem;
+  color: #f4f4f4; }
 
 .register__input {
   width: 100%;
@@ -941,7 +980,9 @@ body {
       z-index: 1999; } }
   .main__hamburger-tittle {
     font-weight: 600;
-    margin-right: 35rem;
+    position: absolute;
+    top: 25%;
+    left: 3rem;
     text-transform: uppercase;
     letter-spacing: 1rem;
     font-size: 3.2rem;
@@ -1002,7 +1043,7 @@ body {
   position: fixed;
   top: 0;
   right: 0%;
-  width: 30%;
+  width: 35%;
   min-height: 100vh;
   display: block;
   z-index: 98;
@@ -1010,7 +1051,7 @@ body {
   padding-top: 120px;
   transition: 0.2s;
   opacity: 0;
-  transform: translateX(30rem);
+  transform: translateX(80rem);
   box-shadow: 0 0 0.4rem #01a001; }
   @media only screen and (max-width: 41em) {
     .main__mobile-nav {
@@ -1206,7 +1247,7 @@ body {
       color: red; }
 
 .card {
-  height: 21rem;
+  height: 23rem;
   width: 100%;
   margin: 0 auto;
   justify-self: center;
@@ -1258,6 +1299,14 @@ body {
       height: 100%;
       opacity: 0.3;
       z-index: 1; }
+    .card__inner-info {
+      margin-top: 1rem; }
+      @media only screen and (min-width: 87em) {
+        .card__inner-info {
+          margin-top: 2rem; } }
+      @media only screen and (max-width: 75em) {
+        .card__inner-info {
+          margin-top: 2rem; } }
     .card__inner-chip {
       width: 5rem; }
     .card__inner-visa {
@@ -1268,13 +1317,25 @@ body {
       font-size: 1.9rem; }
       .card__inner-accountNumber span {
         margin: 0 1.2rem; }
+      @media only screen and (max-width: 75em) {
+        .card__inner-accountNumber {
+          font-size: 2.5rem; } }
     .card__inner-info {
       font-size: 0.8rem; }
+      @media only screen and (max-width: 75em) {
+        .card__inner-info {
+          font-size: 1rem; } }
     .card__inner-holder {
       font-size: 1.6rem;
       text-transform: uppercase; }
+      @media only screen and (max-width: 75em) {
+        .card__inner-holder {
+          font-size: 2rem; } }
     .card__inner-validTo {
       font-size: 1.6rem; }
+      @media only screen and (max-width: 75em) {
+        .card__inner-validTo {
+          font-size: 2rem; } }
     .card__inner-bar {
       background-color: #222;
       position: relative;
@@ -1405,6 +1466,9 @@ body {
         font-weight: 300;
         margin: 3rem 0;
         animation: textColor 3s ease-in infinite; } }
+  .check-pairs__flag {
+    width: 20rem;
+    height: 20rem; }
   .check-pairs__headline {
     position: absolute;
     font-size: 2rem !important;
@@ -1460,9 +1524,12 @@ body {
     color: #01a001; }
   .check-pairs__flag {
     width: 7rem; }
-  .check-pairs__selectionBox {
+  .check-pairs__selectionBox select {
     display: flex;
+    width: auto;
     flex-direction: column; }
+  .check-pairs__option {
+    margin-top: 50rem; }
   .check-pairs__exchangeRate {
     align-self: center;
     border-bottom: 1px solid #217400;
@@ -1825,17 +1892,21 @@ body {
   color: white;
   width: 85%;
   flex: 1;
+  box-shadow: 0rem 0rem 3.4rem #124000;
   margin: 0 auto;
   display: flex;
-  letter-spacing: 0.2rem;
-  box-shadow: 0rem 0rem 3.4rem #124000; }
+  letter-spacing: 0.2rem; }
   @media only screen and (max-width: 41em) {
     .main {
       flex-direction: column; } }
   @media only screen and (max-width: 56.25em) {
     .main {
       width: 100%;
+      height: fit-content;
       border-radius: 0; } }
+  @media only screen and (max-width: 75em) {
+    .main {
+      min-height: 100vh; } }
   @media only screen and (min-width: 87em) {
     .main {
       width: 80%; } }

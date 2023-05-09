@@ -8,10 +8,19 @@
 }
 
 .sign-in {
-  position: relative;
-
   &__form {
-    transform: rotateY(15deg) translateY(-5rem);
+    position: relative;
+    transform: rotateY(15deg) translateY(-16rem);
+
+    @include respond(big-desktop) {
+      transform: translateY(-3rem);
+    }
+
+    @include respond(tab-land) {
+      width: 60%;
+      padding: 2rem 0;
+    }
+
     transition: all 1s;
 
     position: absolute;

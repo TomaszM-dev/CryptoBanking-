@@ -22,6 +22,7 @@
   },
   "dependencies": {
     "chart.js": "^4.2.1",
-    "concat": "^1.0.3"
+    "concat": "^1.0.3",
+    "flag-icons": "^6.6.6"
   }
 }

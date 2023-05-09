@@ -108,9 +108,32 @@ body {
 .wrong-password {
   z-index: 10000;
   position: absolute;
-  top: 15rem;
-  left: 34.5rem;
+  top: -16rem;
+  left: 4rem;
   transition: all 1s;
+
+  @include respond(big-desktop) {
+    top: -14rem;
+    left: 0rem;
+  }
+
+  @include respond(XL-desktop) {
+    left: 14rem;
+  }
+
+  @include respond(tab-land) {
+    left: 13rem;
+    top: -10rem;
+  }
+
+  @include respond(tab-land) {
+    left: 7rem;
+    top: -12rem;
+  }
+
+  @include respond(tab-port) {
+    left: -5rem;
+  }
 
   &__popup {
     z-index: 1000;

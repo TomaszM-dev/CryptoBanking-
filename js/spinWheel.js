@@ -224,8 +224,3 @@ export const spin = function (currentAccount) {
     gameCurBalance.textContent = 0;
   });
 };
-
-let currentAccount;
-currentAccount = acc.accounts.find((acc) => acc.userName === "admin");
-
-spin(currentAccount);

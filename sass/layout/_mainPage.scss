@@ -3,23 +3,24 @@
   background-color: rgba(0, 0, 0, 0.625);
   color: white;
   width: 85%;
-
   flex: 1;
-
+  box-shadow: 0rem 0rem 3.4rem #124000;
   margin: 0 auto;
   display: flex;
+  letter-spacing: 0.2rem;
 
   @include respond(phone) {
     flex-direction: column;
   }
 
-  letter-spacing: 0.2rem;
-
-  box-shadow: 0rem 0rem 3.4rem #124000;
-
   @include respond(tab-port) {
     width: 100%;
+    height: fit-content;
     border-radius: 0;
+  }
+
+  @include respond(tab-land) {
+    min-height: 100vh;
   }
 
   @include respond(big-desktop) {

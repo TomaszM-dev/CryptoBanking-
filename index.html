@@ -17,6 +17,10 @@
       integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ="
       crossorigin="anonymous"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@6.6.6/css/flag-icons.min.css"
+    />
     <link rel="stylesheet" href="/css/style.css" />
     <script type="module" defer src="js/controller.js"></script>
   </head>
@@ -95,6 +99,15 @@
       </div>
 
       <form class="sign-in__form">
+        <div class="wrong-password">
+          <div class="wrong-password__popup close">
+            <button class="wrong-password__close">X</button>
+            <h3 class="wrong-password__headline mg-sm">Wrong pass</h3>
+            <p class="wrong-password__info">
+              try again using different credentials or register yourself
+            </p>
+          </div>
+        </div>
         <div class="sign-in__form-group sign-in__btn-container">
           <button data-set="1" class="sign-in__headline sign-in__login active">
             Sign In
@@ -192,24 +205,16 @@
         CRYPTOBANKING
       </h1>
     </section>
-    <div class="wrong-password">
-      <div class="wrong-password__popup close">
-        <button class="wrong-password__close">X</button>
-        <h3 class="wrong-password__headline mg-sm">Wrong pass</h3>
-        <p class="wrong-password__info">
-          try again using different credentials or register yourself
-        </p>
-      </div>
-    </div>
+
     <div id="overlay" class="overlay hide"></div>
     <section class="section-mainPage">
-      <!-- <div class="bg-video">
+      <div class="bg-video hide">
         <video class="bg-video__content" autoplay muted loop>
           <source src="img/bg-video.mp4" type="video/mp4" />
           <source src="img/video.webm" type="video/webm" />
           Your browser is not supported!
         </video>
-      </div> -->
+      </div>
 
       <div class="main">
         <div class="main__navbar">
@@ -480,10 +485,10 @@
                 <div class="check-pairs__from">
                   <p>From</p>
                   <div class="check-pairs__selectionBox">
-                    <img
+                    <!-- <img
                       src="https://flagsapi.com/US/flat/64.png"
                       class="check-pairs__flag"
-                    />
+                    /> -->
                     <select class="check-pairs__select select__from"></select>
                   </div>
                 </div>
@@ -493,10 +498,10 @@
                 <div class="check-pairs__to">
                   <p>To</p>
                   <div class="check-pairs__selectionBox">
-                    <img
+                    <!-- <img
                       src="https://flagsapi.com/PL/flat/64.png"
                       class="check-pairs__flag"
-                    />
+                    /> -->
                     <select class="check-pairs__select select__to"></select>
                   </div>
                 </div>
@@ -609,7 +614,7 @@
                       <div class="card__inner-row mg-sm">
                         <p class="card__inner-accountNumber"></p>
                       </div>
-                      <div class="card__inner-row">
+                      <div class="card__inner-row card__inner-info">
                         <p class="card__inner-info">CARD HOLDER</p>
                         <p class="card__inner-info">VALID TILL</p>
                       </div>
@@ -689,7 +694,7 @@
           </div>
         </div>
       </div>
-      <div class="currencies-panel"></div>
+      <div class="currencies-panel hide"></div>
 
       <div class="loading-page hide">
         <div class="loading-page__spinner mg-lm">

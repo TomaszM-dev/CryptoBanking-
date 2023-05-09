@@ -1,6 +1,6 @@
 .card {
   // box-shadow: $shadow;
-  height: 21rem;
+  height: 23rem;
   width: 100%;
   margin: 0 auto;
   justify-self: center;
@@ -30,6 +30,9 @@
     position: relative;
     border-radius: 20px;
     opacity: 0.7;
+
+    @include respond(tab-land) {
+    }
 
     &-front,
     &-back {
@@ -68,6 +71,17 @@
       z-index: 1;
     }
 
+    &-info {
+      margin-top: 1rem;
+      @include respond(big-desktop) {
+        margin-top: 2rem;
+      }
+
+      @include respond(tab-land) {
+        margin-top: 2rem;
+      }
+    }
+
     &-chip {
       width: 5rem;
     }
@@ -82,17 +96,32 @@
       flex: 1;
       text-align: center;
       font-size: 1.9rem;
+
+      @include respond(tab-land) {
+        font-size: 2.5rem;
+      }
     }
 
     &-info {
       font-size: 0.8rem;
+
+      @include respond(tab-land) {
+        font-size: 1rem;
+      }
     }
 
     &-holder {
       font-size: 1.6rem;
       text-transform: uppercase;
+
+      @include respond(tab-land) {
+        font-size: 2rem;
+      }
     }
     &-validTo {
+      @include respond(tab-land) {
+        font-size: 2rem;
+      }
       font-size: 1.6rem;
     }
 

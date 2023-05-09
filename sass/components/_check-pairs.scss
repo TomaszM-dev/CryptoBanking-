@@ -21,6 +21,11 @@
     }
   }
 
+  &__flag {
+    width: 20rem;
+    height: 20rem;
+  }
+
   &__headline {
     position: absolute;
     font-size: 2rem !important;
@@ -99,9 +104,14 @@
     width: 7rem;
   }
 
-  &__selectionBox {
+  &__selectionBox select {
     display: flex;
+    width: auto;
     flex-direction: column;
+  }
+
+  &__option {
+    margin-top: 50rem;
   }
 
   &__exchangeRate {

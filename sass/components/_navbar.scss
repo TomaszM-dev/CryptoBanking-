@@ -22,12 +22,18 @@
 
     &-tittle {
       font-weight: 600;
-      margin-right: 35rem;
+      position: absolute;
+      top: 25%;
+      left: 3rem;
+
       text-transform: uppercase;
       letter-spacing: 1rem;
       font-size: 3.2rem;
       color: transparent;
       -webkit-text-stroke: 0.2vh #23ba0f;
+
+      @include respond(phone) {
+      }
     }
   }
 
@@ -101,7 +107,7 @@
     position: fixed;
     top: 0;
     right: 0%;
-    width: 30%;
+    width: 35%;
     min-height: 100vh;
     display: block;
     z-index: 98;
@@ -109,7 +115,7 @@
     padding-top: 120px;
     transition: 0.2s;
     opacity: 0;
-    transform: translateX(30rem);
+    transform: translateX(80rem);
     box-shadow: 0 0 0.4rem $color-secondary-light-1;
   }
 

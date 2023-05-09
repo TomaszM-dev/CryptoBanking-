@@ -10,16 +10,21 @@ const fromCurrency = document.querySelector(".select__from");
 const toCurrency = document.querySelector(".select__to");
 const exchangeRateText = document.querySelector(".check-pairs__exchangeRate");
 const exchangeIcon = document.querySelector(".check-pairs__icon");
+const flagContainer = document.querySelector(".check-pairs__selectionBox");
 
 dropList.innerHTML = "";
 
 // taking data from config and storing to variable
 let countries = con.country_list;
 
+for (let f in countries) {
+  console.log(countries[f]);
+}
 // creating options on selection based on countries array
 for (let i = 0; i < dropList.length; i++) {
   for (let country in countries) {
     let selected;
+    console.log(country);
 
     if (i == 0) {
       selected = country == "USD" ? "selected" : "";
@@ -36,19 +41,25 @@ for (let i = 0; i < dropList.length; i++) {
   // loading flags on change
   dropList[i].addEventListener("change", function (e) {
     e.preventDefault();
+
     loadFlag(e.target);
   });
 }
 
 // loading flag mechanics
-const loadFlag = function (element) {
-  for (let flag in config.country_list) {
-    if (flag == element.value) {
+function loadFlag(element) {
+  for (let flag in con.country_list) {
+    if (flag === element.value) {
+      // const markup = `<span class="fi fi-${countries[flag]} check-pairs__flag"></span>
+      // `;
+
+      // flagContainer.insertAdjacentHTML("afterbegin", markup);
+
       let img = element.parentElement.querySelector("img");
-      img.src = `https://flagsapi.com/${config.country_list[flag]}/flat/64.png`;
-    }
+      img.src = `https://flagsapi.com/${con.country_list[flag]}/flat/64.png`;
+    } else return;
   }
-};
+}
 
 // loading currencies that are selected and fetching right api for them
 
@@ -140,6 +151,7 @@ const config = {
   type: "line",
   data,
   options: {
+    responsive: true,
     scales: {
       y: {
         beginAtZero: false,
