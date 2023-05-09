@@ -17,14 +17,10 @@ dropList.innerHTML = "";
 // taking data from config and storing to variable
 let countries = con.country_list;
 
-for (let f in countries) {
-  console.log(countries[f]);
-}
 // creating options on selection based on countries array
 for (let i = 0; i < dropList.length; i++) {
   for (let country in countries) {
     let selected;
-    console.log(country);
 
     if (i == 0) {
       selected = country == "USD" ? "selected" : "";
