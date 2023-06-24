@@ -61,7 +61,7 @@ function loadFlag(element) {
 
 const loadCurrencies = async function (fromValue, amountValue) {
   const res = await fetch(
-    ` https://v6.exchangerate-api.com/v6/912b37ae75699e3c78fa344b/latest/${fromValue}`
+    ` https://v6.exchangerate-api.com/v6/r6VUKG8uDG4PLF4kV66ftVZhsK05buU5oKebljXb/latest/${fromValue}`
   );
 
   const data = await res.json();
@@ -110,7 +110,7 @@ const ratePrices = async function () {
   let prices = [];
   for (let day of weekDays) {
     const res = await fetch(
-      `https://v6.exchangerate-api.com/v6/912b37ae75699e3c78fa344b/history/${fromCurrency.value}/${day}`
+      `https://v6.exchangerate-api.com/v6/r6VUKG8uDG4PLF4kV66ftVZhsK05buU5oKebljXb/history/${fromCurrency.value}/${day}`
     );
 
     const data = await res.json();
